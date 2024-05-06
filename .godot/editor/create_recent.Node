@@ -1,3 +1,6 @@
+MarginContainer
+Panel
+TextureRect
 Popup
 HTTPRequest
 Control

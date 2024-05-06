@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bxthtt0n6qcta"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru7tr"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.215686, 0.188235, 0.129412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.34902, 0.533333, 0.364706, 1)
+
+[resource]
+/colors/Background = Color(0, 0, 0, 1)
+Panel/colors/Background = Color(0.215686, 0.188235, 0.129412, 1)
+Panel/colors/Foreground = Color(0.34902, 0.533333, 0.364706, 1)
+Panel/colors/Text = Color(1, 1, 1, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_ru7tr")
+VBoxContainer/constants/separation = 4

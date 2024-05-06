@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient135">
+      <stop
+         style="stop-color:#373021;stop-opacity:1;"
+         offset="0"
+         id="stop135" />
+      <stop
+         style="stop-color:#59885d;stop-opacity:1;"
+         offset="1"
+         id="stop136" />
+    </linearGradient>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter131"
+       x="-0.0060074678"
+       y="-0.0069133311"
+       width="1.0120149"
+       height="1.0138267">
+      <feSpecularLighting
+         in="SourceAlpha"
+         surfaceScale="1"
+         specularConstant="2"
+         specularExponent="18.5"
+         id="feSpecularLighting130">
+        <feDistantLight
+           elevation="30"
+           azimuth="225"
+           id="feDistantLight130" />
+      </feSpecularLighting>
+      <feComposite
+         result="result0"
+         operator="atop"
+         in2="SourceGraphic"
+         id="feComposite130" />
+      <feMorphology
+         radius="2"
+         result="result1"
+         in="SourceAlpha"
+         operator="dilate"
+         id="feMorphology130" />
+      <feComposite
+         in="result0"
+         in2="result1"
+         id="feComposite131" />
+    </filter>
+    <linearGradient
+       xlink:href="#linearGradient135"
+       id="linearGradient136"
+       x1="260.90002"
+       y1="86.299988"
+       x2="260.90002"
+       y2="255.58423"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:expanded;font-size:266.667px;font-family:Inconsolata;-inkscape-font-specification:'Inconsolata, Heavy Expanded';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:url(#linearGradient136);fill-opacity:1"
+       x="14.132943"
+       y="252.38423"
+       id="text60"><tspan
+         id="tspan60"
+         x="14.132943"
+         y="252.38423"
+         style="fill:url(#linearGradient136);fill-opacity:1">CVR</tspan></text>
+    <path
+       style="fill:#aa0000;filter:url(#filter131)"
+       id="path77"
+       d="M 43.697054,221.5547 210.15654,289.66973 376.61603,223.51441 234.39693,333.61504 208.45938,510.85084 184.21899,332.63518 Z"
+       transform="matrix(0.80287996,0,0,0.80287996,87.269526,92.696815)" />
+  </g>
+</svg>

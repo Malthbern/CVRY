@@ -12,15 +12,21 @@ config_version=5
 
 config/name="CVR-Y"
 config/version="0.0.1_DEV"
-run/main_scene="res://main.tscn"
+run/main_scene="res://Frontend/Startup/Startup.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://Frontend/CVRYicon.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="res://Frontend/CVRYicon.png"
 
 [autoload]
 
-DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+SaveCrypto="*res://Backend/savecrypto.gd"
+FrontStart="*res://Frontend/FrontStart.gd"
 Utils="*res://Backend/utils.gd"
 ApiCvrHttp="*res://Backend/api_cvr_http.gd"
+DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
 [editor_plugins]
 

@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://cumv5w51iw20"]
+
+[ext_resource type="Theme" uid="uid://bxthtt0n6qcta" path="res://CVR.tres" id="1_ufdtb"]
+[ext_resource type="Texture2D" uid="uid://irr4uv4nfsb2" path="res://Frontend/CVRYicon.png" id="2_o2f70"]
+[ext_resource type="Texture2D" uid="uid://btmdj5dlm51vd" path="res://Frontend/loadigncircle.svg" id="2_oid2n"]
+[ext_resource type="Script" path="res://Frontend/Startup/LoadingCircle.gd" id="3_rbcu2"]
+
+[node name="Startup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ufdtb")
+
+[node name="Panel" type="Panel" parent="."]
+visibility_layer = 1025
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_ufdtb")
+
+[node name="LoadingCircle" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -140.0
+offset_right = 140.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(140, 140)
+texture = ExtResource("2_oid2n")
+expand_mode = 3
+script = ExtResource("3_rbcu2")
+
+[node name="Logo" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -101.0
+offset_right = 101.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_o2f70")
+expand_mode = 2

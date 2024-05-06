@@ -1,13 +1,11 @@
 extends Node
 
-@export var GetUserAgent : String = ('CVR-Y/' + ProjectSettings.get_setting('application/config/version') + '/deployment:')
+@export var GetUserAgent : String = ('CVR-Y_GodotApp/' + ProjectSettings.get_setting('application/config/version') + '/deployment:')
 var entity
 var mapping
 var object
 
 var entityToMap
-
-#@export var DeepClone = JSON.parse(JSON.stringify(obj))
 
 func _ready():
 	#Generate final user agent
@@ -31,6 +29,6 @@ func _ready():
 	GetUserAgent += Engine.get_architecture_name()
 	print_debug('UserAgent: ' + GetUserAgent)
 	
-	for apikey in mapping:
-		if object.prototype.hasOwnProperty.call(entityToMap, apikey):
-			var ourkey = mapping[apikey]
+#	for apikey in mapping:
+#		if object.prototype.hasOwnProperty.call(entityToMap, apikey):
+#			var ourkey = mapping[apikey]
