@@ -1,6 +1,11 @@
-MarginContainer
-Panel
+LineEdit
+TextEdit
 TextureRect
+Button
+HBoxContainer
+VBoxContainer
+Panel
+MarginContainer
 Popup
 HTTPRequest
 Control

@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://nhglhox6yy7m"]
+[gd_scene load_steps=3 format=3 uid="uid://nhglhox6yy7m"]
+
+[ext_resource type="Theme" uid="uid://bxthtt0n6qcta" path="res://CVR.tres" id="1_ou2en"]
+[ext_resource type="Texture2D" uid="uid://irr4uv4nfsb2" path="res://Frontend/CVRYicon.png" id="2_aq1bf"]
 
 [node name="Login" type="Control"]
 layout_mode = 3
@@ -7,3 +10,57 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ou2en")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.402
+anchor_top = 0.17
+anchor_right = 0.598
+anchor_bottom = 0.517
+offset_left = 0.395996
+offset_top = -0.160004
+offset_right = -0.395996
+offset_bottom = -0.0163269
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aq1bf")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+anchor_left = 0.271
+anchor_top = 0.54
+anchor_right = 0.729
+anchor_bottom = 0.725
+offset_left = -0.192017
+offset_top = 0.0799866
+offset_right = 0.191956
+offset_bottom = 0.199982
+size_flags_horizontal = 3
+theme = ExtResource("1_ou2en")
+
+[node name="Email" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "E-mail"
+
+[node name="Password" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Password"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+action_mode = 0
+keep_pressed_outside = true
+text = "Login"

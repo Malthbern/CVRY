@@ -1,8 +1,2 @@
-res://Frontend/Login/Login.tscn
 res://CVR.tres
-res://Backend/savecrypto.gd
-res://Backend/api_cvr_http.gd
-res://Frontend/FrontStart.gd
-res://Frontend/Startup/LoadingCircle.gd
-res://Backend/LoginInfo.gd
-res://Backend/utils.gd
+res://Frontend/Login/Login.tscn

@@ -21,13 +21,15 @@ func savelogininfo():
 	
 
 func _ready():
+	print_debug('Getting login info ready')
 	var json_return = SaveCrypto.decrypt_and_read(SAVE_DIR+SAVE_NAME)
 	if json_return == null:
 		printerr("Something when horriably wrong!: %s" % [json_return])
 		get_tree().quit()
 		return #just in case, we dont want to go further
 	elif json_return == "new":
-		
+		FrontStart.loadUI('Login')
+		return
 	
 	email = json_return.email
 	username = json_return.username

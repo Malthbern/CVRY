@@ -23,6 +23,7 @@ config/icon="res://Frontend/CVRYicon.png"
 [autoload]
 
 SaveCrypto="*res://Backend/savecrypto.gd"
+LoginInfo="*res://Backend/LoginInfo.gd"
 FrontStart="*res://Frontend/FrontStart.gd"
 Utils="*res://Backend/utils.gd"
 ApiCvrHttp="*res://Backend/api_cvr_http.gd"
@@ -32,7 +33,13 @@ DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
 enabled=PackedStringArray("res://addons/HTTPManager/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg")
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/android/enable_long_press_as_right_click=true
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
