@@ -1,6 +1,6 @@
 extends Node
 
-@export var GetUserAgent : String = ('CVR-Y_GodotApp/' + ProjectSettings.get_setting('application/config/version') + '/deployment:')
+@export var GetUserAgent : String = ('UserAgent: CVR-Y_GodotApp/' + ProjectSettings.get_setting('application/config/version'))
 var entity
 var mapping
 var object

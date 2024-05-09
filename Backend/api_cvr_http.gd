@@ -7,8 +7,18 @@ const APIBase:String = APIAddress + "/1"
 const APIBase2:String = APIAddress + "/2"
 
 func Post(url, data, authenticated = true, apiVersion = 1):
-	#const response = await (authenticated falsy_value(apiVersion === 1 ? CVRapi : CVRApiV2) : UnauthenticatedCVRApi.post(url, data)
-	print_debug('[Post] [${response.status}] ')
+	var headers: PackedStringArray = ["accept: application/json", "Content-Type: application/json", Utils.GetUserAgent]
+	if apiVersion == 1:
+		print_debug("Sending: " + JSON.stringify(data, "\t", false) + " to " + APIBase+url)
+		Httpnode.request_completed.connect(_on_request_completed)
+		Httpnode.request(APIBase+url+'?acceptTos=false', headers, HTTPClient.METHOD_POST, JSON.stringify(data, "\t", false, true))
+	JSON.stringify(data,"",false)
+	
+
+func _on_request_completed(result, response_code, headers, body):
+	print_debug('Response: %s' % [response_code]) 
+	print_debug(body.get_string_from_utf8())
+	print_debug(JSON.stringify(headers, "\t", false))
 
 #api constants
 const CATEGORY_TYPES : Dictionary = {
@@ -36,17 +46,14 @@ const PrivacyLevel : Dictionary = {
 #API endpoints
 
 #authenticate
-func Authenticate(authType, credentialUser, credentialSecret):
-	#const  authentication = HTTPManager
-	pass
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	Httpnode.request_completed.connect(_on_request_completed)
-	Httpnode.request(APIBase)
+func Authenticate(Authtype:int, credentialUser:String, credentialSecret:String):
+	var auth
 	
-
-func _on_request_completed(result, response_code, headers, body):
-	var json = JSON.parse_string(body.get_string_from_utf8())
-	print_debug(json["message"])
+	var authdata : Dictionary = {
+		username = credentialUser,
+		password = credentialSecret,
+		authType = Authtype
+	}
+	
+	auth = await Post('/users/auth', authdata, false)
 

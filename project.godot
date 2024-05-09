@@ -24,9 +24,9 @@ config/icon="res://Frontend/CVRYicon.png"
 
 SaveCrypto="*res://Backend/savecrypto.gd"
 LoginInfo="*res://Backend/LoginInfo.gd"
-FrontStart="*res://Frontend/FrontStart.gd"
 Utils="*res://Backend/utils.gd"
 ApiCvrHttp="*res://Backend/api_cvr_http.gd"
+FrontStart="*res://Frontend/FrontStart.gd"
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
 [editor_plugins]

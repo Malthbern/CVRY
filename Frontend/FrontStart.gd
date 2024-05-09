@@ -7,10 +7,12 @@ var Login = "res://Frontend/Login/Login.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var l = load(Login).instantiate()
-	get_tree().root.add_child.call_deferred(l)
+	
+	ApiCvrHttp.Authenticate(1,'Malthbern','U8kBgAgVJuUWQ4Y')
 
 func load_complete(Scene:Node):
+	var l = load(Login).instantiate()
+	get_tree().root.add_child.call_deferred(l)
 	get_tree().root.remove_child(Scene)
 	
 
