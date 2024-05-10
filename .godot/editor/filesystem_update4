@@ -7,3 +7,6 @@ res://Frontend/Mobile/Mobile.tscn
 res://Frontend/Login/Login.tscn
 res://Backend/utils.gd
 res://Backend/api_cvr_http.gd
+res://Frontend/Login/Login.gd
+res://Backend/LoginInfo.gd
+res://Backend/savecrypto.gd
