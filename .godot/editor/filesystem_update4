@@ -1,9 +1,9 @@
-res://addons/HTTPManager/example/HTTPManager-Example.tscn
-res://CVR.tres
 res://Frontend/Startup/Startup.tscn
+res://CVR.tres
+res://Frontend/FrontStart.gd
+res://addons/HTTPManager/example/HTTPManager-Example.tscn
 res://Frontend/Desktop/Desktop.tscn
 res://Frontend/Mobile/Mobile.tscn
 res://Frontend/Login/Login.tscn
-res://Backend/api_cvr_http.gd
 res://Backend/utils.gd
-res://Frontend/FrontStart.gd
+res://Backend/api_cvr_http.gd

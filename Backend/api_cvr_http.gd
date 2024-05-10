@@ -57,3 +57,11 @@ func Authenticate(Authtype:int, credentialUser:String, credentialSecret:String):
 	
 	auth = await Post('/users/auth', authdata, false)
 
+func testrequest():
+	var headers: PackedStringArray = ["accept: application/json", "Content-Type: application/json", Utils.GetUserAgent]
+	print_debug("Sending test request to malthbern.com")
+	Httpnode.request_completed.connect(_on_test_request)
+	Httpnode.request('https://malthbern.com', headers)
+
+func _on_test_request(result, response_code, headers, body):
+	print(response_code)
