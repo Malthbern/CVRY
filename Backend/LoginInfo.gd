@@ -8,6 +8,7 @@ const SAVE_NAME = "login.json"
 @export var password:String
 @export var userid:String
 @export var logintoken:String
+@export var loginvalid : bool = false
 
 
 func savelogininfo():
@@ -41,6 +42,37 @@ func _ready():
 	password = json_return.password
 	logintoken = json_return.logintoken
 	print_debug("Login details decrypted and loaded")
+	autologin()
+
+func autologin():
+	ApiCvrHttp.request_completed.connect(_on_request_completed)
+	ApiCvrHttp.Authenticate(2, email, password)
+	
+
+
+func _on_request_completed(result, response_code, headers, body):
+	var parsedstring = JSON.parse_string(body.get_string_from_utf8())
+	
+	match response_code:
+		200:
+			print_debug("Auto Login successful")
+			username = parsedstring.data.username
+			userid = parsedstring.data.userId
+			logintoken = parsedstring.data.accessKey
+			savelogininfo()
+			loginvalid = true
+			FrontStart.loadUI(OS.get_name())
+			
+		401:
+			print_debug("Auto-Login out of date, moving to manual login")
+			FrontStart.loadUI('Login')
+		403:
+			print_debug("403: Forbidden")
+		_:
+			printerr("Some unexpected error occoured while loging in!")
+		
+	
+
 
 
 #contents of "res://Backend/savecrypto.gd"

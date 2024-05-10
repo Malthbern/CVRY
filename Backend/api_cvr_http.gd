@@ -18,7 +18,7 @@ func _on_request_completed(result, response_code, headers, body):
 	var parsedstring = JSON.parse_string(body.get_string_from_utf8())
 	
 	print_debug('Response: %s' % [response_code]) 
-	print_debug(parsedstring)
+	print_debug(parsedstring.message)
 	print_debug(JSON.stringify(headers, "\t", false))
 	
 

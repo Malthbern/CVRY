@@ -25,15 +25,15 @@ func loadUI(UIToLoad:String):
 #		FirstScene.queue_free()
 #	
 	match UIToLoad:
-		'Desktop':
-			get_tree().change_scene_to_file.call_deferred(Desktop)
-		'Mobile':
+# Assume if not a mobile device / Login when calling loadUI we want some desktop enviorment
+		'Android','iOS':
 			get_tree().change_scene_to_file.call_deferred(Mobile)
 		'Login':
 			get_tree().change_scene_to_file.call_deferred(Login)
 		'Load':
 			get_tree().change_scene_to_file.call_deferred(Loading)
-		
+		_:
+			get_tree().change_scene_to_file.call_deferred(Desktop)
 	
 
 func unloadUI(UIUnload:Node):

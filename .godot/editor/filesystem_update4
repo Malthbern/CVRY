@@ -10,3 +10,4 @@ res://Backend/api_cvr_http.gd
 res://Frontend/Login/Login.gd
 res://Backend/LoginInfo.gd
 res://Backend/savecrypto.gd
+res://Frontend/Startup/LoadingCircle.gd

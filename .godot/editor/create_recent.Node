@@ -1,10 +1,10 @@
-HTTPRequest
+VBoxContainer
 LineEdit
 TextEdit
+HTTPRequest
 TextureRect
 Button
 HBoxContainer
-VBoxContainer
 Panel
 MarginContainer
 Popup

@@ -58,3 +58,45 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_o2f70")
 expand_mode = 2
+
+[node name="TimeWarn" type="VBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = 156.0
+offset_right = 177.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Warnline1" type="LineEdit" parent="Panel/TimeWarn"]
+layout_mode = 2
+text = "Hmm... This seems to be taking a while."
+alignment = 1
+editable = false
+expand_to_text_length = true
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+flat = true
+select_all_on_focus = true
+
+[node name="Warnline2" type="LineEdit" parent="Panel/TimeWarn"]
+layout_mode = 2
+text = "Check you're internet connection or log files.  "
+alignment = 1
+editable = false
+expand_to_text_length = true
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+flat = true
+select_all_on_focus = true

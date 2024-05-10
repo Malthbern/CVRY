@@ -51,6 +51,12 @@ offset_bottom = 0.199982
 size_flags_horizontal = 3
 theme = ExtResource("1_ou2en")
 
+[node name="warn" type="LineEdit" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+editable = false
+
 [node name="Email" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 placeholder_text = "E-mail"
@@ -58,6 +64,7 @@ placeholder_text = "E-mail"
 [node name="Password" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 placeholder_text = "Password"
+secret = true
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
