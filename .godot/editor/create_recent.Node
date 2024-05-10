@@ -1,11 +1,13 @@
-VBoxContainer
 LineEdit
+Panel
+TabContainer
+TabBar
+VBoxContainer
 TextEdit
 HTTPRequest
 TextureRect
 Button
 HBoxContainer
-Panel
 MarginContainer
 Popup
 Control

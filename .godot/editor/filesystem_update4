@@ -11,3 +11,4 @@ res://Frontend/Login/Login.gd
 res://Backend/LoginInfo.gd
 res://Backend/savecrypto.gd
 res://Frontend/Startup/LoadingCircle.gd
+res://Frontend/Desktop/Clock.gd
