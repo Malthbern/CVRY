@@ -8,6 +8,7 @@ const SAVE_NAME = "login.json"
 @export var password:String
 @export var userid:String
 @export var logintoken:String
+@export var UserId:String
 @export var loginvalid : bool = false
 
 var response
@@ -41,6 +42,7 @@ func _ready():
 	email = json_return.email
 	username = json_return.username
 	password = json_return.password
+	userid = json_return.userid
 	logintoken = json_return.logintoken
 	print_debug("Login details decrypted and loaded")
 	autologin()
@@ -55,9 +57,7 @@ func autologin():
 		200:
 			print_debug("Auto Login successful")
 			username = parsedstring.data.username
-			userid = parsedstring.data.userId
 			logintoken = parsedstring.data.accessKey
-			savelogininfo()
 			loginvalid = true
 			FrontStart.loadUI(OS.get_name())
 			

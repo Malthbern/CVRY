@@ -10,7 +10,7 @@ func Get(url, authenticated = true, apiVersion = 1):
 		"accept: application/json",
 		"Content-Type: application/json",
 		Utils.GetUserAgent,
-		'Username: ' + LoginInfo.user,
+		'Username: ' + LoginInfo.username,
 		'AccessKey: ' + LoginInfo.logintoken,
 		'MatureContentDlc: true',
 		'Platform: pc_standalone',

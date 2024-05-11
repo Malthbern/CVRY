@@ -27,6 +27,7 @@ LoginInfo="*res://Backend/LoginInfo.gd"
 Utils="*res://Backend/utils.gd"
 ApiCvrHttp="*res://Backend/api_cvr_http.gd"
 FrontStart="*res://Frontend/FrontStart.gd"
+Cache="*res://Backend/cache.gd"
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
 [editor_plugins]

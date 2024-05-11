@@ -19,6 +19,7 @@ func _on_button_pressed():
 			LoginInfo.password = passinput.text
 			LoginInfo.userid = parsedstring.data.userId
 			LoginInfo.logintoken = parsedstring.data.accessKey
+			LoginInfo.userid = parsedstring.data.userId
 			LoginInfo.loginvalid = true
 			LoginInfo.savelogininfo()
 			FrontStart.loadUI(OS.get_name())
