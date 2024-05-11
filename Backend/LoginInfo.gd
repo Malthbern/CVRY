@@ -10,6 +10,7 @@ const SAVE_NAME = "login.json"
 @export var logintoken:String
 @export var loginvalid : bool = false
 
+var response
 
 func savelogininfo():
 	var dict:Dictionary = {
@@ -20,7 +21,7 @@ func savelogininfo():
 		'logintoken' : logintoken
 	}
 	
-	if !FileAccess.file_exists(SAVE_DIR+SAVE_NAME):
+	if !DirAccess.dir_exists_absolute(SAVE_DIR):
 		DirAccess.make_dir_recursive_absolute(SAVE_DIR)
 	
 	SaveCrypto.encrypt_and_save(dict, SAVE_DIR+SAVE_NAME) #this is obfuscated to avoid easy decryption by bad actors
@@ -45,13 +46,10 @@ func _ready():
 	autologin()
 
 func autologin():
-	ApiCvrHttp.request_completed.connect(_on_request_completed)
-	ApiCvrHttp.Authenticate(2, email, password)
+	response = await ApiCvrHttp.Authenticate(email, password)
 	
-
-
-func _on_request_completed(result, response_code, headers, body):
-	var parsedstring = JSON.parse_string(body.get_string_from_utf8())
+	var response_code = response[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]
+	var parsedstring = JSON.parse_string(response[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8())
 	
 	match response_code:
 		200:
@@ -72,8 +70,6 @@ func _on_request_completed(result, response_code, headers, body):
 			printerr("Some unexpected error occoured while loging in!")
 		
 	
-
-
 
 #contents of "res://Backend/savecrypto.gd"
 

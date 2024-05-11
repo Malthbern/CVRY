@@ -1,6 +1,6 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1715298113
-CVR.tres::Theme::4040447250925021790::1715239226::0::1::::<><>::uid://do3vcpu0qjkt7::::res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres<>uid://c7ea6axe3jeqi::::res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres
+::res://::1715371345
+CVR.tres::Theme::4040447250925021790::1715371345::0::1::::<><>::uid://do3vcpu0qjkt7::::res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres<>uid://c7ea6axe3jeqi::::res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres
 export_presets.cfg::TextFile::-1::1714992888::0::1::::<><>::
 icon.svg::CompressedTexture2D::6093165924295809368::1714907241::1714907247::1::::<><>::
 README.md::TextFile::-1::1714983444::0::1::::<><>::
@@ -42,32 +42,36 @@ application_octet-stream.gd::GDScript::-1::1714958373::0::1::::<>RefCounted<>::
 image.gd::GDScript::-1::1714958373::0::1::::<>RefCounted<>::
 image_texture.gd::GDScript::-1::1714958373::0::1::::<>RefCounted<>::
 text.gd::GDScript::-1::1714958373::0::1::::<>RefCounted<>::
-::res://addons/HTTPManager/example/::1715249509
+::res://addons/HTTPManager/example/::1715371496
 HTTPManager-Example.gd::GDScript::-1::1714958373::0::1::::<>Control<>::
-HTTPManager-Example.tscn::PackedScene::8334611238571021028::1715249509::0::1::::<><>::res://addons/HTTPManager/example/HTTPManager-Example.gd<>res://addons/HTTPManager/classes/HTTPManager.gd<>uid://cs2ts10pc4bi3::::res://icon.svg
+HTTPManager-Example.tscn::PackedScene::8334611238571021028::1715371496::0::1::::<><>::res://addons/HTTPManager/example/HTTPManager-Example.gd<>res://addons/HTTPManager/classes/HTTPManager.gd<>uid://cs2ts10pc4bi3::::res://icon.svg
 ::res://addons/HTTPManager/progress/::1714970292
 progress.gd::GDScript::-1::1714958373::0::1::::<>Window<>::
 progress.tscn::PackedScene::3922829576805833408::1714958373::0::1::::<><>::res://addons/HTTPManager/progress/progress.gd
 ::res://android/::1714990439
-::res://Backend/::1715249023
-api_cvr_http.gd::GDScript::-1::1715249023::0::1::::<>HTTPRequest<>::
-LoginInfo.gd::GDScript::-1::1715046335::0::1::::<>Node<>::
-savecrypto.gd::GDScript::-1::1715045805::0::1::::<>Node<>::
-utils.gd::GDScript::-1::1715242424::0::1::::<>Node<>::
-::res://Frontend/::1715251442
+::res://Backend/::1715321469
+api_cvr_http.gd::GDScript::-1::1715318750::0::1::::<>HTTPRequest<>::
+LoginInfo.gd::GDScript::-1::1715321469::0::1::::<>Node<>::
+savecrypto.gd::GDScript::-1::1715317661::0::1::::<>Node<>::
+utils.gd::GDScript::-1::1715302635::0::1::::<>Node<>::
+::res://Frontend/::1715372897
 CVRYicon.png::CompressedTexture2D::597690232066659805::1714979118::1714981612::1::::<><>::
 CVRYiconexport.svg::CompressedTexture2D::4295857597864062682::1714979355::1714981612::1::::<><>::
-FrontStart.gd::GDScript::-1::1715251442::0::1::::<>Node<>::
+FrontStart.gd::GDScript::-1::1715321164::0::1::::<>Node<>::
+Image Loading.png::CompressedTexture2D::3550401679473616473::1715372897::1715372901::1::::<><>::
 loadigncircle.svg::CompressedTexture2D::3744981049839830277::1714980416::1714981612::1::::<><>::
-::res://Frontend/Desktop/::1715249509
-Desktop.tscn::PackedScene::5447810358474765909::1715249509::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres
-::res://Frontend/Login/::1715249509
-Login.tscn::PackedScene::927289947640518204::1715249509::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png
-::res://Frontend/Mobile/::1715249509
-Mobile.tscn::PackedScene::2204864625932127640::1715249509::0::1::::<><>::
-::res://Frontend/Startup/::1715249509
-LoadingCircle.gd::GDScript::-1::1714985441::0::1::::<>TextureRect<>::
-Startup.tscn::PackedScene::182432959026810407::1715249509::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png<>uid://btmdj5dlm51vd::::res://Frontend/loadigncircle.svg<>res://Frontend/Startup/LoadingCircle.gd
+UserSettings.gd::GDScript::-1::1715371590::0::1::::<>Node<>::
+::res://Frontend/Desktop/::1715372548
+Clock.gd::GDScript::-1::1715324801::0::1::::<>LineEdit<>::
+Desktop.tscn::PackedScene::5447810358474765909::1715372548::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>res://Frontend/Desktop/Clock.gd
+::res://Frontend/Login/::1715372554
+Login.gd::GDScript::-1::1715321481::0::1::::<>Control<>::
+Login.tscn::PackedScene::927289947640518204::1715372554::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png<>res://Frontend/Login/Login.gd
+::res://Frontend/Mobile/::1715371497
+Mobile.tscn::PackedScene::2204864625932127640::1715371497::0::1::::<><>::
+::res://Frontend/Startup/::1715371496
+LoadingCircle.gd::GDScript::-1::1715321316::0::1::::<>TextureRect<>::
+Startup.tscn::PackedScene::182432959026810407::1715371496::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png<>uid://btmdj5dlm51vd::::res://Frontend/loadigncircle.svg<>res://Frontend/Startup/LoadingCircle.gd
 ::res://Frontend/StyleBoxes/::1715047733
 Flat _Stylebox_White_focused.tres::StyleBoxFlat::8200987887465309238::1715047456::0::1::::<><>::
 Flat _Stylebox_White_normal.tres::StyleBoxFlat::7027197270180548864::1715047538::0::1::::<><>::
