@@ -21,7 +21,7 @@ func _ready():
 	userlabel.text = LoginInfo.username
 	var userinfo = await ApiCvrHttp.GetUserById(LoginInfo.userid)
 	var imagurl = JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.imageUrl
-	profileimage = await Cache.get_image(imagurl, Cache.ITEM_TYPES.USER)
+	profileimage.texture = await Cache.get_image(imagurl, Cache.ITEM_TYPES.USER)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

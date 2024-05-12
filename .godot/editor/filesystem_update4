@@ -4,9 +4,4 @@ res://addons/HTTPManager/example/HTTPManager-Example.tscn
 res://Frontend/Desktop/Desktop.tscn
 res://Frontend/Mobile/Mobile.tscn
 res://Frontend/Login/Login.tscn
-res://Frontend/Login/Login.gd
-res://Frontend/Desktop/HomePage.gd
-res://Backend/api_cvr_http.gd
-res://Backend/LoginInfo.gd
 res://Backend/cache.gd
-res://Frontend/FrontStart.gd
