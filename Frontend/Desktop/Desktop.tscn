@@ -123,13 +123,29 @@ alignment = 1
 
 [node name="Username" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Username"
 label_settings = SubResource("LabelSettings_638h7")
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Rank" type="HBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RankName" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer/Rank"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Fetching Rank"
+vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
 
 [node name="CurrentAvatar" type="HBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="AvatarImage" type="TextureRect" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer/CurrentAvatar"]
 layout_mode = 2
@@ -139,12 +155,15 @@ expand_mode = 2
 [node name="AvatarName" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer/CurrentAvatar"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 1
 text = "Fetching Avatar"
+vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
 
 [node name="Badge" type="HBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="badgeImage" type="TextureRect" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer/Badge"]
 layout_mode = 2
@@ -154,38 +173,94 @@ expand_mode = 2
 [node name="badgeName" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer/Badge"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 1
 text = "Fetching Badge"
+vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
 
-[node name="Rank" type="HBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer"]
-layout_mode = 2
+[node name="Notifications" type="Control" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications"]
+layout_mode = 1
+anchor_left = 0.005
+anchor_top = 0.228
+anchor_right = 0.995
+anchor_bottom = 0.997
+offset_left = 0.125
+offset_top = -0.0280151
+offset_right = -0.125031
+offset_bottom = -0.197021
 
-[node name="RankImage" type="TextureRect" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer/Rank"]
-layout_mode = 2
-texture = ExtResource("3_x78pr")
-expand_mode = 2
+[node name="Header" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Notifications"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.004
+anchor_right = 0.995
+anchor_bottom = 0.054
+offset_left = 0.145
+offset_top = 0.152
+offset_right = -0.14502
+offset_bottom = 0.052
+text = "Notifications"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="RankName" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer/Rank"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Fetching Rank"
-clip_text = true
-text_overrun_behavior = 3
+[node name="notifpannel" type="Panel" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Notifications"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.005
+anchor_top = 0.058
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.145
+offset_top = 0.203999
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Notifications/notifpannel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011
+anchor_top = 0.009
+anchor_right = 0.989
+anchor_bottom = 0.991
+offset_left = -0.125
+offset_top = 0.0669997
+offset_right = 0.125
+offset_bottom = -0.0670166
 
 [node name="Active Worlds" type="Panel" parent="OutlineMargin/TabBar/Home/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Header" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/Active Worlds"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011
+anchor_top = 0.007
+anchor_right = 0.989
+anchor_bottom = 0.045
+offset_left = -0.125
+offset_top = -0.207
+offset_right = 0.125
+offset_bottom = -0.045002
+text = "Active Worlds"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Active Pannel" type="Panel" parent="OutlineMargin/TabBar/Home/HBoxContainer/Active Worlds"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.045
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.045002
+
 [node name="Online Friends" type="Panel" parent="OutlineMargin/TabBar/Home/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Button" type="Button" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends"]
-layout_mode = 0
-offset_right = 289.0
-offset_bottom = 193.0
-text = "press"
 
 [node name="Friends" type="Panel" parent="OutlineMargin/TabBar"]
 visible = false
@@ -210,5 +285,3 @@ layout_mode = 2
 [node name="Settings" type="Panel" parent="OutlineMargin/TabBar"]
 visible = false
 layout_mode = 2
-
-[connection signal="pressed" from="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Button" to="OutlineMargin/TabBar/Home" method="_on_button_pressed"]

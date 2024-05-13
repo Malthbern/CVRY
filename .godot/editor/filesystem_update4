@@ -1,7 +1,7 @@
 res://Frontend/Startup/Startup.tscn
 res://CVR.tres
+res://Backend/cache.gd
 res://addons/HTTPManager/example/HTTPManager-Example.tscn
 res://Frontend/Desktop/Desktop.tscn
 res://Frontend/Mobile/Mobile.tscn
 res://Frontend/Login/Login.tscn
-res://Backend/cache.gd

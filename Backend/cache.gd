@@ -2,11 +2,14 @@ extends HTTPRequest
 
 const cdnaddr : String = 'https://files.abidata.io/'
 
+const errorimg = preload("res://Frontend/orange-error-icon-0.png")
+
 const ITEM_TYPES: Dictionary = {
 	USER = 'user_images/',
 	AVATAR = 'user_content/avatars/',
 	WORLD = 'user_content/worlds/',
-	PROP = 'user_content/spawnables/'
+	PROP = 'user_content/spawnables/',
+	BADGE = 'static_web/Badges/'
 }
 
 var cachedir = 'user://CVRY/cache/'
@@ -17,15 +20,18 @@ func _ready():
 	if !DirAccess.dir_exists_absolute(cachedir):
 		DirAccess.make_dir_recursive_absolute(cachedir)
 
-func get_image(URL:String, TYPE:String):
+func get_image(URL:String, TYPE:String, AssetId:String = ''):
 	#prep image data
-	var imagename = URL.trim_prefix(cdnaddr + TYPE)
+	var imagename = URL.trim_prefix(cdnaddr + TYPE + AssetId)
 	var imagemeta = imagename.trim_suffix('png') + 'meta'
 	print_debug("Fetching image: " + imagename)
 	
 	#get hash from header
 	request(URL, [Utils.GetUserAgent], HTTPClient.METHOD_HEAD)
 	var header = await request_completed
+	if header[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE] != 200:
+		printerr('An error occoured while requesting an image hash: (%s)' % [header[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]]) 
+		return errorimg
 	var headerhash = header[ApiCvrHttp.PACKED_RESPONSE.HEADERS][9]
 	print_debug("Fetching image hash")
 	
@@ -33,11 +39,17 @@ func get_image(URL:String, TYPE:String):
 	if FileAccess.file_exists(cachedir + imagemeta):
 		#if meta exists read and compare. download and set new hash as needed
 		var hashfile =  FileAccess.open(cachedir + imagemeta, FileAccess.READ_WRITE)
+		if hashfile == null:
+			printerr('An error occoured while loading an image meta: (%s)' % [FileAccess.get_open_error()])
+			return errorimg
 		var existhash = hashfile.get_as_text(true)
 		hashfile.close()
 		
 		if existhash != headerhash:
 			hashfile = FileAccess.open(cachedir + imagemeta, FileAccess.WRITE_READ)
+			if hashfile == null:
+				printerr('An error occoured while loading an image meta: (%s)' % [FileAccess.get_open_error()])
+				return errorimg
 			print_debug("Hashes do not match: existing: " + existhash + ' cdn: ' + headerhash)
 			await download_image(URL, cachedir + imagename)
 			print_debug("Storeing new hash in meta file at: " + cachedir + imagemeta)
@@ -51,6 +63,9 @@ func get_image(URL:String, TYPE:String):
 		#assume if meta is missing so is image
 		print_debug('New image or missing meta')
 		var newhash = FileAccess.open(cachedir + imagemeta, FileAccess.WRITE_READ)
+		if newhash == null:
+				printerr('An error occoured while creating an image meta: (%s)' % [FileAccess.get_open_error()])
+				return errorimg
 		print_debug("Storeing new hash in meta file at: " + cachedir + imagemeta)
 		newhash.store_string(headerhash)
 		newhash.close()
@@ -67,6 +82,9 @@ func download_image(url:String, path:String):
 	var imagefile = FileAccess.open(path, FileAccess.WRITE_READ)
 	request(url, [Utils.GetUserAgent], HTTPClient.METHOD_GET,)
 	var reply : Array = await request_completed
+	if reply[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE] != 200:
+		printerr('An error occured ehile trying to fetch %s (%s)' % [url, reply[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]])
+		return errorimg
 	buffer = reply[ApiCvrHttp.PACKED_RESPONSE.DATA]
 	imagefile.store_buffer(buffer)
 	return
@@ -77,6 +95,9 @@ func load_image_from_cache(File:String):
 	print_debug('Loading image from file')
 	await image.load(File)
 	var texture = ImageTexture.create_from_image(image)
+	if texture == null:
+		printerr('Something happened while loading an image from cache: ' + File)
+		return errorimg
 	return texture
 	
 
@@ -85,4 +106,7 @@ func load_image_from_buffer():
 	print_debug('Loading image from buffer')
 	await image.load_png_from_buffer(buffer)
 	var texture = ImageTexture.create_from_image(image)
+	if texture == null:
+		printerr('Something happened while loading an image from buffer: ' + ''.join(buffer))
+		return errorimg
 	return texture

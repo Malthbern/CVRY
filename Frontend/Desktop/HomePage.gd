@@ -14,15 +14,21 @@ extends Node
 
 #rank
 @onready var ranklabel = $"HBoxContainer/User+notifications/Profile/VBoxContainer/Rank/RankName"
-@onready var rankimage = $"HBoxContainer/User+notifications/Profile/VBoxContainer/Rank/RankImage"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	userlabel.text = LoginInfo.username
 	var userinfo = await ApiCvrHttp.GetUserById(LoginInfo.userid)
-	var imagurl = JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.imageUrl
-	profileimage.texture = await Cache.get_image(imagurl, Cache.ITEM_TYPES.USER)
-
+	# Profile
+	userlabel.text = LoginInfo.username
+	profileimage.texture = await Cache.get_image(JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.imageUrl, Cache.ITEM_TYPES.USER)
+	# Badge
+	badgelabel.text = JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.featuredBadge.name
+	badgeimage.texture = await Cache.get_image(JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.featuredBadge.image, Cache.ITEM_TYPES.BADGE)
+	# Rank
+	ranklabel.text = JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.rank
+	# Avatar
+	avatarlabel.text = JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.avatar.name
+	avatarimage.texture = await Cache.get_image(JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.avatar.imageUrl, Cache.ITEM_TYPES.AVATAR, JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.avatar.id)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
