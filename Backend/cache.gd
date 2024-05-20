@@ -1,4 +1,4 @@
-extends HTTPRequest
+extends Node
 
 const cdnaddr : String = 'https://files.abidata.io/'
 
@@ -20,6 +20,18 @@ func _ready():
 	if !DirAccess.dir_exists_absolute(cachedir):
 		DirAccess.make_dir_recursive_absolute(cachedir)
 
+func HEAD (url:String):
+	var http = HTTPRequest.new()
+	add_child(http)
+	http.request(url, [Utils.GetUserAgent], HTTPClient.METHOD_HEAD)
+	return http
+
+func IMG_GET(url:String):
+	var http = HTTPRequest.new()
+	add_child(http)
+	http.request(url, [Utils.GetUserAgent], HTTPClient.METHOD_GET)
+	return http
+
 func get_image(URL:String, TYPE:String, AssetId:String = ''):
 	#prep image data
 	var imagename = URL.trim_prefix(cdnaddr + TYPE + AssetId)
@@ -27,8 +39,9 @@ func get_image(URL:String, TYPE:String, AssetId:String = ''):
 	print_debug("Fetching image: " + imagename)
 	
 	#get hash from header
-	request(URL, [Utils.GetUserAgent], HTTPClient.METHOD_HEAD)
-	var header = await request_completed
+	var headreq = HEAD(URL)
+	var header = await headreq.request_completed
+	headreq.queue_free()
 	if header[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE] != 200:
 		printerr('An error occoured while requesting an image hash: (%s)' % [header[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]]) 
 		return errorimg
@@ -80,8 +93,9 @@ func get_image(URL:String, TYPE:String, AssetId:String = ''):
 
 func download_image(url:String, path:String):
 	var imagefile = FileAccess.open(path, FileAccess.WRITE_READ)
-	request(url, [Utils.GetUserAgent], HTTPClient.METHOD_GET,)
-	var reply : Array = await request_completed
+	var imgget = IMG_GET(url)
+	var reply = await imgget.request_completed
+	imgget.queue_free()
 	if reply[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE] != 200:
 		printerr('An error occured ehile trying to fetch %s (%s)' % [url, reply[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]])
 		return errorimg

@@ -4,13 +4,16 @@ extends Control
 @onready var passinput = $VBoxContainer/Password
 @onready var warn = $VBoxContainer/Label
 
-var response
+var request:HTTPRequest
 
 func _on_button_pressed():
-	response = await ApiCvrHttp.Authenticate(emailinput.text, passinput.text)
-	var response_code = response[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]
-	var parsedstring = JSON.parse_string(response[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8())
+	request = ApiCvrHttp.Authenticate(emailinput.text, passinput.text)
 	
+	var res = await request.request_completed
+	request.queue_free()
+	
+	var response_code = res[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]
+	var parsedstring = JSON.parse_string(res[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8())
 	match response_code:
 		200:
 			print_debug("Login successful; Saving info")
@@ -34,7 +37,7 @@ func _on_button_pressed():
 			warn.visible = true
 			print_debug("403: Forbidden")
 		_:
-			warn.text = ("Well that was awkward. Something unexpected happened: (%s : %s)" % [response_code, response[ApiCvrHttp.PACKED_RESPONSE.STATUS]]) #while a 403 isn't nessesarily cloudflare it's the most likly in this case
+			warn.text = ("Well that was awkward. Something unexpected happened: (%s : %s)" % [response_code, res[ApiCvrHttp.PACKED_RESPONSE.STATUS]]) #while a 403 isn't nessesarily cloudflare it's the most likly in this case
 			warn.visible = true
 			printerr("Some unexpected error occoured while loging in!")
 		

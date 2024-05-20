@@ -76,4 +76,6 @@ action_mode = 0
 keep_pressed_outside = true
 text = "Login"
 
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

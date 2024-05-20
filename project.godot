@@ -22,17 +22,19 @@ config/icon="res://Frontend/CVRYicon.png"
 
 [autoload]
 
+RushRequest="res://addons/rush_request/rush_request.gd"
 SaveCrypto="*res://Backend/savecrypto.gd"
 LoginInfo="*res://Backend/LoginInfo.gd"
 Utils="*res://Backend/utils.gd"
 ApiCvrHttp="*res://Backend/api_cvr_http.gd"
-FrontStart="*res://Frontend/FrontStart.gd"
 Cache="*res://Backend/cache.gd"
+FrontStart="*res://Frontend/FrontStart.gd"
+ToastParty="*res://addons/toastparty/toast-autoload.gd"
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/HTTPManager/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg")
+enabled=PackedStringArray("res://addons/SystemTrayEnabler/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg", "res://addons/rush_request/plugin.cfg", "res://addons/toastparty/plugin.cfg")
 
 [input_devices]
 

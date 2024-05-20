@@ -258,9 +258,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -0.045002
 
+[node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Active Worlds/Active Pannel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.008
+anchor_top = 0.005
+anchor_right = 0.992
+anchor_bottom = 0.995
+offset_top = 0.13
+offset_right = -3.05176e-05
+offset_bottom = -0.130066
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Active Worlds/Active Pannel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="Online Friends" type="Panel" parent="OutlineMargin/TabBar/Home/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Header" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011
+anchor_top = 0.007
+anchor_right = 0.989
+anchor_bottom = 0.045
+offset_left = -0.136
+offset_top = -0.207
+offset_right = 0.135986
+offset_bottom = -0.045002
+text = "Online Friends"
+horizontal_alignment = 1
+
+[node name="Online Panel" type="Panel" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.045
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.045002
 
 [node name="Friends" type="Panel" parent="OutlineMargin/TabBar"]
 visible = false

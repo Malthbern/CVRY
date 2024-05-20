@@ -1,4 +1,4 @@
-extends HTTPRequest
+extends Node
 
 const APIAddress:String = "https://api.abinteractive.net"
 
@@ -17,10 +17,10 @@ func Get(url, authenticated = true, apiVersion = 1):
 		'CompatibleVersions: 0,1,2'
 	]
 	
-	print_debug(headers)
-	
-	await request(APIAddress +'/%s' % [apiVersion] + url, headers, HTTPClient.METHOD_GET)
-	return await request_completed
+	var http = HTTPRequest.new()
+	add_child(http)
+	http.request(APIAddress +'/%s' % [apiVersion] + url, headers, HTTPClient.METHOD_GET)
+	return http
 	
 
 func Post(url, data, authenticated = true, apiVersion = 1):
@@ -39,11 +39,10 @@ func Post(url, data, authenticated = true, apiVersion = 1):
 	else:
 		headers = ["accept: application/json", "Content-Type: application/json", Utils.GetUserAgent]
 	
-	print_debug("Sending: Login Request")
-	await request(APIAddress +'/%s' % [apiVersion] + url + '?acceptTos=false', headers, HTTPClient.METHOD_POST, JSON.stringify(data, "\t", false, true))
-	
-	var response : Array = await request_completed
-	return response
+	var http = HTTPRequest.new()
+	add_child(http)
+	http.request(APIAddress +'/%s' % [apiVersion] + url + '?acceptTos=false', headers, HTTPClient.METHOD_POST, JSON.stringify(data, "\t", false, true))
+	return http
 
 #api constants
 const PACKED_RESPONSE : Dictionary = {
@@ -94,54 +93,54 @@ func Authenticate(credentialUser:String, credentialSecret:String, Authtype:int =
 		authType = Authtype
 	}
 	
-	return await Post('/users/auth', authdata, false)
+	return Post('/users/auth', authdata, false)
 	
 
 #get and set functions
 
 #stats
-func GetUserStats(): return await Get('/public/userstats',false)
+func GetUserStats(): return Get('/public/userstats',false)
 
 #friends
-func GetMyFriends(): return await Get('/friends')
-func GetMyFriendRequests(): return await Get('/friends/requests')
+func GetMyFriends(): return Get('/friends')
+func GetMyFriendRequests(): return Get('/friends/requests')
 
 #users
-func GetUserById(id:String): return await Get('/users/' + id)
-func GetUserPublicAvatars(id:String): return await Get('/users/' + id + '/avatars')
-func GetUserPublicWorlds(id:String): return await Get('/users/' + id + '/worlds')
-func GetUserPublicProps(id:String): return await Get('/users/' + id + '/spawnables')
-func SetFriendNote(id:String , usernote:String): return await Post('/users/' + id + 'note', {note = usernote})
+func GetUserById(id:String): return Get('/users/' + id)
+func GetUserPublicAvatars(id:String): return Get('/users/' + id + '/avatars')
+func GetUserPublicWorlds(id:String): return Get('/users/' + id + '/worlds')
+func GetUserPublicProps(id:String): return Get('/users/' + id + '/spawnables')
+func SetFriendNote(id:String , usernote:String): return Post('/users/' + id + 'note', {note = usernote})
 
 #avatars
-func GetMyAvatars(): return  await Get('/avatars')
-func GetAvatarById(id:String): return await Get('/avatars/' + id)
+func GetMyAvatars(): return  Get('/avatars')
+func GetAvatarById(id:String): return Get('/avatars/' + id)
 
 #categorys
 #get
-func GetCategories(): return await Get('/categories')
+func GetCategories(): return Get('/categories')
 #set
 func SetCategories(type:String, id:String, categoryIds:PackedStringArray):
-	var response : Array = await Post('/categories/assign', {Uuid = id, CategoryType = type, Categories = categoryIds})
+	var response : Array = Post('/categories/assign', {Uuid = id, CategoryType = type, Categories = categoryIds})
 	return JSON.parse_string(response[PACKED_RESPONSE.DATA].get_string_from_utf8())
 #functions for types
-func SetAvatarCategories(avatarId:String, categoryIds:PackedStringArray): await SetCategories(CATEGORY_TYPES.AVATARS, avatarId, categoryIds)
-func SetFriendCategories(friendId:String, categoryIds:PackedStringArray): await SetCategories(CATEGORY_TYPES.FRIENDS, friendId, categoryIds)
-func SetPropCategories(propId:String, categoryIds:PackedStringArray): await SetCategories(CATEGORY_TYPES.PROPS, propId, categoryIds)
-func SetWorldCategories(worldId:String, categoryIds:PackedStringArray): await SetCategories(CATEGORY_TYPES.WORLDS, worldId, categoryIds)
+func SetAvatarCategories(avatarId:String, categoryIds:PackedStringArray): SetCategories(CATEGORY_TYPES.AVATARS, avatarId, categoryIds)
+func SetFriendCategories(friendId:String, categoryIds:PackedStringArray): SetCategories(CATEGORY_TYPES.FRIENDS, friendId, categoryIds)
+func SetPropCategories(propId:String, categoryIds:PackedStringArray): SetCategories(CATEGORY_TYPES.PROPS, propId, categoryIds)
+func SetWorldCategories(worldId:String, categoryIds:PackedStringArray): SetCategories(CATEGORY_TYPES.WORLDS, worldId, categoryIds)
 
 #worlds
-func GetWorldById(id:String): return await Get('/worlds/' + id)
-func GetWorldMetsById(id:String): return await Get('/worlds/' + id + '/meta')
-func GetWorldsByCategory(id:String): return await Get('/worlds/list/' + id + '?page=0&direction=0', true, 2)
-func SetWorldAsHome(id:String): return await Get('/worlds/' + id + '/sethome')
+func GetWorldById(id:String): return Get('/worlds/' + id)
+func GetWorldMetsById(id:String): return Get('/worlds/' + id + '/meta')
+func GetWorldsByCategory(id:String): return Get('/worlds/list/' + id + '?page=0&direction=0', true, 2)
+func SetWorldAsHome(id:String): return Get('/worlds/' + id + '/sethome')
 
 #props
-func GetProps(): return await Get('/spawnables')
-func GetPropById(id:String): return await Get('/spawnables/' + id)
+func GetProps(): return Get('/spawnables')
+func GetPropById(id:String): return Get('/spawnables/' + id)
 
 #instances
-func GetInstanceById(id:String): return await Get('/instances/' + id)
+func GetInstanceById(id:String): return Get('/instances/' + id)
 
 #search
-func Search(term:String): return await Get('/seatch' + term)
+func Search(term:String): return Get('/seatch' + term)

@@ -11,7 +11,7 @@ const SAVE_NAME = "login.json"
 @export var UserId:String
 @export var loginvalid : bool = false
 
-var response
+var request:HTTPRequest
 
 func savelogininfo():
 	var dict:Dictionary = {
@@ -48,10 +48,13 @@ func _ready():
 	autologin()
 
 func autologin():
-	response = await ApiCvrHttp.Authenticate(email, password)
+	request = ApiCvrHttp.Authenticate(email, password)
 	
-	var response_code = response[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]
-	var parsedstring = JSON.parse_string(response[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8())
+	var res = await request.request_completed
+	request.queue_free()
+	
+	var response_code = res[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]
+	var parsedstring = JSON.parse_string(res[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8())
 	
 	match response_code:
 		200:
