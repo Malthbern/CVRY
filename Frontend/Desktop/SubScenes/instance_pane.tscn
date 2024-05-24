@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b18u25luwvt40"]
+[gd_scene load_steps=3 format=3 uid="uid://b18u25luwvt40"]
 
 [ext_resource type="Script" path="res://Frontend/Desktop/ActiveWorldPane.gd" id="1_8it6j"]
-[ext_resource type="Theme" uid="uid://bxthtt0n6qcta" path="res://CVR.tres" id="1_csbtu"]
 [ext_resource type="Texture2D" uid="uid://bqt3ukcfoh2fl" path="res://Frontend/Image Loading.png" id="2_irg5p"]
 
 [node name="Instance Pane" type="Panel"]
@@ -9,7 +8,6 @@ custom_minimum_size = Vector2(367, 150)
 offset_right = 367.0
 offset_bottom = 150.0
 size_flags_vertical = 0
-theme = ExtResource("1_csbtu")
 script = ExtResource("1_8it6j")
 
 [node name="World Image" type="TextureRect" parent="."]

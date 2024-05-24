@@ -1,7 +1,7 @@
 extends Node
 
 ## Name of your exported executable
-var exename: String = "CodeGame.exe" # Include .exe in name
+var exename: String = "CVRY.exe" # Include .exe in name
 ## Window title to control the right application from tray
 @onready var apptitle: String = get_window().title
 ## Organized data to save for use in the system tray

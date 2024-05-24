@@ -25,6 +25,7 @@ func _on_button_pressed():
 			LoginInfo.userid = parsedstring.data.userId
 			LoginInfo.loginvalid = true
 			LoginInfo.savelogininfo()
+			WebSocket.PrepWS()
 			FrontStart.loadUI(OS.get_name())
 			
 		401:

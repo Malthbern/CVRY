@@ -1,12 +1,11 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1716181033
-AwaitableHTTPRequest.gd::GDScript::-1::1716178175::0::1::::AwaitableHTTPRequest<>HTTPRequest<>::
-CVR.tres::Theme::4040447250925021790::1716174738::0::1::::<><>::uid://do3vcpu0qjkt7::::res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres<>uid://c7ea6axe3jeqi::::res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres
+::res://::1716520446
+CVR.tres::Theme::4040447250925021790::1716516482::0::1::::<><>::uid://do3vcpu0qjkt7::::res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres<>uid://c7ea6axe3jeqi::::res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres
 export_presets.cfg::TextFile::-1::1715505871::0::1::::<><>::
 icon.svg::CompressedTexture2D::6093165924295809368::1714907241::1714907247::1::::<><>::
 plugin-icon.png::CompressedTexture2D::4712544778492425097::1716181033::1716181034::1::::<><>::
 README.md::TextFile::-1::1714983444::0::1::::<><>::
-::res://addons/::1716181032
+::res://addons/::1716189774
 ::res://addons/discord-rpc-gd/::1714907306
 Debug.svg::CompressedTexture2D::1414570589633831756::1714907304::1714907305::1::::<><>::
 example.gd::GDScript::-1::1714907304::0::1::::DiscordRPCTutorial<>Node<>::
@@ -29,37 +28,9 @@ discord_autoload.gd::GDScript::-1::1714907305::0::1::::<>Node<>::
 Checked.svg::CompressedTexture2D::8083066295081234619::1714907305::1714907306::1::::<><>::
 circle.svg::CompressedTexture2D::8498865176304625629::1714907305::1714907305::1::::<><>::
 Unchecked.svg::CompressedTexture2D::5781190569803204660::1714907305::1714907306::1::::<><>::
-::res://addons/HTTPManager/::1714958373
-http-manager-plugin.gd::GDScript::-1::1714958373::0::1::::<>EditorPlugin<>::
-plugin.cfg::TextFile::-1::1714958373::0::1::::<><>::
-::res://addons/HTTPManager/classes/::1714958373
-HTTPManager.gd::GDScript::-1::1714958373::0::1::::HTTPManager<>Node<>::
-HTTPManagerCacher.gd::GDScript::-1::1714958373::0::1::::<>RefCounted<>::
-HTTPManagerCookie.gd::GDScript::-1::1714958373::0::1::::HTTPManagerCookie<>RefCounted<>::
-HTTPManagerJob.gd::GDScript::-1::1714958373::0::1::::HTTPManagerJob<>RefCounted<>::
-HTTPPipe.gd::GDScript::-1::1714958373::0::1::::<>HTTPRequest<>::
-::res://addons/HTTPManager/classes/decoders/::1714958373
-application_json.gd::GDScript::-1::1714958373::0::1::::<>RefCounted<>::
-application_octet-stream.gd::GDScript::-1::1714958373::0::1::::<>RefCounted<>::
-image.gd::GDScript::-1::1714958373::0::1::::<>RefCounted<>::
-image_texture.gd::GDScript::-1::1714958373::0::1::::<>RefCounted<>::
-text.gd::GDScript::-1::1714958373::0::1::::<>RefCounted<>::
-::res://addons/HTTPManager/example/::1716180511
-HTTPManager-Example.gd::GDScript::-1::1714958373::0::1::::<>Control<>::
-HTTPManager-Example.tscn::PackedScene::8334611238571021028::1716180511::0::1::::<><>::res://addons/HTTPManager/example/HTTPManager-Example.gd<>res://addons/HTTPManager/classes/HTTPManager.gd<>uid://cs2ts10pc4bi3::::res://icon.svg
-::res://addons/HTTPManager/progress/::1714970292
-progress.gd::GDScript::-1::1714958373::0::1::::<>Window<>::
-progress.tscn::PackedScene::3922829576805833408::1714958373::0::1::::<><>::res://addons/HTTPManager/progress/progress.gd
-::res://addons/rush_request/::1716181033
-plugin.cfg::TextFile::-1::1716181033::0::1::::<><>::
-plugin.gd::GDScript::-1::1716181033::0::1::::<>EditorPlugin<>::
-rush_request.gd::GDScript::-1::1716181033::0::1::::<>Node<>::
-rush_request_client.gd::GDScript::-1::1716181033::0::1::::RushRequestClient<>RefCounted<>::
-rush_request_response.gd::GDScript::-1::1716181033::0::1::::RushRequestResponse<>RefCounted<>::
-rush_request_util.gd::GDScript::-1::1716181033::0::1::::RushRequestUtil<>RefCounted<>::
-::res://addons/SystemTrayEnabler/::1716065393
+::res://addons/SystemTrayEnabler/::1716356043
 plugin.cfg::TextFile::-1::1716065393::0::1::::<><>::
-SystemTray.gd::GDScript::-1::1716065393::0::1::::<>Node<>::
+SystemTray.gd::GDScript::-1::1716356043::0::1::::<>Node<>::
 SystemTrayPlugin.gd::GDScript::-1::1716065393::0::1::::<>EditorPlugin<>::
 ::res://addons/SystemTrayEnabler/neededFiles/::1716065394
 trayicon.png::CompressedTexture2D::9020683358105954563::1716065393::1716065394::1::::<><>::
@@ -78,11 +49,13 @@ toast_label_style.tres::StyleBoxFlat::3199553429173375896::1716065155::0::1::::<
 ::res://assetlibData/::1716065394
 libIcon.png::CompressedTexture2D::1409565651609743356::1716065393::1716065394::1::::<><>::
 TrayItem.png::CompressedTexture2D::8640756255433012286::1716065393::1716065394::1::::<><>::
-::res://Backend/::1716180511
-api_cvr_http.gd::GDScript::-1::1716180511::0::1::::<>HTTPManager<>::
-cache.gd::GDScript::-1::1716065495::0::1::::<>HTTPRequest<>::
-LoginInfo.gd::GDScript::-1::1716179417::0::1::::<>Node<>::
+::res://Backend/::1716519590
+api_cvr_http.gd::GDScript::-1::1716188088::0::1::::<>Node<>::
+api_cvr_ws.gd::GDScript::-1::1716519590::0::1::::<>Node<>::
+cache.gd::GDScript::-1::1716192500::0::1::::<>Node<>::
+LoginInfo.gd::GDScript::-1::1716516703::0::1::::<>Node<>::
 savecrypto.gd::GDScript::-1::1715317661::0::1::::<>Node<>::
+UserSettings.gd::GDScript::-1::1716272998::0::1::::<>Node<>::
 utils.gd::GDScript::-1::1715302635::0::1::::<>Node<>::
 ::res://Frontend/::1715562506
 CVRYicon.png::CompressedTexture2D::597690232066659805::1714979118::1714981612::1::::<><>::
@@ -92,22 +65,23 @@ Image Loading.png::CompressedTexture2D::3550401679473616473::1715372897::1715372
 loadigncircle.svg::CompressedTexture2D::3744981049839830277::1714980416::1714981612::1::::<><>::
 orange-error-icon-0.png::CompressedTexture2D::75376539614626969::1715562502::1715562506::1::::<><>::
 UserSettings.gd::GDScript::-1::1715371590::0::1::::<>Node<>::
-::res://Frontend/Desktop/::1716180511
-ActiveWorldPane.gd::GDScript::-1::1716083687::0::1::::<>Node<>::
+::res://Frontend/Desktop/::1716520349
+ActiveWorldPane.gd::GDScript::-1::1716264170::0::1::::<>Node<>::
 Clock.gd::GDScript::-1::1715324801::0::1::::<>LineEdit<>::
-Desktop.tscn::PackedScene::5447810358474765909::1716180511::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>res://Frontend/Desktop/Clock.gd<>res://Frontend/Desktop/HomePage.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png<>res://Frontend/Desktop/WorldGrabber.gd
-HomePage.gd::GDScript::-1::1715507307::0::1::::<>Node<>::
-WorldGrabber.gd::GDScript::-1::1716174908::0::1::::<>Node<>::
-::res://Frontend/Desktop/SubScenes/::1716180512
-instance_pane.tscn::PackedScene::4280719234088986247::1716180512::0::1::::<><>::res://Frontend/Desktop/ActiveWorldPane.gd<>uid://bxthtt0n6qcta::::res://CVR.tres<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
-::res://Frontend/Login/::1716180511
-Login.gd::GDScript::-1::1715403332::0::1::::<>Control<>::
-Login.tscn::PackedScene::927289947640518204::1716180511::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png<>res://Frontend/Login/Login.gd
-::res://Frontend/Mobile/::1716180511
-Mobile.tscn::PackedScene::2204864625932127640::1716180511::0::1::::<><>::
-::res://Frontend/Startup/::1716180511
+Desktop.tscn::PackedScene::5447810358474765909::1716520349::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>res://Frontend/Desktop/Clock.gd<>res://Frontend/Desktop/HomePage.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png<>res://Frontend/Desktop/settingspanel.gd
+HomePage.gd::GDScript::-1::1716269437::0::1::::<>Node<>::
+settingspanel.gd::GDScript::-1::1716273087::0::1::::<>Control<>::
+WorldGrabber.gd::GDScript::-1::1716362357::0::1::::<>Node<>::
+::res://Frontend/Desktop/SubScenes/::1716520349
+instance_pane.tscn::PackedScene::4280719234088986247::1716520349::0::1::::<><>::res://Frontend/Desktop/ActiveWorldPane.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
+::res://Frontend/Login/::1716520349
+Login.gd::GDScript::-1::1716516703::0::1::::<>Control<>::
+Login.tscn::PackedScene::927289947640518204::1716520349::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png<>res://Frontend/Login/Login.gd
+::res://Frontend/Mobile/::1716520349
+Mobile.tscn::PackedScene::2204864625932127640::1716520349::0::1::::<><>::
+::res://Frontend/Startup/::1716520348
 LoadingCircle.gd::GDScript::-1::1715321316::0::1::::<>TextureRect<>::
-Startup.tscn::PackedScene::182432959026810407::1716180511::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png<>uid://btmdj5dlm51vd::::res://Frontend/loadigncircle.svg<>res://Frontend/Startup/LoadingCircle.gd
+Startup.tscn::PackedScene::182432959026810407::1716520348::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png<>uid://btmdj5dlm51vd::::res://Frontend/loadigncircle.svg<>res://Frontend/Startup/LoadingCircle.gd
 ::res://Frontend/StyleBoxes/::1715047733
 Flat _Stylebox_White_focused.tres::StyleBoxFlat::8200987887465309238::1715047456::0::1::::<><>::
 Flat _Stylebox_White_normal.tres::StyleBoxFlat::7027197270180548864::1715047538::0::1::::<><>::

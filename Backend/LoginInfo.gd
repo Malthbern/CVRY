@@ -62,6 +62,7 @@ func autologin():
 			username = parsedstring.data.username
 			logintoken = parsedstring.data.accessKey
 			loginvalid = true
+			WebSocket.PrepWS()
 			FrontStart.loadUI(OS.get_name())
 			
 		401:

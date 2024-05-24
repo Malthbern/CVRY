@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cju7v1u4c130d"]
+[gd_scene load_steps=7 format=3 uid="uid://cju7v1u4c130d"]
 
 [ext_resource type="Theme" uid="uid://bxthtt0n6qcta" path="res://CVR.tres" id="1_fs04x"]
 [ext_resource type="Script" path="res://Frontend/Desktop/Clock.gd" id="2_wcfpt"]
 [ext_resource type="Script" path="res://Frontend/Desktop/HomePage.gd" id="3_8smlt"]
 [ext_resource type="Texture2D" uid="uid://bqt3ukcfoh2fl" path="res://Frontend/Image Loading.png" id="3_x78pr"]
+[ext_resource type="Script" path="res://Frontend/Desktop/settingspanel.gd" id="5_1p88j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_638h7"]
 font_size = 25
@@ -66,8 +67,10 @@ grow_vertical = 2
 [node name="TabBar" type="TabContainer" parent="OutlineMargin"]
 layout_mode = 2
 tab_alignment = 1
+current_tab = 6
 
 [node name="Home" type="Panel" parent="OutlineMargin/TabBar"]
+visible = false
 layout_mode = 2
 script = ExtResource("3_8smlt")
 
@@ -290,6 +293,7 @@ offset_right = 0.135986
 offset_bottom = -0.045002
 text = "Online Friends"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Online Panel" type="Panel" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends"]
 layout_mode = 1
@@ -320,5 +324,60 @@ visible = false
 layout_mode = 2
 
 [node name="Settings" type="Panel" parent="OutlineMargin/TabBar"]
-visible = false
 layout_mode = 2
+script = ExtResource("5_1p88j")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_top = 0.007
+anchor_right = 0.997
+anchor_bottom = 0.993
+offset_left = 0.571
+offset_top = -0.263
+offset_right = -0.571045
+offset_bottom = -56.737
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OutlineMargin/TabBar/Settings/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="24htime" type="CheckButton" parent="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "24-hour time "
+clip_text = true
+
+[node name="systemtray" type="CheckButton" parent="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Close to system tray"
+clip_text = true
+
+[node name="updatenotif" type="CheckButton" parent="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Notify me when there's an update"
+clip_text = true
+
+[node name="save" type="Button" parent="OutlineMargin/TabBar/Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.391
+anchor_top = 0.926
+anchor_right = 0.61
+anchor_bottom = 0.992
+offset_left = 0.0869751
+offset_top = 0.065979
+offset_right = -0.230042
+offset_bottom = -0.128052
+grow_horizontal = 2
+grow_vertical = 0
+text = "Save settings"
+
+[connection signal="toggled" from="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/24htime" to="OutlineMargin/TabBar/Settings" method="_on_htime_toggled"]
+[connection signal="toggled" from="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/systemtray" to="OutlineMargin/TabBar/Settings" method="_on_systemtray_toggled"]
+[connection signal="toggled" from="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/updatenotif" to="OutlineMargin/TabBar/Settings" method="_on_updatenotif_toggled"]
+[connection signal="pressed" from="OutlineMargin/TabBar/Settings/save" to="OutlineMargin/TabBar/Settings" method="_on_save_pressed"]

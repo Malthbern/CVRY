@@ -11,7 +11,7 @@ extends Node
 @export var wid:String
 @export var Name:String
 @export var imgurl:String
-@export var locale:
+@export var locale:int
 
 func applyworld():
 	countlabel.text = "%s" % [playercount]
