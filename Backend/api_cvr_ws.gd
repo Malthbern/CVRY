@@ -121,8 +121,36 @@ func _process(delta):
 		if pollinterval > pingpongtime:
 			socket.poll()
 			print_debug('Socket %s polled with state (%s)' % [socketid, socket.get_ready_state()])
+			if socket.get_ready_state() == WebSocketPeer.STATE_CLOSED:
+				ConnectWebsocket()
 			while socket.get_available_packet_count():
-				print_debug(JSON.stringify(JSON.parse_string(socket.get_packet().get_string_from_utf8()), '\t',false,true))
+				process_packet(socket.get_packet())
 			pollinterval = 0
 		
 	
+
+func process_packet(Packet):
+	var utf8 = Packet.get_string_from_utf8()
+	var pktjson = JSON.parse_string(utf8)
+	var restype = pktjson.ResponseType
+	
+	
+	#I wanted to do a match operation but it didnt work
+	if restype == RESPONSE_TYPE.MENU_POPUP:
+		pass
+	
+	if restype == RESPONSE_TYPE.HUD_MESSAGE:
+		pass
+	
+	if restype == RESPONSE_TYPE.ONLINE_FRIENDS:
+		print_debug(JSON.stringify(pktjson,'\t',false,true))
+		Cache.update_online_friends(pktjson.Data)
+	
+	if restype == RESPONSE_TYPE.INVITES:
+		pass
+	
+	if restype == RESPONSE_TYPE.REQUEST_INVITES:
+		pass
+	
+	if restype == RESPONSE_TYPE.FRIEND_REQUESTS:
+		pass

@@ -1,7 +1,14 @@
-res://Frontend/Desktop/Desktop.tscn::61012a7840de95de3d4ab584aef25013::1715505368::res://.godot/exported/133200997/export-c91a89807208fd9be39c3d0c5a4d6cc2-Desktop.scn
-res://CVR.tres::03cdaf5536d015b186fec9e6f9dc5ce9::1715505136::res://.godot/exported/133200997/export-f1308a662244b9956f11961ae59fc478-CVR.res
+res://Frontend/Desktop/Desktop.tscn::2565a1ef3c8d3f678e6afd9a9a5079d9::1716685700::res://.godot/exported/133200997/export-c91a89807208fd9be39c3d0c5a4d6cc2-Desktop.scn
+res://CVR.tres::3a9b712cfb994e432eb89268b8e1846f::1716673732::res://.godot/exported/133200997/export-f1308a662244b9956f11961ae59fc478-CVR.res
 res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres::9f777e1d659b77a0cfae5afc08726af7::1715047456::res://.godot/exported/133200997/export-d0c17440695f274372a57263a98a45c4-Flat _Stylebox_White_focused.res
 res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres::e2b9301473f1863607682eb9e5af3c18::1715047538::res://.godot/exported/133200997/export-e77e8ff34de468c973850e6a88159984-Flat _Stylebox_White_normal.res
-res://Frontend/Login/Login.tscn::8d3a9c5c81ff776e202218a0505f7e1d::1715505368::res://.godot/exported/133200997/export-08a69f123c3d9232ba5627d72494e887-Login.scn
-res://Frontend/Mobile/Mobile.tscn::2ae9d6c61118edb305bb1de6c4d078af::1715505368::res://.godot/exported/133200997/export-739a7654b1ba410ee0f584e8c4cf3326-Mobile.scn
-res://Frontend/Startup/Startup.tscn::1b5f433f407ebec5ea07c1209fbbb51f::1715505367::res://.godot/exported/133200997/export-54c6d0cfd5ef9412d06445c22c1a8d49-Startup.scn
+res://Frontend/Login/Login.tscn::551e7365869965c01d003504af2bea86::1716685700::res://.godot/exported/133200997/export-08a69f123c3d9232ba5627d72494e887-Login.scn
+res://Frontend/Mobile/Mobile.tscn::2ae9d6c61118edb305bb1de6c4d078af::1716685700::res://.godot/exported/133200997/export-739a7654b1ba410ee0f584e8c4cf3326-Mobile.scn
+res://Frontend/Startup/Startup.tscn::1b5f433f407ebec5ea07c1209fbbb51f::1716685699::res://.godot/exported/133200997/export-54c6d0cfd5ef9412d06445c22c1a8d49-Startup.scn
+res://addons/discord-rpc-gd/nodes/Debug.tscn::2f55f1c3f5d835f31fa4437032cd4dad::1714907304::res://.godot/exported/133200997/export-d928f068a1bafec7d86411894a66c6a8-Debug.scn
+res://addons/discord-rpc-gd/restart_window.tscn::8395450f311dee441578bd454ccea04b::1714907304::res://.godot/exported/133200997/export-a83ca32fd2b1f993c75747100575ce7a-restart_window.scn
+res://addons/toastparty/toast_label/toast_label.tscn::f53fbf534d2c7392a6702a0a98b7ccff::1716065155::res://.godot/exported/133200997/export-0dcff9bbd3112e440a6c16844800f2cf-toast_label.scn
+res://addons/toastparty/toast_label/toast_label_style.tres::17f2c07b5e2257409e7286acfe43202c::1716065155::res://.godot/exported/133200997/export-e5354684f678e94cfe8e826ff30dc485-toast_label_style.res
+res://Frontend/Desktop/SubScenes/active_friend_panel.tscn::a498c32264b1915ce56a237e6d62f255::1716685700::res://.godot/exported/133200997/export-1304ecbc5cbcb991790232b26c97361e-active_friend_panel.scn
+res://Frontend/Desktop/SubScenes/instance_pane.tscn::29d3394162098f5f6e9f27ccae555425::1716685700::res://.godot/exported/133200997/export-193a851010299812c7674efd0a0c2350-instance_pane.scn
+res://Frontend/Desktop/SubScenes/onlineperson.tscn::d828c6397517b6cc27fb66c9ef8aac1b::1716685700::res://.godot/exported/133200997/export-1ef16c819ed8c49e3e03811420f4039c-onlineperson.scn

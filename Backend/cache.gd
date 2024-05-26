@@ -16,6 +16,8 @@ var cachedir = 'user://CVRY/cache/'
 
 var buffer
 
+var Online_Friends:Array
+
 func _ready():
 	if !DirAccess.dir_exists_absolute(cachedir):
 		DirAccess.make_dir_recursive_absolute(cachedir)
@@ -77,7 +79,7 @@ func get_image(URL:String, TYPE:String, AssetId:String = ''):
 		print_debug('New image or missing meta')
 		var newhash = FileAccess.open(cachedir + imagemeta, FileAccess.WRITE_READ)
 		if newhash == null:
-				printerr('An error occoured while creating an image meta: (%s)' % [FileAccess.get_open_error()])
+				printerr('An error occoured while creating an image meta:(%s) (%s)' % [cachedir + imagemeta ,FileAccess.get_open_error()])
 				return errorimg
 		print_debug("Storeing new hash in meta file at: " + cachedir + imagemeta)
 		newhash.store_string(headerhash)
@@ -124,3 +126,35 @@ func load_image_from_buffer():
 		printerr('Something happened while loading an image from buffer: ' + ''.join(buffer))
 		return errorimg
 	return texture
+
+signal Online_Friends_Updated
+
+func update_online_friends(packet:Array):
+	print_debug('Updating online friends')
+	
+	if Online_Friends.size() == 0:
+		print_debug('Online Friends was empty... populating')
+		Online_Friends = packet
+		Online_Friends_Updated.emit()
+		return
+	
+	var i:int = 0
+	for friend in packet:
+		var found = false
+		for online in Online_Friends:
+			if online.Id == friend.Id:
+				found = true
+				print_debug('Updating online friend %s' % [friend.Id])
+				Online_Friends[i] = friend
+			i += 1
+		if !found:
+			print_debug('Friend %s wasnt found in online list appending' % [friend.Id])
+			Online_Friends.append(friend)
+	
+	i = 0
+	for friend in Online_Friends:
+		if !friend.IsOnline:
+			print_debug('Purging offline friend %s' % [friend.Id])
+			Online_Friends.remove_at(i)
+		i += 1
+	Online_Friends_Updated.emit()

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://2c355x4w7xnt"]
+
+[ext_resource type="Script" path="res://Frontend/Desktop/SubScenes/onlineperson.gd" id="1_18juv"]
+[ext_resource type="Texture2D" uid="uid://bqt3ukcfoh2fl" path="res://Frontend/Image Loading.png" id="1_dr6ic"]
+
+[node name="Onlineperson" type="Button"]
+clip_contents = true
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.062
+offset_right = -40.32
+offset_bottom = -40.176
+text = "
+"
+flat = true
+script = ExtResource("1_18juv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dr6ic")
+expand_mode = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

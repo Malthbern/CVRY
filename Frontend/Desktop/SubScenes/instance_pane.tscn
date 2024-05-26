@@ -1,12 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://b18u25luwvt40"]
 
-[ext_resource type="Script" path="res://Frontend/Desktop/ActiveWorldPane.gd" id="1_8it6j"]
+[ext_resource type="Script" path="res://Frontend/Desktop/SubScenes/ActiveWorldPane.gd" id="1_8it6j"]
 [ext_resource type="Texture2D" uid="uid://bqt3ukcfoh2fl" path="res://Frontend/Image Loading.png" id="2_irg5p"]
 
 [node name="Instance Pane" type="Panel"]
 custom_minimum_size = Vector2(367, 150)
-offset_right = 367.0
-offset_bottom = 150.0
+anchors_preset = -1
+anchor_right = 0.319
+anchor_bottom = 0.231
+offset_right = -0.488007
+offset_bottom = 0.311996
 size_flags_vertical = 0
 script = ExtResource("1_8it6j")
 

@@ -1,5 +1,7 @@
-res://Backend
+/run/media/malthbern/4TB HDD/home/malthbern/Godot Releases/CVRY/Win
 res://Frontend/Desktop/SubScenes/
+res://Frontend/Desktop
+res://Backend
 /run/media/malthbern/4TB HDD/home/malthbern/Godot Releases/CVRY/Linux
 res://
 /run/media/malthbern/4TB HDD/home/malthbern/Godot Projects/CVRY
@@ -7,6 +9,5 @@ res://
 /bin
 /run/media/malthbern/4TB HDD/home/malthbern/Godot Releases/CVRY/Android
 res://Frontend
-/run/media/malthbern/4TB HDD/home/malthbern/Godot Releases/CVRY/Win
 /run/media/malthbern/4TB HDD/home/malthbern/Godot Releases/CVRY/OSX
 res://Frontend/Startup

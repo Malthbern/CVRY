@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cju7v1u4c130d"]
+[gd_scene load_steps=9 format=3 uid="uid://cju7v1u4c130d"]
 
 [ext_resource type="Theme" uid="uid://bxthtt0n6qcta" path="res://CVR.tres" id="1_fs04x"]
 [ext_resource type="Script" path="res://Frontend/Desktop/Clock.gd" id="2_wcfpt"]
 [ext_resource type="Script" path="res://Frontend/Desktop/HomePage.gd" id="3_8smlt"]
 [ext_resource type="Texture2D" uid="uid://bqt3ukcfoh2fl" path="res://Frontend/Image Loading.png" id="3_x78pr"]
 [ext_resource type="Script" path="res://Frontend/Desktop/settingspanel.gd" id="5_1p88j"]
+[ext_resource type="Script" path="res://Frontend/Desktop/SubScenes/OnlineFriendManager.gd" id="5_m8a02"]
+[ext_resource type="Script" path="res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd" id="6_nxqxy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_638h7"]
 font_size = 25
@@ -67,10 +69,8 @@ grow_vertical = 2
 [node name="TabBar" type="TabContainer" parent="OutlineMargin"]
 layout_mode = 2
 tab_alignment = 1
-current_tab = 6
 
 [node name="Home" type="Panel" parent="OutlineMargin/TabBar"]
-visible = false
 layout_mode = 2
 script = ExtResource("3_8smlt")
 
@@ -279,6 +279,7 @@ size_flags_horizontal = 3
 [node name="Online Friends" type="Panel" parent="OutlineMargin/TabBar/Home/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("5_m8a02")
 
 [node name="Header" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends"]
 layout_mode = 1
@@ -303,6 +304,96 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -0.045002
 
+[node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.008
+anchor_top = 0.005
+anchor_right = 0.992
+anchor_bottom = 0.993
+offset_left = -0.00800014
+offset_top = -0.0450001
+offset_right = 0.00799561
+offset_bottom = -0.137024
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PrivateFriendPanel" type="Panel" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("6_nxqxy")
+
+[node name="Label" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel"]
+layout_mode = 2
+anchor_left = 0.008
+anchor_top = 0.023
+anchor_right = 0.992
+anchor_bottom = 0.2
+offset_left = 0.04
+offset_top = 0.00999975
+offset_right = -0.0400085
+text = "Friends in a private"
+horizontal_alignment = 1
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.008
+anchor_top = 0.2
+anchor_right = 0.992
+anchor_bottom = 0.977
+offset_left = 0.04
+offset_right = -0.0400085
+offset_bottom = -0.0100098
+
+[node name="GridContainer" type="GridContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 8
+
+[node name="OnlineNotConnected" type="Panel" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("6_nxqxy")
+
+[node name="Label" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/OnlineNotConnected"]
+layout_mode = 2
+anchor_left = 0.008
+anchor_top = 0.023
+anchor_right = 0.992
+anchor_bottom = 0.2
+offset_left = 0.04
+offset_top = 0.00999975
+offset_right = -0.0400085
+text = "Friends not connected to an instance"
+horizontal_alignment = 1
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/OnlineNotConnected"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.008
+anchor_top = 0.2
+anchor_right = 0.992
+anchor_bottom = 0.977
+offset_left = 0.04
+offset_right = -0.0400085
+offset_bottom = -0.0100098
+
+[node name="GridContainer" type="GridContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/OnlineNotConnected/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 8
+
 [node name="Friends" type="Panel" parent="OutlineMargin/TabBar"]
 visible = false
 layout_mode = 2
@@ -324,6 +415,7 @@ visible = false
 layout_mode = 2
 
 [node name="Settings" type="Panel" parent="OutlineMargin/TabBar"]
+visible = false
 layout_mode = 2
 script = ExtResource("5_1p88j")
 

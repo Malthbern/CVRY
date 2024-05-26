@@ -1,7 +1,13 @@
 res://Frontend/Desktop/Desktop.tscn
 res://CVR.tres
+res://Backend/api_cvr_ws.gd
 res://Frontend/Startup/Startup.tscn
 res://Frontend/Mobile/Mobile.tscn
 res://Frontend/Login/Login.tscn
 res://Frontend/Desktop/SubScenes/instance_pane.tscn
-res://Backend/api_cvr_ws.gd
+res://Frontend/Desktop/SubScenes/onlineperson.tscn
+res://Frontend/Desktop/SubScenes/active_friend_panel.tscn
+res://Frontend/Desktop/SubScenes/OnlineFriendManager.gd
+res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd
+res://Frontend/Desktop/SubScenes/onlineperson.gd
+res://Backend/cache.gd
