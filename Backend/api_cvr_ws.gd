@@ -143,7 +143,6 @@ func process_packet(Packet):
 		pass
 	
 	if restype == RESPONSE_TYPE.ONLINE_FRIENDS:
-		print_debug(JSON.stringify(pktjson,'\t',false,true))
 		Cache.update_online_friends(pktjson.Data)
 	
 	if restype == RESPONSE_TYPE.INVITES:

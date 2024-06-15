@@ -13,19 +13,19 @@ const WorldCat : Dictionary = {
 
 
 #user
-@onready var userlabel = $"HBoxContainer/User+notifications/Profile/VBoxContainer/Username"
-@onready var profileimage = $"HBoxContainer/User+notifications/Profile/PlayerProfPic"
+@onready var userlabel = $"HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/Username"
+@onready var profileimage = $"HBoxContainer/User+notifications/Profile/HBoxContainer/PlayerProfPic"
 
 #avatar
-@onready var avatarlabel = $"HBoxContainer/User+notifications/Profile/VBoxContainer/CurrentAvatar/AvatarName"
-@onready var avatarimage = $"HBoxContainer/User+notifications/Profile/VBoxContainer/CurrentAvatar/AvatarImage"
+@onready var avatarlabel = $"HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/CurrentAvatar/AvatarName"
+@onready var avatarimage = $"HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/CurrentAvatar/AvatarImage"
 
 #badge
-@onready var badgelabel = $"HBoxContainer/User+notifications/Profile/VBoxContainer/Badge/badgeName"
-@onready var badgeimage = $"HBoxContainer/User+notifications/Profile/VBoxContainer/Badge/badgeImage"
+@onready var badgelabel = $"HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/Badge/badgeName"
+@onready var badgeimage = $"HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/Badge/badgeImage"
 
 #rank
-@onready var ranklabel = $"HBoxContainer/User+notifications/Profile/VBoxContainer/Rank/RankName"
+@onready var ranklabel = $"HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/Rank/RankName"
 
 #active worlds
 @onready var activecontainer = $"HBoxContainer/Active Worlds/Active Pannel/ScrollContainer/VBoxContainer"

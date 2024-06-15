@@ -10,9 +10,14 @@ func _ready():
 	Cache.Online_Friends_Updated.connect(updateui)
 
 func updateui():
+	var children = worldcontainer.get_children()
+	
 	for friend in Cache.Online_Friends:
 		var childpanel
-		var test
+		
+		for child in children:
+			child.removeuser(friend)
+		
 		if friend.Instance != null:
 			childpanel = worldcontainer.find_child(friend.Instance.Id, false, false)
 		

@@ -19,6 +19,7 @@ func Get(url, authenticated = true, apiVersion = 1):
 	
 	var http = HTTPRequest.new()
 	add_child(http)
+	http.name = url
 	http.request(APIAddress +'/%s' % [apiVersion] + url, headers, HTTPClient.METHOD_GET)
 	return http
 	
@@ -41,6 +42,7 @@ func Post(url, data, authenticated = true, apiVersion = 1):
 	
 	var http = HTTPRequest.new()
 	add_child(http)
+	http.name = url
 	http.request(APIAddress +'/%s' % [apiVersion] + url + '?acceptTos=false', headers, HTTPClient.METHOD_POST, JSON.stringify(data, "\t", false, true))
 	return http
 

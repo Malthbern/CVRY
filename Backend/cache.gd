@@ -25,12 +25,14 @@ func _ready():
 func HEAD (url:String):
 	var http = HTTPRequest.new()
 	add_child(http)
+	http.name = url
 	http.request(url, [Utils.GetUserAgent], HTTPClient.METHOD_HEAD)
 	return http
 
 func IMG_GET(url:String):
 	var http = HTTPRequest.new()
 	add_child(http)
+	http.name = url
 	http.request(url, [Utils.GetUserAgent], HTTPClient.METHOD_GET)
 	return http
 
@@ -127,7 +129,10 @@ func load_image_from_buffer():
 		return errorimg
 	return texture
 
-signal Online_Friends_Updated
+#Friend Location cacher
+#God only hopes this changes at some point
+
+signal Online_Friends_Updated()
 
 func update_online_friends(packet:Array):
 	print_debug('Updating online friends')
@@ -135,7 +140,7 @@ func update_online_friends(packet:Array):
 	if Online_Friends.size() == 0:
 		print_debug('Online Friends was empty... populating')
 		Online_Friends = packet
-		Online_Friends_Updated.emit()
+		Online_Friends_Updated.emit() # We have to duplicate the array due to how godot handles variables
 		return
 	
 	var i:int = 0
@@ -154,7 +159,8 @@ func update_online_friends(packet:Array):
 	i = 0
 	for friend in Online_Friends:
 		if !friend.IsOnline:
+			Online_Friends_Updated.emit()
 			print_debug('Purging offline friend %s' % [friend.Id])
 			Online_Friends.remove_at(i)
 		i += 1
-	Online_Friends_Updated.emit()
+	Online_Friends_Updated.emit() # We have to duplicate the array due to how godot handles variables

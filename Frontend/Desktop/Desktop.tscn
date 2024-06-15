@@ -99,32 +99,29 @@ anchor_right = 1.0
 anchor_bottom = 0.228
 offset_bottom = -0.0280151
 
-[node name="PlayerProfPic" type="TextureRect" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile"]
-layout_mode = 2
-anchor_left = 0.011
-anchor_top = 0.029
-anchor_right = 0.355
-anchor_bottom = 0.971
-offset_left = -0.125
-offset_top = 0.027
-offset_right = -0.125
-offset_bottom = -0.0270081
-texture = ExtResource("3_x78pr")
-expand_mode = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile"]
+[node name="HBoxContainer" type="HBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.36
-anchor_top = 0.029
-anchor_right = 0.989
-anchor_bottom = 0.971
-offset_top = 0.027
-offset_right = 0.125
-offset_bottom = -0.0270081
+anchor_left = 0.008
+anchor_top = 0.022
+anchor_right = 0.992
+anchor_bottom = 0.978
+offset_top = -0.0139999
+offset_right = -3.05176e-05
+offset_bottom = 0.0140076
+
+[node name="PlayerProfPic" type="TextureRect" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_x78pr")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 alignment = 1
 
-[node name="Username" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer"]
+[node name="Username" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Username"
@@ -133,29 +130,16 @@ vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
 
-[node name="Rank" type="HBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer"]
+[node name="CurrentAvatar" type="HBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="RankName" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer/Rank"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-text = "Fetching Rank"
-vertical_alignment = 1
-clip_text = true
-text_overrun_behavior = 3
-
-[node name="CurrentAvatar" type="HBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="AvatarImage" type="TextureRect" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer/CurrentAvatar"]
+[node name="AvatarImage" type="TextureRect" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/CurrentAvatar"]
 layout_mode = 2
 texture = ExtResource("3_x78pr")
 expand_mode = 2
 
-[node name="AvatarName" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer/CurrentAvatar"]
+[node name="AvatarName" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/CurrentAvatar"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -164,20 +148,33 @@ vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
 
-[node name="Badge" type="HBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer"]
+[node name="Badge" type="HBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="badgeImage" type="TextureRect" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer/Badge"]
+[node name="badgeImage" type="TextureRect" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/Badge"]
 layout_mode = 2
 texture = ExtResource("3_x78pr")
 expand_mode = 2
 
-[node name="badgeName" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/VBoxContainer/Badge"]
+[node name="badgeName" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/Badge"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Fetching Badge"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Rank" type="HBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RankName" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/Rank"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Fetching Rank"
 vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
@@ -326,73 +323,48 @@ custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 size_flags_vertical = 0
 script = ExtResource("6_nxqxy")
+IsPermenantPannel = true
 
-[node name="Label" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel"]
-layout_mode = 2
-anchor_left = 0.008
-anchor_top = 0.023
-anchor_right = 0.992
-anchor_bottom = 0.2
-offset_left = 0.04
-offset_top = 0.00999975
-offset_right = -0.0400085
-text = "Friends in a private"
-horizontal_alignment = 1
-clip_text = true
-text_overrun_behavior = 1
-
-[node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel"]
+[node name="HDetailContainer" type="HBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.008
-anchor_top = 0.2
-anchor_right = 0.992
+anchor_top = 0.031
+anchor_right = 0.986
 anchor_bottom = 0.977
 offset_left = 0.04
-offset_right = -0.0400085
+offset_top = -0.0300002
+offset_right = 0.179993
 offset_bottom = -0.0100098
 
-[node name="GridContainer" type="GridContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-columns = 8
-
-[node name="OnlineNotConnected" type="Panel" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel/HDetailContainer"]
 visible = false
-custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
-size_flags_vertical = 0
-script = ExtResource("6_nxqxy")
+size_flags_horizontal = 0
+texture = ExtResource("3_x78pr")
+expand_mode = 3
+stretch_mode = 4
 
-[node name="Label" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/OnlineNotConnected"]
+[node name="VDetailContainer" type="VBoxContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel/HDetailContainer"]
 layout_mode = 2
-anchor_left = 0.008
-anchor_top = 0.023
-anchor_right = 0.992
-anchor_bottom = 0.2
-offset_left = 0.04
-offset_top = 0.00999975
-offset_right = -0.0400085
-text = "Friends not connected to an instance"
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel/HDetailContainer/VDetailContainer"]
+layout_mode = 2
+text = "Friends in Private Worlds
+"
 horizontal_alignment = 1
 clip_text = true
 text_overrun_behavior = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/OnlineNotConnected"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.008
-anchor_top = 0.2
-anchor_right = 0.992
-anchor_bottom = 0.977
-offset_left = 0.04
-offset_right = -0.0400085
-offset_bottom = -0.0100098
+[node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel/HDetailContainer/VDetailContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="GridContainer" type="GridContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/OnlineNotConnected/ScrollContainer"]
+[node name="FlowContainer" type="FlowContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/Online Friends/Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel/HDetailContainer/VDetailContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-columns = 8
+size_flags_vertical = 3
 
 [node name="Friends" type="Panel" parent="OutlineMargin/TabBar"]
 visible = false

@@ -10,42 +10,40 @@ offset_bottom = 130.0
 size_flags_vertical = 0
 script = ExtResource("1_8v8b6")
 
-[node name="Label" type="Label" parent="."]
+[node name="HDetailContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.008
+anchor_top = 0.031
+anchor_right = 0.992
+anchor_bottom = 0.977
+offset_left = 0.0559998
+offset_top = -0.0300002
+offset_right = -0.0560303
+offset_bottom = -0.0100098
+
+[node name="TextureRect" type="TextureRect" parent="HDetailContainer"]
 layout_mode = 2
-offset_left = 88.0
-offset_top = 3.0
-offset_right = 367.0
-offset_bottom = 26.0
+size_flags_horizontal = 0
+texture = ExtResource("1_tkd7k")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="VDetailContainer" type="VBoxContainer" parent="HDetailContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HDetailContainer/VDetailContainer"]
+layout_mode = 2
 text = "World name (Instance id)"
 clip_text = true
 text_overrun_behavior = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="HDetailContainer/VDetailContainer"]
 layout_mode = 2
-anchor_left = 0.008
-anchor_top = 0.032
-anchor_right = 0.232
-anchor_bottom = 0.669
-offset_left = 0.04
-offset_top = -0.16
-offset_right = 0.159996
-offset_bottom = 0.0299988
-size_flags_horizontal = 0
-texture = ExtResource("1_tkd7k")
-expand_mode = 2
+size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.238
-anchor_top = 0.2
-anchor_right = 0.992
-anchor_bottom = 0.977
-offset_left = -0.0600052
-offset_right = -0.0400085
-offset_bottom = -0.0100098
-
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+[node name="FlowContainer" type="FlowContainer" parent="HDetailContainer/VDetailContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-columns = 6
+size_flags_vertical = 3

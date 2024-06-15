@@ -1,7 +1,7 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1716673649
-CVR.tres::Theme::4040447250925021790::1716598257::0::1::::<><>::uid://do3vcpu0qjkt7::::res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres<>uid://c7ea6axe3jeqi::::res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres
-export_presets.cfg::TextFile::-1::1715505871::0::1::::<><>::
+::res://::1718418589
+CVR.tres::Theme::4040447250925021790::1716870681::0::1::::<><>::uid://do3vcpu0qjkt7::::res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres<>uid://c7ea6axe3jeqi::::res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres
+export_presets.cfg::TextFile::-1::1716686792::0::1::::<><>::
 icon.svg::CompressedTexture2D::6093165924295809368::1714907241::1714907247::1::::<><>::
 plugin-icon.png::CompressedTexture2D::4712544778492425097::1716181033::1716181034::1::::<><>::
 README.md::TextFile::-1::1714983444::0::1::::<><>::
@@ -49,10 +49,10 @@ toast_label_style.tres::StyleBoxFlat::3199553429173375896::1716065155::0::1::::<
 ::res://assetlibData/::1716065394
 libIcon.png::CompressedTexture2D::1409565651609743356::1716065393::1716065394::1::::<><>::
 TrayItem.png::CompressedTexture2D::8640756255433012286::1716065393::1716065394::1::::<><>::
-::res://Backend/::1716614370
+::res://Backend/::1716875332
 api_cvr_http.gd::GDScript::-1::1716188088::0::1::::<>Node<>::
-api_cvr_ws.gd::GDScript::-1::1716609248::0::1::::<>Node<>::
-cache.gd::GDScript::-1::1716614370::0::1::::<>Node<>::
+api_cvr_ws.gd::GDScript::-1::1716871740::0::1::::<>Node<>::
+cache.gd::GDScript::-1::1716875332::0::1::::<>Node<>::
 LoginInfo.gd::GDScript::-1::1716516703::0::1::::<>Node<>::
 savecrypto.gd::GDScript::-1::1715317661::0::1::::<>Node<>::
 UserSettings.gd::GDScript::-1::1716272998::0::1::::<>Node<>::
@@ -65,25 +65,27 @@ Image Loading.png::CompressedTexture2D::3550401679473616473::1715372897::1715372
 loadigncircle.svg::CompressedTexture2D::3744981049839830277::1714980416::1714981612::1::::<><>::
 orange-error-icon-0.png::CompressedTexture2D::75376539614626969::1715562502::1715562506::1::::<><>::
 UserSettings.gd::GDScript::-1::1715371590::0::1::::<>Node<>::
-::res://Frontend/Desktop/::1716619562
+::res://Frontend/Desktop/::1716875911
 Clock.gd::GDScript::-1::1715324801::0::1::::<>LineEdit<>::
-Desktop.tscn::PackedScene::5447810358474765909::1716619562::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>res://Frontend/Desktop/Clock.gd<>res://Frontend/Desktop/HomePage.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png<>res://Frontend/Desktop/settingspanel.gd<>res://Frontend/Desktop/SubScenes/OnlineFriendManager.gd
+Desktop.tscn::PackedScene::5447810358474765909::1716875911::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>res://Frontend/Desktop/Clock.gd<>res://Frontend/Desktop/HomePage.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png<>res://Frontend/Desktop/settingspanel.gd<>res://Frontend/Desktop/SubScenes/OnlineFriendManager.gd<>res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd
 HomePage.gd::GDScript::-1::1716269437::0::1::::<>Node<>::
 settingspanel.gd::GDScript::-1::1716273087::0::1::::<>Control<>::
-::res://Frontend/Desktop/SubScenes/::1716619562
+::res://Frontend/Desktop/SubScenes/::1716875912
 ActiveWorldPane.gd::GDScript::-1::1716264170::0::1::::<>Node<>::
-active_friend_panel.tscn::PackedScene::3642334144635730979::1716619562::0::1::::<><>::uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
-instance_pane.tscn::PackedScene::4280719234088986247::1716619562::0::1::::<><>::res://Frontend/Desktop/SubScenes/ActiveWorldPane.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
-OnlineFriendManager.gd::GDScript::-1::1716619223::0::1::::<>Node<>::
-onlineperson.tscn::PackedScene::1900982795928919145::1716619562::0::1::::<><>::uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
-::res://Frontend/Login/::1716619562
+active_friend_panel.tscn::PackedScene::3642334144635730979::1716875912::0::1::::<><>::res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
+instance_pane.tscn::PackedScene::4280719234088986247::1716875911::0::1::::<><>::res://Frontend/Desktop/SubScenes/ActiveWorldPane.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
+OnlineFriendManager.gd::GDScript::-1::1716875332::0::1::::<>Node<>::
+OnlineFriendPannel.gd::GDScript::-1::1716875911::0::1::::<>Node<>::
+onlineperson.gd::GDScript::-1::1716875706::0::1::::<>Button<>::
+onlineperson.tscn::PackedScene::1900982795928919145::1716875912::0::1::::<><>::res://Frontend/Desktop/SubScenes/onlineperson.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
+::res://Frontend/Login/::1716875911
 Login.gd::GDScript::-1::1716516703::0::1::::<>Control<>::
-Login.tscn::PackedScene::927289947640518204::1716619562::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png<>res://Frontend/Login/Login.gd
-::res://Frontend/Mobile/::1716619562
-Mobile.tscn::PackedScene::2204864625932127640::1716619562::0::1::::<><>::
-::res://Frontend/Startup/::1716619561
+Login.tscn::PackedScene::927289947640518204::1716875911::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png<>res://Frontend/Login/Login.gd
+::res://Frontend/Mobile/::1716875911
+Mobile.tscn::PackedScene::2204864625932127640::1716875911::0::1::::<><>::
+::res://Frontend/Startup/::1716875911
 LoadingCircle.gd::GDScript::-1::1715321316::0::1::::<>TextureRect<>::
-Startup.tscn::PackedScene::182432959026810407::1716619561::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png<>uid://btmdj5dlm51vd::::res://Frontend/loadigncircle.svg<>res://Frontend/Startup/LoadingCircle.gd
+Startup.tscn::PackedScene::182432959026810407::1716875911::0::1::::<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png<>uid://btmdj5dlm51vd::::res://Frontend/loadigncircle.svg<>res://Frontend/Startup/LoadingCircle.gd
 ::res://Frontend/StyleBoxes/::1715047733
 Flat _Stylebox_White_focused.tres::StyleBoxFlat::8200987887465309238::1715047456::0::1::::<><>::
 Flat _Stylebox_White_normal.tres::StyleBoxFlat::7027197270180548864::1715047538::0::1::::<><>::

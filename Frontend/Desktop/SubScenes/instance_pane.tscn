@@ -13,19 +13,6 @@ offset_bottom = 0.311996
 size_flags_vertical = 0
 script = ExtResource("1_8it6j")
 
-[node name="World Image" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.008
-anchor_top = 0.02
-anchor_right = 0.008
-anchor_bottom = 0.02
-offset_left = 0.0639999
-offset_right = 97.064
-offset_bottom = 97.0
-texture = ExtResource("2_irg5p")
-expand_mode = 5
-
 [node name="Details button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -36,73 +23,57 @@ anchor_bottom = 0.973
 offset_left = -0.0370002
 offset_top = -0.0500031
 offset_right = 0.0369873
-offset_bottom = 0.0499878
+offset_bottom = 0.0500031
 text = "Details"
 
-[node name="WorldName" type="Label" parent="."]
-clip_contents = true
+[node name="HDteailContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.275
+anchor_left = 0.008
 anchor_top = 0.02
-anchor_right = 0.275
-anchor_bottom = 0.02
-offset_left = 0.0749969
-offset_right = 263.075
-offset_bottom = 23.0
+anchor_right = 0.992
+anchor_bottom = 0.667
+offset_left = 0.0639999
+offset_right = -0.0640259
+offset_bottom = -0.0500107
+
+[node name="World Image" type="TextureRect" parent="HDteailContainer"]
+layout_mode = 2
+texture = ExtResource("2_irg5p")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="DetailsContainer" type="VBoxContainer" parent="HDteailContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WorldName" type="Label" parent="HDteailContainer/DetailsContainer"]
+clip_contents = true
+layout_mode = 2
 text = "World Name"
 clip_text = true
 
-[node name="ID" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.275
-anchor_top = 0.173
-anchor_right = 0.275
-anchor_bottom = 0.173
-offset_left = 0.0749969
-offset_top = 0.0499992
-offset_right = 263.075
-offset_bottom = 23.05
+[node name="ID" type="Label" parent="HDteailContainer/DetailsContainer"]
+layout_mode = 2
 text = "Instance ID"
 clip_text = true
 
-[node name="Connected Players" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.275
-anchor_top = 0.32
-anchor_right = 0.275
-anchor_bottom = 0.32
-offset_left = 0.0749969
-offset_right = 40.075
-offset_bottom = 23.0
+[node name="PlayerCountContainer" type="HBoxContainer" parent="HDteailContainer/DetailsContainer"]
+layout_mode = 2
+
+[node name="Connected Players" type="Label" parent="HDteailContainer/DetailsContainer/PlayerCountContainer"]
+layout_mode = 2
 text = "Connected Players:"
 
-[node name="PlayerCount" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.681
-anchor_top = 0.32
-anchor_right = 0.681
-anchor_bottom = 0.32
-offset_left = 0.0729828
-offset_right = 115.073
-offset_bottom = 23.0
+[node name="PlayerCount" type="Label" parent="HDteailContainer/DetailsContainer/PlayerCountContainer"]
+layout_mode = 2
 text = "100"
 
-[node name="Locale" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.275
-anchor_top = 0.473
-anchor_right = 0.275
-anchor_bottom = 0.473
-offset_left = 0.0749969
-offset_top = 0.0499954
-offset_right = 29.075
-offset_bottom = 29.05
+[node name="Locale" type="TextureRect" parent="HDteailContainer/DetailsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 texture = ExtResource("2_irg5p")
 expand_mode = 3
+stretch_mode = 4
 
 [connection signal="pressed" from="Details button" to="." method="_on_details_pressed"]

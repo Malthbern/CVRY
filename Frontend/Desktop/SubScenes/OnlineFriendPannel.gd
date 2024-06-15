@@ -1,9 +1,11 @@
 extends Node
 
 var Friendbutton = load("res://Frontend/Desktop/SubScenes/onlineperson.tscn")
-@onready var friendcontainer = $ScrollContainer/GridContainer
-@onready var worldlabel = $Label
-@onready var worldimage = $TextureRect
+@onready var friendcontainer = $HDetailContainer/VDetailContainer/ScrollContainer/FlowContainer
+@onready var worldlabel = $HDetailContainer/VDetailContainer/Label
+@onready var worldimage = $HDetailContainer/TextureRect
+
+@export var IsPermenantPannel:bool = false
 
 var worldname:String
 var imagurl:String
@@ -15,8 +17,9 @@ func setworld():
 	return
 
 func adduser(user:Dictionary):
-	var finduser = friendcontainer.find_child(user.Id, false, false)
-	if finduser != null:
+	var find = friendcontainer.find_child(user.Id, false, false)
+	
+	if find != null:
 		return
 	
 	var instance = Friendbutton.instantiate()
@@ -28,4 +31,20 @@ func adduser(user:Dictionary):
 	instance.setuser()
 
 func removeuser(user:Dictionary):
-	pass
+	var find = friendcontainer.find_child(user.Id, false, false)
+	
+	if !IsPermenantPannel:
+		if friendcontainer.get_child_count() == 0: self.queue_free()
+	
+	if find == null:
+		return
+	
+	if user.Instance != null:
+		if user.Instance.Id == self.name:
+			return
+	elif user.Instance == null && find.world == '':
+		return
+	
+	find.queue_free()
+	
+

@@ -1,11 +1,11 @@
 extends Node
 
 #UI items
-@onready var worldimage = $"World Image"
-@onready var namelabel = $WorldName
-@onready var idlabel = $ID
-@onready var countlabel = $PlayerCount
-@onready var localimage = $Locale
+@onready var worldimage = $"HDteailContainer/World Image"
+@onready var namelabel = $HDteailContainer/DetailsContainer/WorldName
+@onready var idlabel = $HDteailContainer/DetailsContainer/ID
+@onready var countlabel = $HDteailContainer/DetailsContainer/PlayerCountContainer/PlayerCount
+@onready var localimage = $HDteailContainer/DetailsContainer/Locale
 
 @export var playercount:int
 @export var wid:String
