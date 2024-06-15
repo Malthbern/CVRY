@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bxthtt0n6qcta"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://bxthtt0n6qcta"]
 
 [ext_resource type="StyleBox" uid="uid://do3vcpu0qjkt7" path="res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres" id="1_42c8k"]
 [ext_resource type="StyleBox" uid="uid://c7ea6axe3jeqi" path="res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres" id="2_adfeu"]
@@ -80,6 +80,8 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.34902, 0.533333, 0.364706, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cymy"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_npsgr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4evs"]
@@ -126,6 +128,7 @@ Panel/colors/Background = Color(0.215686, 0.188235, 0.129412, 1)
 Panel/colors/Foreground = Color(0.34902, 0.533333, 0.364706, 1)
 Panel/colors/Text = Color(1, 1, 1, 1)
 Panel/styles/panel = SubResource("StyleBoxFlat_ru7tr")
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_6cymy")
 TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_npsgr")
 TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_u4evs")
 TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_hca4f")

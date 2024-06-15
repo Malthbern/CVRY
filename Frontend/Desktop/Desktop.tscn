@@ -69,8 +69,10 @@ grow_vertical = 2
 [node name="TabBar" type="TabContainer" parent="OutlineMargin"]
 layout_mode = 2
 tab_alignment = 1
+current_tab = 1
 
 [node name="Home" type="Panel" parent="OutlineMargin/TabBar"]
+visible = false
 layout_mode = 2
 script = ExtResource("3_8smlt")
 
@@ -367,6 +369,27 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Friends" type="Panel" parent="OutlineMargin/TabBar"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="OutlineMargin/TabBar/Friends"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.997
+anchor_bottom = 1.0
+offset_left = 0.571
+offset_top = 4.0
+offset_right = -0.571045
+offset_bottom = -4.0
+
+[node name="All" type="Panel" parent="OutlineMargin/TabBar/Friends/TabContainer"]
+layout_mode = 2
+
+[node name="Online" type="Panel" parent="OutlineMargin/TabBar/Friends/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Offline" type="Panel" parent="OutlineMargin/TabBar/Friends/TabContainer"]
 visible = false
 layout_mode = 2
 
