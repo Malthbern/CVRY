@@ -11,6 +11,9 @@ const WorldCat : Dictionary = {
 	Mine = 'wrldmine',
 }
 
+var timer:float
+var refreashlimit:float = 60 #1 minuite cooldown for forced refreash
+var autorefreash:float = 600 #10 minuite auto refreash timer
 
 #user
 @onready var userlabel = $"HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/Username"
@@ -63,6 +66,7 @@ func populate_userdata():
 func depopulate_active():
 	for child in activecontainer.get_children():
 		child.queue_free()
+	return
 
 func populate_active():
 	var reqworlds : HTTPRequest = ApiCvrHttp.GetWorldsByCategory(WorldCat.Active)
@@ -79,8 +83,14 @@ func populate_active():
 		pane.applyworld()
 	
 
+func UpdateTab():
+	if timer >= refreashlimit:
+		timer = 0
+		await depopulate_active()
+		populate_active()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if timer < autorefreash:
+		timer += delta
+	else:
+		UpdateTab()

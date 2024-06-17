@@ -3,6 +3,7 @@ extends Node
 const cdnaddr : String = 'https://files.abidata.io/'
 
 const errorimg = preload("res://Frontend/orange-error-icon-0.png")
+const default = preload("res://Frontend/00default.png")
 
 const ITEM_TYPES: Dictionary = {
 	USER = 'user_images/',
@@ -37,8 +38,14 @@ func IMG_GET(url:String):
 	return http
 
 func get_image(URL:String, TYPE:String, AssetId:String = ''):
+	#default image
+	if URL == 'https://files.abidata.io/user_images/00default.png':
+		push_warning('Avatar is default')
+		return default
+	
 	#prep image data
-	var imagename = URL.trim_prefix(cdnaddr + TYPE + AssetId)
+	var imagename = URL.trim_prefix(cdnaddr + TYPE)
+	imagename = imagename.trim_prefix(AssetId) #this is to account for a weird instance where the image does not have the asset/userid in it
 	var imagemeta = imagename.trim_suffix('png') + 'meta'
 	print_debug("Fetching image: " + imagename)
 	

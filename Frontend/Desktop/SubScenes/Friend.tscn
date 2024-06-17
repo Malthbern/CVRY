@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddcm02182b82j"]
+
+[ext_resource type="Script" path="res://Frontend/Desktop/SubScenes/Friend.gd" id="1_4j8tw"]
+[ext_resource type="Texture2D" uid="uid://bqt3ukcfoh2fl" path="res://Frontend/Image Loading.png" id="1_y1xdi"]
+
+[node name="Friend" type="Panel"]
+custom_minimum_size = Vector2(150, 190)
+script = ExtResource("1_4j8tw")
+
+[node name="FriendPFP" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.063
+anchor_right = 0.92
+anchor_bottom = 0.726
+offset_top = 0.0299997
+offset_bottom = 0.0599976
+texture = ExtResource("1_y1xdi")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="FriendName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013
+anchor_top = 0.726
+anchor_right = 0.987
+anchor_bottom = 0.862
+offset_left = 0.05
+offset_top = 0.0599976
+offset_right = -0.0500031
+offset_bottom = -0.0800018
+text = "ABCDEFGHIJKLMNOP"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.847
+anchor_right = 0.967
+anchor_bottom = 0.979
+offset_left = 0.0500002
+offset_top = 0.0699921
+offset_right = -0.0500031
+offset_bottom = -0.0100098
+text = "Details"

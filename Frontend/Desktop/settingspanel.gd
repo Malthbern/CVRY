@@ -7,6 +7,9 @@ func _ready():
 	#settings = UserSettings.savedsettings
 	pass
 
+func UpdateTab():
+	pass
+
 func _on_save_pressed():
 	UserSettings.updatesettings(settings)
 
