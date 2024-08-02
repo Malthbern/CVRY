@@ -3,8 +3,6 @@ extends Node
 var currentusername:String
 var currentaccesskey:String
 
-var pingpongtime:float = 15
-
 var socket:WebSocketPeer
 var previouscosket:WebSocketPeer
 
@@ -111,23 +109,16 @@ func ConnectWebsocket():
 	print_debug('websocket connecting to ' + websocketaddress + ' as ' + LoginInfo.username)
 	previouscosket = socket
 
-var pollinterval = 0
 func _process(delta):
-	pollinterval += delta
 	if socket != null:
-		if socket.get_ready_state() == WebSocketPeer.STATE_CONNECTING:
-			socket.poll()
-		
-		if pollinterval > pingpongtime:
-			socket.poll()
-			print_debug('Socket %s polled with state (%s)' % [socketid, socket.get_ready_state()])
-			if socket.get_ready_state() == WebSocketPeer.STATE_CLOSED:
-				ConnectWebsocket()
-			while socket.get_available_packet_count():
-				process_packet(socket.get_packet())
-			pollinterval = 0
-		
+		socket.poll()
+	else:
+		return
 	
+	if socket.get_ready_state() == WebSocketPeer.STATE_CLOSED:
+		ConnectWebsocket()
+	while socket.get_available_packet_count():
+		process_packet(socket.get_packet())
 
 func process_packet(Packet):
 	var utf8 = Packet.get_string_from_utf8()

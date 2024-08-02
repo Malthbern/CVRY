@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cju7v1u4c130d"]
+[gd_scene load_steps=13 format=3 uid="uid://cju7v1u4c130d"]
 
 [ext_resource type="Theme" uid="uid://bxthtt0n6qcta" path="res://CVR.tres" id="1_fs04x"]
 [ext_resource type="Script" path="res://Frontend/Desktop/Clock.gd" id="2_wcfpt"]
@@ -13,6 +13,9 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_638h7"]
 font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cm73"]
+bg_color = Color(0, 0, 0, 0.25098)
 
 [node name="Desktop" type="Control"]
 layout_mode = 3
@@ -72,10 +75,12 @@ grow_vertical = 2
 [node name="TabBar" type="TabContainer" parent="OutlineMargin" node_paths=PackedStringArray("Tabs")]
 layout_mode = 2
 tab_alignment = 1
+current_tab = 1
 script = ExtResource("3_q3riv")
 Tabs = [NodePath("Home"), NodePath("Friends"), NodePath("Worlds"), NodePath("Avatars"), NodePath("Props"), NodePath("Search"), NodePath("Settings")]
 
 [node name="Home" type="Panel" parent="OutlineMargin/TabBar"]
+visible = false
 layout_mode = 2
 script = ExtResource("3_8smlt")
 
@@ -398,7 +403,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Friends" type="Panel" parent="OutlineMargin/TabBar" node_paths=PackedStringArray("containers")]
-visible = false
 layout_mode = 2
 script = ExtResource("8_ep1r4")
 containers = [NodePath("TabContainer/All/ScrollContainer/Friend Container"), NodePath("TabContainer/Favorites/ScrollContainer/Friend Container")]
@@ -621,6 +625,154 @@ offset_bottom = -0.128052
 grow_horizontal = 2
 grow_vertical = 0
 text = "Save settings"
+
+[node name="InfoOverlayDarken" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3cm73")
+
+[node name="Player" type="Panel" parent="InfoOverlayDarken"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.253
+anchor_top = 0.253
+anchor_right = 0.747
+anchor_bottom = 0.747
+offset_left = -0.456024
+offset_top = 0.0559845
+offset_right = 0.455933
+offset_bottom = -0.0560303
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InfoOverlayDarken/Player"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.012
+anchor_right = 0.993
+anchor_bottom = 0.987
+offset_left = 0.00999999
+offset_top = 0.16
+offset_right = -0.0100098
+offset_bottom = 0.159973
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoOverlayDarken/Player/HBoxContainer"]
+layout_mode = 2
+
+[node name="ProfilePic" type="TextureRect" parent="InfoOverlayDarken/Player/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+tooltip_text = "LOADING:ID"
+texture = ExtResource("3_x78pr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="InfoOverlayDarken/Player/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "NAME"
+horizontal_alignment = 1
+
+[node name="Rank" type="Label" parent="InfoOverlayDarken/Player/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "RANK"
+horizontal_alignment = 1
+
+[node name="Avatar" type="HBoxContainer" parent="InfoOverlayDarken/Player/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ProfilePic2" type="TextureRect" parent="InfoOverlayDarken/Player/HBoxContainer/VBoxContainer/Avatar"]
+layout_mode = 2
+texture = ExtResource("3_x78pr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Avatar Name" type="Label" parent="InfoOverlayDarken/Player/HBoxContainer/VBoxContainer/Avatar"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "AVATAR"
+text_overrun_behavior = 3
+
+[node name="Group" type="HBoxContainer" parent="InfoOverlayDarken/Player/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GroupImg" type="TextureRect" parent="InfoOverlayDarken/Player/HBoxContainer/VBoxContainer/Group"]
+layout_mode = 2
+texture = ExtResource("3_x78pr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="GroupName" type="Label" parent="InfoOverlayDarken/Player/HBoxContainer/VBoxContainer/Group"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "No Group"
+text_overrun_behavior = 3
+
+[node name="Badge" type="HBoxContainer" parent="InfoOverlayDarken/Player/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Badgeimg" type="TextureRect" parent="InfoOverlayDarken/Player/HBoxContainer/VBoxContainer/Badge"]
+layout_mode = 2
+texture = ExtResource("3_x78pr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BadgeName" type="Label" parent="InfoOverlayDarken/Player/HBoxContainer/VBoxContainer/Badge"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Badge"
+text_overrun_behavior = 3
+
+[node name="Details" type="VBoxContainer" parent="InfoOverlayDarken/Player/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TabContainer" type="TabContainer" parent="InfoOverlayDarken/Player/HBoxContainer/Details"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Activity" type="Panel" parent="InfoOverlayDarken/Player/HBoxContainer/Details/TabContainer"]
+layout_mode = 2
+
+[node name="Avatars" type="Panel" parent="InfoOverlayDarken/Player/HBoxContainer/Details/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Worlds" type="Panel" parent="InfoOverlayDarken/Player/HBoxContainer/Details/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Props" type="Panel" parent="InfoOverlayDarken/Player/HBoxContainer/Details/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InfoOverlayDarken/Player/HBoxContainer/Details"]
+layout_mode = 2
+alignment = 2
+
+[node name="Friend Unfriend" type="Button" parent="InfoOverlayDarken/Player/HBoxContainer/Details/HBoxContainer"]
+layout_mode = 2
+text = "Friend"
+
+[node name="Favorite Unfavorite" type="Button" parent="InfoOverlayDarken/Player/HBoxContainer/Details/HBoxContainer"]
+layout_mode = 2
+text = "Favorite"
+
+[node name="Button" type="Button" parent="InfoOverlayDarken/Player"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -59.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 29.0
+text = "Back"
 
 [connection signal="tab_changed" from="OutlineMargin/TabBar" to="OutlineMargin/TabBar" method="_on_tab_changed"]
 [connection signal="pressed" from="OutlineMargin/TabBar/Home/HBoxContainer/Active Worlds/Button" to="OutlineMargin/TabBar/Home" method="UpdateTab"]

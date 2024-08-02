@@ -33,6 +33,15 @@ FrontStart="*res://Frontend/FrontStart.gd"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
+[debug]
+
+settings/crash_handler/message.editor="Please include this when reporting the bug on: https://github.com/Malthbern/CVRY/issues"
+
+[display]
+
+window/energy_saving/keep_screen_on=false
+window/handheld/orientation=1
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/SystemTrayEnabler/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg", "res://addons/toastparty/plugin.cfg")
