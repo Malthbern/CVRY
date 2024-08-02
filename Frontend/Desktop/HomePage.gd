@@ -53,7 +53,7 @@ func populate_userdata():
 	
 	# Profile
 	userlabel.text = LoginInfo.username
-	profileimage.texture = await Cache.get_image(JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.imageUrl, Cache.ITEM_TYPES.USER)
+	profileimage.texture = await Cache.get_image(JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.imageUrl, Cache.ITEM_TYPES.USER, LoginInfo.userid)
 	# Badge
 	badgelabel.text = JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.featuredBadge.name
 	badgeimage.texture = await Cache.get_image(JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.featuredBadge.image, Cache.ITEM_TYPES.BADGE)

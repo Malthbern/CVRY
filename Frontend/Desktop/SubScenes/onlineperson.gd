@@ -12,7 +12,7 @@ func setuser():
 	var user = JSON.parse_string(res[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8())
 	
 	tooltip_text = user.data.name
-	image.texture = await Cache.get_image(user.data.imageUrl, Cache.ITEM_TYPES.USER)
+	image.texture = await Cache.get_image(user.data.imageUrl, Cache.ITEM_TYPES.USER, id)
 
 
 func _on_pressed():

@@ -8,3 +8,6 @@ res://Frontend/Desktop/SubScenes/instance_pane.tscn
 res://Frontend/Desktop/SubScenes/onlineperson.tscn
 res://Frontend/Desktop/SubScenes/active_friend_panel.tscn
 res://Frontend/Desktop/SubScenes/Friend.tscn
+res://Backend/cache.gd
+res://Frontend/Desktop/HomePage.gd
+res://Frontend/Desktop/SubScenes/onlineperson.gd
