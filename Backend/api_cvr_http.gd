@@ -101,26 +101,26 @@ func Authenticate(credentialUser:String, credentialSecret:String, Authtype:int =
 #get and set functions
 
 #stats
-func GetUserStats(): return Get('/public/userstats',false)
+func GetUserStats(): return await parse_response(Get('/public/userstats',false))
 
 #friends
-func GetMyFriends(): return Get('/friends')
-func GetMyFriendRequests(): return Get('/friends/requests')
+func GetMyFriends(): return await parse_response(Get('/friends'))
+func GetMyFriendRequests(): return await parse_response(Get('/friends/requests'))
 
 #users
-func GetUserById(id:String): return Get('/users/' + id)
-func GetUserPublicAvatars(id:String): return Get('/users/' + id + '/avatars')
-func GetUserPublicWorlds(id:String): return Get('/users/' + id + '/worlds')
-func GetUserPublicProps(id:String): return Get('/users/' + id + '/spawnables')
+func GetUserById(id:String): return await parse_response(Get('/users/' + id))
+func GetUserPublicAvatars(id:String): return await parse_response(Get('/users/' + id + '/avatars'))
+func GetUserPublicWorlds(id:String): return await parse_response(Get('/users/' + id + '/worlds'))
+func GetUserPublicProps(id:String): return await parse_response(Get('/users/' + id + '/spawnables'))
 func SetFriendNote(id:String , usernote:String): return Post('/users/' + id + 'note', {note = usernote})
 
 #avatars
-func GetMyAvatars(): return  Get('/avatars')
-func GetAvatarById(id:String): return Get('/avatars/' + id)
+func GetMyAvatars(): return  await parse_response(Get('/avatars'))
+func GetAvatarById(id:String): return await parse_response(Get('/avatars/' + id))
 
 #categorys
 #get
-func GetCategories(): return Get('/categories')
+func GetCategories(): return await parse_response(Get('/categories'))
 #set
 func SetCategories(type:String, id:String, categoryIds:PackedStringArray):
 	var response : Array = Post('/categories/assign', {Uuid = id, CategoryType = type, Categories = categoryIds})
@@ -132,17 +132,27 @@ func SetPropCategories(propId:String, categoryIds:PackedStringArray): SetCategor
 func SetWorldCategories(worldId:String, categoryIds:PackedStringArray): SetCategories(CATEGORY_TYPES.WORLDS, worldId, categoryIds)
 
 #worlds
-func GetWorldById(id:String): return Get('/worlds/' + id)
-func GetWorldMetsById(id:String): return Get('/worlds/' + id + '/meta')
-func GetWorldsByCategory(id:String): return Get('/worlds/list/' + id + '?page=0&direction=0', true, 2)
-func SetWorldAsHome(id:String): return Get('/worlds/' + id + '/sethome')
+func GetWorldById(id:String): return await parse_response(Get('/worlds/' + id))
+func GetWorldMetsById(id:String): return await parse_response(Get('/worlds/' + id + '/meta'))
+func GetWorldsByCategory(id:String): return await parse_response(Get('/worlds/list/' + id + '?page=0&direction=0', true, 2))
+func SetWorldAsHome(id:String): return await parse_response(Get('/worlds/' + id + '/sethome'))
 
 #props
-func GetProps(): return Get('/spawnables')
-func GetPropById(id:String): return Get('/spawnables/' + id)
+func GetProps(): return await parse_response(Get('/spawnables'))
+func GetPropById(id:String): return await parse_response(Get('/spawnables/' + id))
 
 #instances
-func GetInstanceById(id:String): return Get('/instances/' + id)
+func GetInstanceById(id:String): return await parse_response(Get('/instances/' + id))
 
 #search
-func Search(term:String): return Get('/seatch' + term)
+func Search(term:String): return await parse_response(Get('/seatch' + term))
+
+#function to streamline requests
+func parse_response(Get_Function:HTTPRequest):
+	var tx = await Get_Function.request_completed
+	Get_Function.queue_free()
+	if tx[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE] != 200:
+		printerr("HTTP Error: Request for %s failed with code %s" % [tx.name, tx[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]])
+		return null
+	return JSON.parse_string(tx[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8())
+	pass

@@ -22,9 +22,7 @@ func updateui():
 			childpanel = worldcontainer.find_child(friend.Instance.Id, false, false)
 		
 		if childpanel == null && friend.Instance != null:
-			var req = ApiCvrHttp.GetUserById(friend.Id)
-			var res = await req.request_completed
-			var user = JSON.parse_string(res[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8())
+			var user = await ApiCvrHttp.GetUserById(friend.Id)
 			childpanel = await createworldpannel(friend.Instance.Id, friend.Instance.Name, friend.Instance.Privacy, user.data.instance.world.imageUrl, user.data.instance.world.id)
 		
 		if childpanel != null:

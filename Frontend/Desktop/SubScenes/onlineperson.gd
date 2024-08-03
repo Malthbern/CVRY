@@ -6,10 +6,7 @@ extends Button
 @export var world:String
 
 func setuser():
-	var req = ApiCvrHttp.GetUserById(id)
-	var res = await req.request_completed
-	req.queue_free()
-	var user = JSON.parse_string(res[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8())
+	var user = await ApiCvrHttp.GetUserById(id)
 	
 	tooltip_text = user.data.name
 	image.texture = await Cache.get_image(user.data.imageUrl, Cache.ITEM_TYPES.USER, id)

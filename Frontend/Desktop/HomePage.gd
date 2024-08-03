@@ -46,22 +46,20 @@ func refreash():
 	populate_active()
 
 func populate_userdata():
-	var request = ApiCvrHttp.GetUserById(LoginInfo.userid)
-	var userinfo = await request.request_completed
-	request.queue_free()
+	var userinfo = await ApiCvrHttp.GetUserById(LoginInfo.userid)
 	
 	
 	# Profile
 	userlabel.text = LoginInfo.username
-	profileimage.texture = await Cache.get_image(JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.imageUrl, Cache.ITEM_TYPES.USER, LoginInfo.userid)
+	profileimage.texture = await Cache.get_image(userinfo.data.imageUrl, Cache.ITEM_TYPES.USER, LoginInfo.userid)
 	# Badge
-	badgelabel.text = JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.featuredBadge.name
-	badgeimage.texture = await Cache.get_image(JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.featuredBadge.image, Cache.ITEM_TYPES.BADGE)
+	badgelabel.text = userinfo.data.featuredBadge.name
+	badgeimage.texture = await Cache.get_image(userinfo.data.featuredBadge.image, Cache.ITEM_TYPES.BADGE)
 	# Rank
-	ranklabel.text = JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.rank
+	ranklabel.text = userinfo.data.rank
 	# Avatar
-	avatarlabel.text = JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.avatar.name
-	avatarimage.texture = await Cache.get_image(JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.avatar.imageUrl, Cache.ITEM_TYPES.AVATAR, JSON.parse_string(userinfo[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.avatar.id)
+	avatarlabel.text = userinfo.data.avatar.name
+	avatarimage.texture = await Cache.get_image(userinfo.data.avatar.imageUrl, Cache.ITEM_TYPES.AVATAR, userinfo.data.avatar.id)
 
 func depopulate_active():
 	for child in activecontainer.get_children():
@@ -69,11 +67,9 @@ func depopulate_active():
 	return
 
 func populate_active():
-	var reqworlds : HTTPRequest = ApiCvrHttp.GetWorldsByCategory(WorldCat.Active)
-	var activeworlds = await reqworlds.request_completed
-	reqworlds.queue_free()
+	var activeworlds = await ApiCvrHttp.GetWorldsByCategory(WorldCat.Active)
 	
-	for world in JSON.parse_string(activeworlds[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8()).data.entries:
+	for world in activeworlds.data.entries:
 		var pane = instancepane.instantiate()
 		activecontainer.add_child(pane)
 		pane.playercount = world.playerCount

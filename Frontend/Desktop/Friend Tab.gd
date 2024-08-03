@@ -14,9 +14,7 @@ var friends
 
 func populatefriends():
 	print_debug('Populating friends list')
-	var req = ApiCvrHttp.GetMyFriends()
-	var res = await req.request_completed
-	friends = JSON.parse_string(res[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8())
+	friends = await ApiCvrHttp.GetMyFriends()
 	print_debug('Recieved %s friends' % [friends.data.size()])
 	for friend in friends.data:
 		var panel = friendpannel.instantiate()
