@@ -4,10 +4,18 @@ extends Control
 @onready var passinput = $VBoxContainer/Password
 @onready var warn = $VBoxContainer/Label
 
+@onready var tosagree = $VBoxContainer/TOSAgree
+@onready var remember =$VBoxContainer/RememberMe
+
 var request:HTTPRequest
 
 func _on_button_pressed():
-	request = ApiCvrHttp.Authenticate(emailinput.text, passinput.text)
+	if !tosagree.button_pressed:
+		warn.text = 'You must agree to the TOS to log in'
+		warn.visible = true
+		return
+	
+	request = await ApiCvrHttp.Authenticate(emailinput.text, passinput.text)
 	
 	var res = await request.request_completed
 	request.queue_free()
@@ -24,7 +32,7 @@ func _on_button_pressed():
 			LoginInfo.logintoken = parsedstring.data.accessKey
 			LoginInfo.userid = parsedstring.data.userId
 			LoginInfo.loginvalid = true
-			LoginInfo.savelogininfo()
+			if remember.button_pressed: LoginInfo.savelogininfo()
 			WebSocket.PrepWS()
 			FrontStart.loadUI(OS.get_name())
 			

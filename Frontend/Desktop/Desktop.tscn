@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cju7v1u4c130d"]
+[gd_scene load_steps=14 format=3 uid="uid://cju7v1u4c130d"]
 
 [ext_resource type="Theme" uid="uid://bxthtt0n6qcta" path="res://CVR.tres" id="1_fs04x"]
 [ext_resource type="Script" path="res://Frontend/Desktop/Clock.gd" id="2_wcfpt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bqt3ukcfoh2fl" path="res://Frontend/Image Loading.png" id="3_x78pr"]
 [ext_resource type="Script" path="res://Frontend/Desktop/settingspanel.gd" id="5_1p88j"]
 [ext_resource type="Script" path="res://Frontend/Desktop/SubScenes/OnlineFriendManager.gd" id="5_m8a02"]
+[ext_resource type="Script" path="res://Frontend/Desktop/NotificationHandler.gd" id="6_hmdwd"]
 [ext_resource type="Script" path="res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd" id="6_nxqxy"]
 [ext_resource type="Texture2D" uid="uid://c65ouieij6jjk" path="res://Frontend/Under Construction.png" id="6_vueme"]
 [ext_resource type="Script" path="res://Frontend/Desktop/Friend Tab.gd" id="8_ep1r4"]
@@ -75,14 +76,14 @@ grow_vertical = 2
 [node name="TabBar" type="TabContainer" parent="OutlineMargin" node_paths=PackedStringArray("Tabs")]
 layout_mode = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 script = ExtResource("3_q3riv")
 Tabs = [NodePath("Home"), NodePath("Friends"), NodePath("Worlds"), NodePath("Avatars"), NodePath("Props"), NodePath("Search"), NodePath("Settings")]
 
 [node name="Home" type="Panel" parent="OutlineMargin/TabBar"]
-visible = false
 layout_mode = 2
 script = ExtResource("3_8smlt")
+metadata/_tab_index = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="OutlineMargin/TabBar/Home"]
 layout_mode = 1
@@ -228,6 +229,7 @@ offset_right = 2.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("6_hmdwd")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Notifications/notifpannel"]
 layout_mode = 1
@@ -245,14 +247,6 @@ offset_bottom = -0.0669556
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="Under Construction" type="TextureRect" parent="OutlineMargin/TabBar/Home/HBoxContainer/User+notifications/Notifications/notifpannel/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 420)
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("6_vueme")
-expand_mode = 3
-stretch_mode = 4
 
 [node name="Active Worlds" type="Panel" parent="OutlineMargin/TabBar/Home/HBoxContainer"]
 layout_mode = 2
@@ -403,9 +397,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Friends" type="Panel" parent="OutlineMargin/TabBar" node_paths=PackedStringArray("containers")]
+visible = false
 layout_mode = 2
 script = ExtResource("8_ep1r4")
 containers = [NodePath("TabContainer/All/ScrollContainer/Friend Container"), NodePath("TabContainer/Favorites/ScrollContainer/Friend Container")]
+metadata/_tab_index = 1
 
 [node name="TabContainer" type="TabContainer" parent="OutlineMargin/TabBar/Friends"]
 layout_mode = 1
@@ -422,6 +418,7 @@ current_tab = 1
 [node name="All" type="Panel" parent="OutlineMargin/TabBar/Friends/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Friends/TabContainer/All"]
 layout_mode = 1
@@ -443,6 +440,7 @@ size_flags_vertical = 3
 
 [node name="Favorites" type="Panel" parent="OutlineMargin/TabBar/Friends/TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Friends/TabContainer/Favorites"]
 layout_mode = 1
@@ -482,6 +480,7 @@ stretch_mode = 4
 [node name="Worlds" type="Panel" parent="OutlineMargin/TabBar"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 2
 
 [node name="Under Construction" type="TextureRect" parent="OutlineMargin/TabBar/Worlds"]
 layout_mode = 1
@@ -503,6 +502,7 @@ stretch_mode = 4
 [node name="Avatars" type="Panel" parent="OutlineMargin/TabBar"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 3
 
 [node name="Under Construction" type="TextureRect" parent="OutlineMargin/TabBar/Avatars"]
 layout_mode = 1
@@ -524,6 +524,7 @@ stretch_mode = 4
 [node name="Props" type="Panel" parent="OutlineMargin/TabBar"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 4
 
 [node name="Under Construction" type="TextureRect" parent="OutlineMargin/TabBar/Props"]
 layout_mode = 1
@@ -545,6 +546,7 @@ stretch_mode = 4
 [node name="Search" type="Panel" parent="OutlineMargin/TabBar"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 5
 
 [node name="Under Construction" type="TextureRect" parent="OutlineMargin/TabBar/Search"]
 layout_mode = 1
@@ -567,6 +569,7 @@ stretch_mode = 4
 visible = false
 layout_mode = 2
 script = ExtResource("5_1p88j")
+metadata/_tab_index = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Settings"]
 layout_mode = 1
@@ -735,21 +738,26 @@ size_flags_horizontal = 3
 [node name="TabContainer" type="TabContainer" parent="InfoOverlayDarken/Player/HBoxContainer/Details"]
 layout_mode = 2
 size_flags_vertical = 3
+current_tab = 0
 
 [node name="Activity" type="Panel" parent="InfoOverlayDarken/Player/HBoxContainer/Details/TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="Avatars" type="Panel" parent="InfoOverlayDarken/Player/HBoxContainer/Details/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="Worlds" type="Panel" parent="InfoOverlayDarken/Player/HBoxContainer/Details/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 2
 
 [node name="Props" type="Panel" parent="InfoOverlayDarken/Player/HBoxContainer/Details/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="InfoOverlayDarken/Player/HBoxContainer/Details"]
 layout_mode = 2

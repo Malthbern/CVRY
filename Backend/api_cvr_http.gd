@@ -38,12 +38,12 @@ func Post(url, data, authenticated = true, apiVersion = 1):
 		'CompatibleVersions: 0,1,2'
 		]
 	else:
-		headers = ["accept: application/json", "Content-Type: application/json", Utils.GetUserAgent]
+		headers = ["accept: application/json", "Content-Type: application/json", Utils.GetUserAgent,]
 	
 	var http = HTTPRequest.new()
 	add_child(http)
 	http.name = url
-	http.request(APIAddress +'/%s' % [apiVersion] + url + '?acceptTos=false', headers, HTTPClient.METHOD_POST, JSON.stringify(data, "\t", false, true))
+	http.request(APIAddress +'/%s' % [apiVersion] + url + '?acceptTos=false', headers, HTTPClient.METHOD_POST, JSON.stringify(data, '', false, true))
 	return http
 
 #api constants
@@ -95,7 +95,7 @@ func Authenticate(credentialUser:String, credentialSecret:String, Authtype:int =
 		authType = Authtype
 	}
 	
-	return Post('/users/auth', authdata, false)
+	return await Post('/users/auth', authdata, false)
 	
 
 #get and set functions
@@ -155,4 +155,3 @@ func parse_response(Get_Function:HTTPRequest):
 		printerr("HTTP Error: Request for %s failed with code %s" % [tx.name, tx[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]])
 		return null
 	return JSON.parse_string(tx[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8())
-	pass

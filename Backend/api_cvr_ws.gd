@@ -6,13 +6,15 @@ var currentaccesskey:String
 var socket:WebSocketPeer
 var previouscosket:WebSocketPeer
 
+var reconnectattempts:int
+
 var wsheaders:PackedStringArray = ['MatureContentDlc: true',
 	'Platform: pc_standalone',
 	'CompatibleVersions: 0,1,2',
 ]
 
 const websocketaddress = 'wss://api.abinteractive.net/1/users/ws'
-const maxreconnectattempt = 5
+const maxreconnectattempt:int = 5
 
 # Websocket type constants
 const RESPONSE_TYPE:Dictionary = {
@@ -116,7 +118,17 @@ func _process(delta):
 		return
 	
 	if socket.get_ready_state() == WebSocketPeer.STATE_CLOSED:
-		ConnectWebsocket()
+		if reconnectattempts < maxreconnectattempt:
+			reconnectattempts += 1
+			ConnectWebsocket()
+	
+	if reconnectattempts < 0:
+		var i
+		if i >= 60:
+			i = 0
+			reconnectattempts -= 1
+		i += delta
+	
 	while socket.get_available_packet_count():
 		process_packet(socket.get_packet())
 

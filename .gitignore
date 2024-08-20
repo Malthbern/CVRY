@@ -11,4 +11,4 @@ export_presets.cfg
 data_*/
 
 #ignored for security
-Backend/savecrypto.gd
+parsednonesense

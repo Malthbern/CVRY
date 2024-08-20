@@ -47,4 +47,3 @@ func removeuser(user:Dictionary):
 	
 	find.queue_free()
 	
-

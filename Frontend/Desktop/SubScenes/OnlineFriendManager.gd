@@ -1,7 +1,7 @@
 extends Node
 
 @onready var worldcontainer = $"Online Panel/ScrollContainer/VBoxContainer"
-@onready var notconnected = $"Online Panel/ScrollContainer/VBoxContainer/OnlineNotConnected"
+#@onready var notconnected = $"Online Panel/ScrollContainer/VBoxContainer/OnlineNotConnected"
 @onready var private = $"Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel"
 
 var panel = load("res://Frontend/Desktop/SubScenes/active_friend_panel.tscn")

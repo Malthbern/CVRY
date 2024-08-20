@@ -28,4 +28,3 @@ func launchSystemTray() -> void:
 	if OS.has_feature("release") and OS.has_feature("windows"):
 		var SystemTrayLauncher = path.path_join("TrayHandler.exe")
 		OS.shell_open(SystemTrayLauncher)
-

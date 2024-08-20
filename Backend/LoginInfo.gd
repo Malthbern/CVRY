@@ -48,7 +48,7 @@ func _ready():
 	autologin()
 
 func autologin():
-	request = ApiCvrHttp.Authenticate(email, password)
+	request = await ApiCvrHttp.Authenticate(email, password)
 	
 	var res = await request.request_completed
 	request.queue_free()
@@ -74,41 +74,3 @@ func autologin():
 			printerr("Some unexpected error occoured while loging in!")
 		
 	
-
-#contents of "res://Backend/savecrypto.gd"
-
-#const ekey = 'PUT SOME PASSWORD HERE'
-#
-#func encrypt_and_save(Data:Dictionary, Path:String):
-#	var file = FileAccess.open_encrypted_with_pass(Path, FileAccess.WRITE, ekey)
-#	if file == null:
-#		print(FileAccess.get_open_error())
-#		file.close()
-#		return
-#	
-#	var json_string = JSON.stringify(Data, "\t")
-#	
-#	file.store_string(json_string)
-#	file.close()
-#	return
-#
-#func decrypt_and_read(Path:String):
-#	print_debug('Decrypting and reading login info')
-#	if FileAccess.file_exists(Path):
-#		var file = FileAccess.open_encrypted_with_pass(Path, FileAccess.READ, ekey)
-#		if file == null:
-#			print(FileAccess.get_open_error())
-#			return null
-#		var content = file.get_as_text()
-#		file.close()
-#		
-#		var data = JSON.parse_string(content)
-#		if data == null:
-#			printerr("Cannot parse %s as json_string: (%s)" % [Path, content])
-#			return null
-#		return data
-#		
-#	else:
-#		printerr("Cannot open non-existant file at %s" % [Path])
-#		return "new"
-#	
