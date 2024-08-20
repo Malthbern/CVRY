@@ -32,9 +32,10 @@ func _ready():
 	print_debug('Getting login info ready')
 	var json_return = SaveCrypto.decrypt_and_read(SAVE_DIR+SAVE_NAME)
 	if json_return == null:
-		printerr("Something when horriably wrong!: %s" % [json_return])
-		get_tree().quit()
-		return #just in case, we dont want to go further
+		printerr("Could not open login file pushing to login screen")
+		FrontStart.loadUI('Login')
+		return
+		
 	elif json_return is String && json_return == "new":
 		FrontStart.loadUI('Login')
 		return

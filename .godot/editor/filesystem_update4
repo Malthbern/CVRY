@@ -1,7 +1,5 @@
 res://Frontend/Login/Login.tscn
 res://CVR.tres
-res://Frontend/URLOpen.gd
-res://Frontend/Login/Login.gd
 res://Frontend/Startup/Startup.tscn
 res://Frontend/Desktop/Desktop.tscn
 res://Frontend/Mobile/Mobile.tscn
@@ -11,4 +9,3 @@ res://Frontend/Desktop/SubScenes/active_friend_panel.tscn
 res://Frontend/Desktop/SubScenes/Friend.tscn
 res://Frontend/Desktop/SubScenes/friend_request_box.tscn
 res://Backend/LoginInfo.gd
-res://Backend/savecrypto.gd
