@@ -12,3 +12,4 @@ data_*/
 
 #ignored for security
 parsednonesense
+.godot/export_credentials.cfg
