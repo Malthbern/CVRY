@@ -4,7 +4,7 @@ var settings = UserSettings.usersettingstemplate
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#settings = UserSettings.savedsettings
+	settings = UserSettings.savedsettings
 	pass
 
 func UpdateTab():

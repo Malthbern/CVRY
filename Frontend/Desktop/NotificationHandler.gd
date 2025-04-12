@@ -1,4 +1,4 @@
-extends Node
+extends Panel
 
 @onready var VCon = $ScrollContainer/VBoxContainer
 var friendrequest = load("res://Frontend/Desktop/SubScenes/friend_request_box.tscn")

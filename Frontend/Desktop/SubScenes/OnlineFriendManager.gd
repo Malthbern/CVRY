@@ -1,4 +1,4 @@
-extends Node
+extends Panel
 
 @onready var worldcontainer = $"Online Panel/ScrollContainer/VBoxContainer"
 #@onready var notconnected = $"Online Panel/ScrollContainer/VBoxContainer/OnlineNotConnected"
@@ -16,7 +16,8 @@ func updateui():
 		var childpanel
 		
 		for child in children:
-			child.removeuser(friend)
+			if child != null:
+				child.removeuser(friend)
 		
 		if friend.Instance != null:
 			childpanel = worldcontainer.find_child(friend.Instance.Id, false, false)

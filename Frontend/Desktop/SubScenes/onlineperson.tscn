@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://2c355x4w7xnt"]
 
-[ext_resource type="Script" path="res://Frontend/Desktop/SubScenes/onlineperson.gd" id="1_18juv"]
+[ext_resource type="Script" uid="uid://jsn04n3nj12u" path="res://Frontend/Desktop/SubScenes/onlineperson.gd" id="1_18juv"]
 [ext_resource type="Texture2D" uid="uid://bqt3ukcfoh2fl" path="res://Frontend/Image Loading.png" id="1_dr6ic"]
 
 [node name="Onlineperson" type="Button"]

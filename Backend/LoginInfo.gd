@@ -66,6 +66,8 @@ func autologin():
 			WebSocket.PrepWS()
 			FrontStart.loadUI(OS.get_name())
 			
+			print_debug(await ApiCvrHttp.GetUserById("de8c9d27-6091-af5d-dd66-c2df3c370bbe"))
+			
 		401:
 			print_debug("Auto-Login out of date, moving to manual login")
 			FrontStart.loadUI('Login')

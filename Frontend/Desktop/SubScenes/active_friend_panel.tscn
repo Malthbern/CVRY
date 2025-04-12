@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://br5mygfofl780"]
 
-[ext_resource type="Script" path="res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd" id="1_8v8b6"]
+[ext_resource type="Script" uid="uid://bpkkdv6g6xm8k" path="res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd" id="1_8v8b6"]
 [ext_resource type="Texture2D" uid="uid://bqt3ukcfoh2fl" path="res://Frontend/Image Loading.png" id="1_tkd7k"]
 
 [node name="ActiveFriendPanel" type="Panel"]

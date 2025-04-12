@@ -13,12 +13,16 @@ config_version=5
 config/name="CVR-Y"
 config/version="0.0.2_DEV"
 run/main_scene="res://Frontend/Startup/Startup.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="res://Frontend/CVRYicon.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+boot_splash/image="res://Frontend/CVRYicon.png"
 config/icon="res://Frontend/CVRYicon.png"
+
+[audio]
+
+general/text_to_speech=true
 
 [autoload]
 
@@ -50,10 +54,14 @@ project/assembly_name="CVR-Y"
 
 enabled=PackedStringArray("res://addons/SystemTrayEnabler/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg", "res://addons/toastparty/plugin.cfg")
 
+[gui]
+
+theme/custom="uid://bxthtt0n6qcta"
+
 [input_devices]
 
-pointing/emulate_touch_from_mouse=true
 pointing/android/enable_long_press_as_right_click=true
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 

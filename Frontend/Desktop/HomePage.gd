@@ -1,4 +1,4 @@
-extends Node
+extends Panel
 
 const WorldCat : Dictionary = {
 	Active =  'wrldactive',

@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddcm02182b82j"]
 
-[ext_resource type="Script" path="res://Frontend/Desktop/SubScenes/Friend.gd" id="1_4j8tw"]
-[ext_resource type="Texture2D" uid="uid://bqt3ukcfoh2fl" path="res://Frontend/Image Loading.png" id="1_y1xdi"]
+[ext_resource type="Script" uid="uid://xjj8c6qovvwe" path="res://Frontend/Desktop/SubScenes/ObjectPresenter.gd" id="1_lu15n"]
+[ext_resource type="Texture2D" uid="uid://bqt3ukcfoh2fl" path="res://Frontend/Image Loading.png" id="2_v7874"]
 
 [node name="Friend" type="Panel"]
 custom_minimum_size = Vector2(150, 190)
-script = ExtResource("1_4j8tw")
+script = ExtResource("1_lu15n")
 
 [node name="FriendPFP" type="TextureRect" parent="."]
 layout_mode = 1
@@ -16,7 +16,7 @@ anchor_right = 0.92
 anchor_bottom = 0.726
 offset_top = 0.0299997
 offset_bottom = 0.0599976
-texture = ExtResource("1_y1xdi")
+texture = ExtResource("2_v7874")
 expand_mode = 5
 stretch_mode = 4
 
@@ -35,7 +35,7 @@ text = "ABCDEFGHIJKLMNOP"
 horizontal_alignment = 1
 text_overrun_behavior = 3
 
-[node name="Button" type="Button" parent="."]
+[node name="Details" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.033
@@ -47,3 +47,5 @@ offset_top = 0.0699921
 offset_right = -0.0500031
 offset_bottom = -0.0100098
 text = "Details"
+
+[connection signal="pressed" from="Details" to="." method="_on_details_pressed"]

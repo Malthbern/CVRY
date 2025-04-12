@@ -1,11 +1,11 @@
-res://Frontend/Login/Login.tscn
-res://CVR.tres
-res://Frontend/Startup/Startup.tscn
 res://Frontend/Desktop/Desktop.tscn
-res://Frontend/Mobile/Mobile.tscn
+res://CVR.tres
+res://Frontend/Desktop/SubScenes/active_friend_panel.tscn
+res://Frontend/Desktop/SubScenes/ObjectPresenter.tscn
+res://Frontend/Desktop/SubScenes/friend_request_box.tscn
 res://Frontend/Desktop/SubScenes/instance_pane.tscn
 res://Frontend/Desktop/SubScenes/onlineperson.tscn
-res://Frontend/Desktop/SubScenes/active_friend_panel.tscn
-res://Frontend/Desktop/SubScenes/Friend.tscn
-res://Frontend/Desktop/SubScenes/friend_request_box.tscn
-res://Backend/LoginInfo.gd
+res://Frontend/Desktop/SubScenes/Detail Overlays/player_details.tscn
+res://Frontend/Desktop/SubScenes/Search.gd
+res://Frontend/Desktop/SubScenes/OnlineFriendManager.gd
+res://Backend/api_cvr_http.gd

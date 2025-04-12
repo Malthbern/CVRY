@@ -56,6 +56,7 @@ const PACKED_RESPONSE : Dictionary = {
 
 const CATEGORY_TYPES : Dictionary = {
 	AVATARS = 'Avatars',
+	USER = 'User',
 	FRIENDS = 'Friends',
 	PROPS = 'Props',
 	WORLDS = 'Worlds',
@@ -79,8 +80,6 @@ const PrivacyLevel : Dictionary = {
 @export var AuthenticatedHeaders : Dictionary = {
 	Username = 'placeholder',
 	AccessKey = 'placeholder',
-	MatureContentDlc = 'true',
-	Platform = 'pc_standalone',
 	CompatibleVersions = '0,1,2'
 }
 
@@ -145,7 +144,7 @@ func GetPropById(id:String): return await parse_response(Get('/spawnables/' + id
 func GetInstanceById(id:String): return await parse_response(Get('/instances/' + id))
 
 #search
-func Search(term:String): return await parse_response(Get('/seatch' + term))
+func Search(term:String): return await parse_response(Get('/search/' + term))
 
 #function to streamline requests
 func parse_response(Get_Function:HTTPRequest):
