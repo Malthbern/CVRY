@@ -1,3 +1,4 @@
+Label
 FlowContainer
 GridContainer
 ScrollContainer
@@ -9,7 +10,5 @@ Button
 HBoxContainer
 LineEdit
 TextEdit
-Label
 TextureRect
 Control
-CheckBox

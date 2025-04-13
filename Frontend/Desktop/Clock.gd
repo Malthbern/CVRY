@@ -1,4 +1,4 @@
-extends LineEdit
+extends Label
 
 var datetime
 var time

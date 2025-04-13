@@ -1,6 +1,6 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1744425881
-CVR.tres::Theme::4040447250925021790::1744422408::0::1::::<><><>0<>0<><>::uid://do3vcpu0qjkt7::::res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres<>uid://c7ea6axe3jeqi::::res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres
+::res://::1744439277
+CVR.tres::Theme::4040447250925021790::1744425887::0::1::::<><><>0<>0<><>::uid://do3vcpu0qjkt7::::res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres<>uid://c7ea6axe3jeqi::::res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres
 export_presets.cfg::TextFile/TextFile::-1::1739846451::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::6093165924295809368::1714907241::1741228190::1::::<><><>0<>0<>0c3b79983d5c4441b5152e59c951a136<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 plugin-icon.png::CompressedTexture2D/CompressedTexture2D::4712544778492425097::1716181033::1741228191::1::::<><><>0<>0<>fc868b1e9019bd74af11a9f8a90b8266<>res://.godot/imported/plugin-icon.png-d5e5b9f619edd710c80d5d4fad724cd3.ctex::
@@ -49,8 +49,8 @@ toast_label_style.tres::StyleBoxFlat/StyleBoxFlat::3199553429173375896::17160651
 ::res://assetlibData/::1741228190
 libIcon.png::CompressedTexture2D/CompressedTexture2D::1409565651609743356::1716065393::1741228190::1::::<><><>0<>0<>1c1d555459a2b8e50e9c63580e3ca485<>res://.godot/imported/libIcon.png-f498c0d41966d51e209ff8c040c81616.ctex::
 TrayItem.png::CompressedTexture2D/CompressedTexture2D::8640756255433012286::1716065393::1741228190::1::::<><><>0<>0<>ee3c227b059065252d5b170a94957884<>res://.godot/imported/TrayItem.png-b40994e50045871a050992a8a04f5bff.ctex::
-::res://Backend/::1744423032
-api_cvr_http.gd::GDScript::1868244536425029727::1744423032::0::1::::<>Node<><>0<>0<><>::
+::res://Backend/::1744426972
+api_cvr_http.gd::GDScript::1868244536425029727::1744426972::0::1::::<>Node<><>0<>0<><>::
 api_cvr_ws.gd::GDScript/GDScript::82645827957960188::1735522164::0::1::::<>Node<><>0<>0<><>::
 cache.gd::GDScript/GDScript::932580133983813893::1735522164::0::1::::<>Node<><>0<>0<><>::
 LoginInfo.gd::GDScript/GDScript::1453786029425229403::1739262584::0::1::::<>Node<><>0<>0<><>::
@@ -70,28 +70,28 @@ orange-error-icon-0.png::CompressedTexture2D/CompressedTexture2D::75376539614626
 Under Construction.png::CompressedTexture2D/CompressedTexture2D::7011513033306586088::1718617223::1741228191::1::::<><><>0<>0<>a64a3838d1b68bfc2d834c9850aabf41<>res://.godot/imported/Under Construction.png-7fe61dba49f567ea976e85c98c41a78a.ctex::
 URLOpen.gd::GDScript/GDScript::6018557653813906738::1724144767::0::1::::<>Button<><>0<>0<><>::
 UserSettings.gd::GDScript/GDScript::8382545144083643591::1715371590::0::1::::<>Node<><>0<>0<><>::
-::res://Frontend/Desktop/::1744425869
-Clock.gd::GDScript::6390187296683399654::1744422750::0::1::::<>LineEdit<><>0<>0<><>::
-Desktop.tscn::PackedScene::5447810358474765909::1744425869::0::1::::<><><>0<>0<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://cxbpplsld5l3c::::res://Frontend/Desktop/Clock.gd<>uid://dwsrtkco2u67n::::res://Frontend/Desktop/HomePage.gd<>uid://dkfps78spmwb1::::res://Frontend/Desktop/MainTabController.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png<>uid://duuum5ml7y8nt::::res://Frontend/Desktop/settingspanel.gd<>uid://jjc0r4dih544::::res://Frontend/Desktop/SubScenes/OnlineFriendManager.gd<>uid://c2dxf6qtpyfwf::::res://Frontend/Desktop/NotificationHandler.gd<>uid://bpkkdv6g6xm8k::::res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd<>uid://c65ouieij6jjk::::res://Frontend/Under Construction.png<>uid://eliat8lyo2bf::::res://Frontend/Desktop/Friend Tab.gd<>uid://dbh33xsb60dtj::::res://Frontend/Desktop/SubScenes/Search.gd<>uid://0ak6ndu1yhva::::res://Frontend/Desktop/SubScenes/Detail Overlays/player_details.tscn
-Friend Tab.gd::GDScript::303950315243560483::1744424640::0::1::::<>Panel<><>0<>0<><>::
+::res://Frontend/Desktop/::1744428445
+Clock.gd::GDScript/GDScript::6390187296683399654::1744422750::0::1::::<>LineEdit<><>0<>0<><>::
+Desktop.tscn::PackedScene::5447810358474765909::1744428445::0::1::::<><><>0<>0<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://cxbpplsld5l3c::::res://Frontend/Desktop/Clock.gd<>uid://dwsrtkco2u67n::::res://Frontend/Desktop/HomePage.gd<>uid://dkfps78spmwb1::::res://Frontend/Desktop/MainTabController.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png<>uid://duuum5ml7y8nt::::res://Frontend/Desktop/settingspanel.gd<>uid://jjc0r4dih544::::res://Frontend/Desktop/SubScenes/OnlineFriendManager.gd<>uid://c2dxf6qtpyfwf::::res://Frontend/Desktop/NotificationHandler.gd<>uid://bpkkdv6g6xm8k::::res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd<>uid://c65ouieij6jjk::::res://Frontend/Under Construction.png<>uid://eliat8lyo2bf::::res://Frontend/Desktop/Friend Tab.gd<>uid://dbh33xsb60dtj::::res://Frontend/Desktop/SubScenes/Search.gd<>uid://0ak6ndu1yhva::::res://Frontend/Desktop/SubScenes/Detail Overlays/player_details.tscn
+Friend Tab.gd::GDScript/GDScript::303950315243560483::1744424640::0::1::::<>Panel<><>0<>0<><>::
 HomePage.gd::GDScript/GDScript::8741642058646424793::1744421040::0::1::::<>Panel<><>0<>0<><>::
 MainTabController.gd::GDScript/GDScript::7872417007975841124::1728718311::0::1::::<>TabContainer<><>0<>0<><>::
 NotificationHandler.gd::GDScript/GDScript::6675540352503402005::1744421155::0::1::::<>Panel<><>0<>0<><>::
 settingspanel.gd::GDScript/GDScript::8605563843085026033::1728717443::0::1::::<>Control<><>0<>0<><>::
-::res://Frontend/Desktop/SubScenes/::1744425789
+::res://Frontend/Desktop/SubScenes/::1744428277
 ActiveWorldPane.gd::GDScript/GDScript::289678482250527289::1735522163::0::1::::<>Node<><>0<>0<><>::
-active_friend_panel.tscn::PackedScene::3642334144635730979::1744425789::0::1::::<><><>0<>0<><>::uid://bpkkdv6g6xm8k::::res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
-friend_request_box.tscn::PackedScene::4096117128783300677::1744425789::0::1::::<><><>0<>0<><>::uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
-instance_pane.tscn::PackedScene::4280719234088986247::1744425789::0::1::::<><><>0<>0<><>::uid://eek7ynps203f::::res://Frontend/Desktop/SubScenes/ActiveWorldPane.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
-ObjectPresenter.gd::GDScript::1633528341277205644::1744425161::0::1::::<>Panel<><>0<>0<><>::
-ObjectPresenter.tscn::PackedScene::7374732046093236987::1744425789::0::1::::<><><>0<>0<><>::uid://xjj8c6qovvwe::::res://Frontend/Desktop/SubScenes/ObjectPresenter.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
-OnlineFriendManager.gd::GDScript/GDScript::650446009205573063::1744421155::0::1::::<>Panel<><>0<>0<><>::
+active_friend_panel.tscn::PackedScene::3642334144635730979::1744428277::0::1::::<><><>0<>0<><>::uid://bpkkdv6g6xm8k::::res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
+friend_request_box.tscn::PackedScene::4096117128783300677::1744428277::0::1::::<><><>0<>0<><>::uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
+instance_pane.tscn::PackedScene::4280719234088986247::1744428277::0::1::::<><><>0<>0<><>::uid://eek7ynps203f::::res://Frontend/Desktop/SubScenes/ActiveWorldPane.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
+ObjectPresenter.gd::GDScript/GDScript::1633528341277205644::1744425161::0::1::::<>Panel<><>0<>0<><>::
+ObjectPresenter.tscn::PackedScene::7374732046093236987::1744428277::0::1::::<><><>0<>0<><>::uid://xjj8c6qovvwe::::res://Frontend/Desktop/SubScenes/ObjectPresenter.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
+OnlineFriendManager.gd::GDScript::650446009205573063::1744426822::0::1::::<>Panel<><>0<>0<><>::
 OnlineFriendPannel.gd::GDScript/GDScript::3460510794307811780::1724119481::0::1::::<>Node<><>0<>0<><>::
 onlineperson.gd::GDScript/GDScript::669693902618514410::1722648450::0::1::::<>Button<><>0<>0<><>::
-onlineperson.tscn::PackedScene::1900982795928919145::1744425789::0::1::::<><><>0<>0<><>::uid://jsn04n3nj12u::::res://Frontend/Desktop/SubScenes/onlineperson.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
-Search.gd::GDScript::7245652852953933427::1744425789::0::1::::<>Panel<><>0<>0<><>::
-::res://Frontend/Desktop/SubScenes/Detail Overlays/::1744425789
-player_details.tscn::PackedScene::1755384308871896454::1744425789::0::1::::<><><>0<>0<><>::uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
+onlineperson.tscn::PackedScene::1900982795928919145::1744428277::0::1::::<><><>0<>0<><>::uid://jsn04n3nj12u::::res://Frontend/Desktop/SubScenes/onlineperson.gd<>uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
+Search.gd::GDScript::7245652852953933427::1744428277::0::1::::<>Panel<><>0<>0<><>::
+::res://Frontend/Desktop/SubScenes/Detail Overlays/::1744428277
+player_details.tscn::PackedScene::1755384308871896454::1744428277::0::1::::<><><>0<>0<><>::uid://bqt3ukcfoh2fl::::res://Frontend/Image Loading.png
 ::res://Frontend/Login/::1741228133
 Login.gd::GDScript/GDScript::8442922673201586036::1739262584::0::1::::<>Control<><>0<>0<><>::
 Login.tscn::PackedScene/PackedScene::927289947640518204::1739262692::0::1::::<><><>0<>0<><>::uid://bxthtt0n6qcta::::res://CVR.tres<>uid://irr4uv4nfsb2::::res://Frontend/CVRYicon.png<>res://Frontend/Login/Login.gd<>res://Frontend/URLOpen.gd

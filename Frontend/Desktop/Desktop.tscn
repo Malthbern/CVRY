@@ -37,7 +37,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Clock" type="LineEdit" parent="."]
+[node name="Clock" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.002
@@ -46,19 +46,12 @@ anchor_right = 0.002
 anchor_bottom = 0.003
 offset_left = -0.304
 offset_top = 0.056
-offset_right = 58.7585
+offset_right = 68.2585
 offset_bottom = 33.056
+theme_override_colors/font_color = Color(0.695503, 0.695503, 0.695503, 1)
 text = "00:00"
-editable = false
-context_menu_enabled = false
-virtual_keyboard_enabled = false
-virtual_keyboard_type = 3
-shortcut_keys_enabled = false
-middle_mouse_paste_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-flat = true
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("2_wcfpt")
 
 [node name="OutlineMargin" type="MarginContainer" parent="."]
@@ -538,6 +531,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Search Term"
 alignment = 1
+caret_blink = true
 
 [node name="Search" type="Button" parent="OutlineMargin/TabBar/Search/VBoxContainer/Searchbar"]
 layout_mode = 2
@@ -738,6 +732,7 @@ grow_vertical = 1
 
 [connection signal="tab_changed" from="OutlineMargin/TabBar" to="OutlineMargin/TabBar" method="_on_tab_changed"]
 [connection signal="pressed" from="OutlineMargin/TabBar/Home/HBoxContainer/Active Worlds/Button" to="OutlineMargin/TabBar/Home" method="UpdateTab"]
+[connection signal="text_submitted" from="OutlineMargin/TabBar/Search/VBoxContainer/Searchbar/SearchTerm" to="OutlineMargin/TabBar/Search" method="_on_search_pressed"]
 [connection signal="pressed" from="OutlineMargin/TabBar/Search/VBoxContainer/Searchbar/Search" to="OutlineMargin/TabBar/Search" method="_on_search_pressed"]
 [connection signal="toggled" from="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/24htime" to="OutlineMargin/TabBar/Settings" method="_on_htime_toggled"]
 [connection signal="toggled" from="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/systemtray" to="OutlineMargin/TabBar/Settings" method="_on_systemtray_toggled"]

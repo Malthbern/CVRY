@@ -151,6 +151,6 @@ func parse_response(Get_Function:HTTPRequest):
 	var tx = await Get_Function.request_completed
 	Get_Function.queue_free()
 	if tx[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE] != 200:
-		printerr("HTTP Error: Request for %s failed with code %s" % [tx.name, tx[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]])
-		return null
+		printerr("HTTP Error: failed with code %s Details: %s" % [tx[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8(), tx[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]])
+		return tx[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]
 	return JSON.parse_string(tx[ApiCvrHttp.PACKED_RESPONSE.DATA].get_string_from_utf8())

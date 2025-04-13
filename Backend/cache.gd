@@ -80,7 +80,7 @@ func download_image(url:String, path = null):
 	var reply = await imgget.request_completed
 	imgget.queue_free()
 	if reply[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE] != 200:
-		printerr('An error occured ehile trying to fetch %s (%s)' % [url, reply[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]])
+		printerr('An error occured while trying to fetch %s (%s)' % [url, reply[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE]])
 		return errorimg
 	buffer = reply[ApiCvrHttp.PACKED_RESPONSE.DATA]
 	if path is String:

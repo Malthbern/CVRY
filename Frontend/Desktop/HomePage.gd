@@ -48,7 +48,6 @@ func refreash():
 func populate_userdata():
 	var userinfo = await ApiCvrHttp.GetUserById(LoginInfo.userid)
 	
-	
 	# Profile
 	userlabel.text = LoginInfo.username
 	profileimage.texture = await Cache.get_image(userinfo.data.imageUrl, Cache.ITEM_TYPES.USER, LoginInfo.userid)
