@@ -19,6 +19,8 @@ var buffer
 
 var Online_Friends:Array
 
+var OurUserInfo
+
 func _ready():
 	if !DirAccess.dir_exists_absolute(cachedir):
 		DirAccess.make_dir_recursive_absolute(cachedir)
@@ -53,7 +55,8 @@ func get_image(URL:String, TYPE:String, AssetId:String = ''):
 				return await load_image_from_cache(cachedir + AssetId + ".png")
 		
 		save_local_hash(cachedir + AssetId + ".meta", remote)
-		await download_image(URL, cachedir + AssetId + ".png")
+		if (await download_image(URL, cachedir + AssetId + ".png") == errorimg):
+			return errorimg
 		return await load_image_from_buffer()
 	
 	if TYPE == ITEM_TYPES.WORLD: #Worlds dont provide a hash in the URI, so we just always download
@@ -146,18 +149,21 @@ func update_online_friends(packet:Array):
 		for online in Online_Friends:
 			if online.Id == friend.Id:
 				found = true
-				print_debug('Updating online friend %s' % [friend.Id])
+				print_debug('Updating online friend: %s' % [friend.Id])
 				Online_Friends[i] = friend
 			i += 1
 		if !found:
-			print_debug('Friend %s wasnt found in online list appending' % [friend.Id])
+			print_debug('Friend wasnt found in online list. appending: %s' % [friend.Id])
 			Online_Friends.append(friend)
 	
 	i = 0
 	for friend in Online_Friends:
 		if !friend.IsOnline:
 			Online_Friends_Updated.emit()
-			print_debug('Purging offline friend %s' % [friend.Id])
+			print_debug('Purging offline friend: %s' % [friend.Id])
 			Online_Friends.remove_at(i)
 		i += 1
 	Online_Friends_Updated.emit() # We have to duplicate the array due to how godot handles variables
+
+func get_our_user_info() -> void:
+	OurUserInfo = await ApiCvrHttp.GetUserById(LoginInfo.userid)

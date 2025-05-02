@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://c2dxf6qtpyfwf" path="res://Frontend/Desktop/NotificationHandler.gd" id="6_hmdwd"]
 [ext_resource type="Script" uid="uid://bpkkdv6g6xm8k" path="res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd" id="6_nxqxy"]
 [ext_resource type="Texture2D" uid="uid://c65ouieij6jjk" path="res://Frontend/Under Construction.png" id="6_vueme"]
-[ext_resource type="Script" uid="uid://eliat8lyo2bf" path="res://Frontend/Desktop/Friend Tab.gd" id="8_ep1r4"]
+[ext_resource type="Script" uid="uid://vv48hxpblmpn" path="res://Frontend/Desktop/MyStuff.gd" id="10_llh1t"]
 [ext_resource type="Script" uid="uid://dbh33xsb60dtj" path="res://Frontend/Desktop/SubScenes/Search.gd" id="11_gtogh"]
 [ext_resource type="PackedScene" uid="uid://0ak6ndu1yhva" path="res://Frontend/Desktop/SubScenes/Detail Overlays/player_details.tscn" id="13_gtogh"]
 
@@ -71,11 +71,12 @@ grow_vertical = 2
 [node name="TabBar" type="TabContainer" parent="OutlineMargin" node_paths=PackedStringArray("Tabs")]
 layout_mode = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 script = ExtResource("3_q3riv")
 Tabs = [NodePath("Home"), NodePath("Friends"), NodePath("Worlds"), NodePath("Avatars"), NodePath("Props"), NodePath("Search"), NodePath("Settings")]
 
 [node name="Home" type="Panel" parent="OutlineMargin/TabBar"]
+visible = false
 layout_mode = 2
 script = ExtResource("3_8smlt")
 metadata/_tab_index = 0
@@ -391,11 +392,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Friends" type="Panel" parent="OutlineMargin/TabBar" node_paths=PackedStringArray("containers")]
+[node name="Friends" type="Panel" parent="OutlineMargin/TabBar" node_paths=PackedStringArray("container")]
 visible = false
 layout_mode = 2
-script = ExtResource("8_ep1r4")
-containers = [NodePath("ScrollContainer/Friend Container"), null]
+script = ExtResource("10_llh1t")
+container = NodePath("ScrollContainer/Friend Container")
+tabType = 0
 metadata/_tab_index = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Friends"]
@@ -419,71 +421,79 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Worlds" type="Panel" parent="OutlineMargin/TabBar"]
-visible = false
+[node name="Worlds" type="Panel" parent="OutlineMargin/TabBar" node_paths=PackedStringArray("container")]
 layout_mode = 2
+script = ExtResource("10_llh1t")
+container = NodePath("ScrollContainer/MyWorldsContainer")
+tabType = 1
 metadata/_tab_index = 2
 
-[node name="Under Construction" type="TextureRect" parent="OutlineMargin/TabBar/Worlds"]
+[node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Worlds"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.366
-anchor_top = 0.053
-anchor_right = 0.634
-anchor_bottom = 0.947
-offset_left = -0.338043
-offset_top = -0.277
-offset_right = 0.338013
-offset_bottom = 0.276978
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_vueme")
-expand_mode = 3
-stretch_mode = 4
+anchor_left = 0.003
+anchor_top = 0.007
+anchor_right = 0.997
+anchor_bottom = 0.993
+offset_left = 0.571
+offset_top = -0.263
+offset_right = -0.571045
+offset_bottom = 0.263
 
-[node name="Avatars" type="Panel" parent="OutlineMargin/TabBar"]
+[node name="MyWorldsContainer" type="FlowContainer" parent="OutlineMargin/TabBar/Worlds/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Avatars" type="Panel" parent="OutlineMargin/TabBar" node_paths=PackedStringArray("container")]
 visible = false
 layout_mode = 2
+script = ExtResource("10_llh1t")
+container = NodePath("ScrollContainer/MyAvatarsContainer")
+tabType = 2
 metadata/_tab_index = 3
 
-[node name="Under Construction" type="TextureRect" parent="OutlineMargin/TabBar/Avatars"]
+[node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Avatars"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.366
-anchor_top = 0.053
-anchor_right = 0.634
-anchor_bottom = 0.947
-offset_left = -0.338043
-offset_top = -0.277
-offset_right = 0.338013
-offset_bottom = 0.276978
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_vueme")
-expand_mode = 3
-stretch_mode = 4
+anchor_left = 0.003
+anchor_top = 0.007
+anchor_right = 0.997
+anchor_bottom = 0.993
+offset_left = 0.571
+offset_top = -0.263
+offset_right = -0.571045
+offset_bottom = 0.263
 
-[node name="Props" type="Panel" parent="OutlineMargin/TabBar"]
+[node name="MyAvatarsContainer" type="FlowContainer" parent="OutlineMargin/TabBar/Avatars/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Props" type="Panel" parent="OutlineMargin/TabBar" node_paths=PackedStringArray("container")]
 visible = false
 layout_mode = 2
+script = ExtResource("10_llh1t")
+container = NodePath("ScrollContainer/MyPropsContainer")
+tabType = 3
 metadata/_tab_index = 4
 
-[node name="Under Construction" type="TextureRect" parent="OutlineMargin/TabBar/Props"]
+[node name="ScrollContainer" type="ScrollContainer" parent="OutlineMargin/TabBar/Props"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.366
-anchor_top = 0.053
-anchor_right = 0.634
-anchor_bottom = 0.947
-offset_left = -0.338043
-offset_top = -0.277
-offset_right = 0.338013
-offset_bottom = 0.276978
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_vueme")
-expand_mode = 3
-stretch_mode = 4
+anchor_left = 0.003
+anchor_top = 0.007
+anchor_right = 0.997
+anchor_bottom = 0.993
+offset_left = 0.571
+offset_top = -0.263
+offset_right = -0.571045
+offset_bottom = 0.263
+
+[node name="MyPropsContainer" type="FlowContainer" parent="OutlineMargin/TabBar/Props/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
 
 [node name="Search" type="Panel" parent="OutlineMargin/TabBar"]
 visible = false

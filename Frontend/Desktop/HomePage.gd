@@ -36,9 +36,9 @@ var instancepane = load("res://Frontend/Desktop/SubScenes/instance_pane.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#seperated so that we can refreash these at any time
 	populate_userdata()
 	populate_active()
+	Cache.get_our_user_info()
 
 func refreash():
 	depopulate_active()
