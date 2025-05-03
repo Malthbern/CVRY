@@ -1,16 +1,5 @@
 extends Panel
 
-const WorldCat : Dictionary = {
-	Active =  'wrldactive',
-	New = 'wrldnew',
-	Trending = 'wrldtrending',
-	Official = 'wrldofficial',
-	Avatar = 'wrldavatars',
-	Public = 'wrldpublic',
-	RecentlyUpdated = 'wrldrecentlyupdated',
-	Mine = 'wrldmine',
-}
-
 var timer:float
 var refreashlimit:float = 60 #1 minuite cooldown for forced refreash
 var autorefreash:float = 600 #10 minuite auto refreash timer
@@ -36,6 +25,15 @@ var instancepane = load("res://Frontend/Desktop/SubScenes/instance_pane.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	var rand = randi_range(0,100)
+	
+	if rand < 10:
+		var desktop = $"../../.."
+		var csans:Font = load("res://Frontend/Comic.TTF")
+		printerr("Oops! fogot to impliment the easteregg")
+		# todo: add csans easteregg (blame DDAkebono)
+	
 	populate_userdata()
 	populate_active()
 	Cache.get_our_user_info()
@@ -66,7 +64,7 @@ func depopulate_active():
 	return
 
 func populate_active():
-	var activeworlds = await ApiCvrHttp.GetWorldsByCategory(WorldCat.Active)
+	var activeworlds = await ApiCvrHttp.GetWorldsByCategory(ApiCvrHttp.WorldCat.Active)
 	
 	for world in activeworlds.data.entries:
 		var pane = instancepane.instantiate()

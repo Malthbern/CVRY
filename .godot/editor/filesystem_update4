@@ -1,1 +1,14 @@
+res://Frontend/Desktop/Desktop.tscn
 res://CVR.tres
+res://Frontend/Desktop/SubScenes/active_friend_panel.tscn
+res://Frontend/Desktop/SubScenes/ObjectPresenter.tscn
+res://Frontend/Desktop/SubScenes/friend_request_box.tscn
+res://Frontend/Desktop/SubScenes/instance_pane.tscn
+res://Frontend/Desktop/SubScenes/onlineperson.tscn
+res://Frontend/Desktop/SubScenes/Detail Overlays/player_details.tscn
+res://Frontend/Desktop/MyStuff.gd
+res://Frontend/Desktop/MainTabController.gd
+res://Frontend/FrontStart.gd
+res://Frontend/Desktop/HomePage.gd
+res://Backend/api_cvr_http.gd
+res://Backend/cache.gd

@@ -2,30 +2,23 @@ extends Panel
 @export var container : FlowContainer
 @export_enum('Friends','Worlds','Avatars','Props') var tabType
 
-const WorldCategories = {
-	'ActiveInstances': 'wrldactive',
-	'New': 'wrldnew',
-	'Trending': 'wrldtrending',
-	'Official': 'wrldofficial',
-	'Avatar': 'wrldavatars',
-	'Public': 'wrldpublic',
-	'RecentlyUpdated': 'wrldrecentlyupdated',
-	'Mine': 'wrldmine',
-}
-
-
 var objectpannel = load("res://Frontend/Desktop/SubScenes/ObjectPresenter.tscn")
 
-var FirstLoad:bool = false
+var FirstLoad:bool = true
 var worlds
 
-var timer:float = 43190
+var timer:float = 0
 var refreashtimer:float = 1800 #30 minuite manual refreash limit
 var autorefreash:float = 43200 #12 hour auto refreash
 
 func UpdateTab() -> void:
 	var request
 	var type
+	
+	if timer < refreashtimer && !FirstLoad:
+		return
+	
+	FirstLoad = false
 	
 	match tabType:
 		0:
@@ -36,7 +29,7 @@ func UpdateTab() -> void:
 		
 		1:
 			print_debug("Fetching my worlds")
-			request = await ApiCvrHttp.GetWorldsByCategory(WorldCategories.Mine)
+			request = await ApiCvrHttp.GetWorldsByCategory(ApiCvrHttp.WorldCat.Mine)
 			type = Cache.ITEM_TYPES.WORLD
 			populatetab(request.data.entries,type)
 		
@@ -52,12 +45,18 @@ func UpdateTab() -> void:
 			type = Cache.ITEM_TYPES.PROP
 			populatetab(request.data,type)
 
-
 func populatetab(data:Array, type:String) -> void:
 	for c in container.get_children():
 		c.queue_free()
 	
 	for w in data:
+		
+		if type == Cache.ITEM_TYPES.AVATAR && !w.categories.has('avtrmine'):
+			return
+		
+		if type == Cache.ITEM_TYPES.PROP && !w.categories.has('propmine'):
+			return
+		
 		var panel = objectpannel.instantiate()
 		panel.ObjectName = w.name
 		panel.ObjectType = type
@@ -65,3 +64,10 @@ func populatetab(data:Array, type:String) -> void:
 		panel.ImgUrl = w.imageUrl
 		panel.name = w.name + w.id
 		container.add_child(panel)
+
+func _process(delta: float) -> void:
+	if timer < autorefreash:
+		timer += delta
+	else:
+		UpdateTab()
+		timer = 0

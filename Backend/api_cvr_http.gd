@@ -2,6 +2,17 @@ extends Node
 
 const APIAddress:String = "https://api.abinteractive.net"
 
+const WorldCat : Dictionary = {
+	Active =  'wrldactive',
+	New = 'wrldnew',
+	Trending = 'wrldtrending',
+	Official = 'wrldofficial',
+	Avatar = 'wrldavatars',
+	Public = 'wrldpublic',
+	RecentlyUpdated = 'wrldrecentlyupdated',
+	Mine = 'wrldmine',
+}
+
 #get and post web functions
 
 func Get(url, authenticated = true, apiVersion = 1):
