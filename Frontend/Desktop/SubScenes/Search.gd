@@ -28,8 +28,8 @@ func UpdateTab():
 			child.queue_free()
 
 func _on_search_pressed() -> void:
-	UpdateTab()
 	results = await ApiCvrHttp.Search(SearchInput.text)
+	UpdateTab()
 	for object in results.data:
 		var panel = objectpannel.instantiate()
 		panel.ObjectName = object.name

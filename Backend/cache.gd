@@ -43,12 +43,13 @@ func get_image(URL:String, TYPE:String, AssetId:String = ''):
 	
 	if URL == "https://files.abidata.io/user_images/00default.png":
 		return default
+		
+	var local = get_local_hash(cachedir + AssetId + ".meta")
 	
 	#We seperate by type for granular control if needed later
 	if TYPE == ITEM_TYPES.USER: #Hash is provided in URI
 		var remote = URL.trim_prefix(cdnaddr + TYPE + AssetId + "-")
 		remote = remote.trim_suffix(".png")
-		var local = get_local_hash(cachedir + AssetId + ".meta")
 		
 		if local is String:
 			if local == remote:
@@ -59,17 +60,17 @@ func get_image(URL:String, TYPE:String, AssetId:String = ''):
 			return errorimg
 		return await load_image_from_buffer()
 	
-	if TYPE == ITEM_TYPES.WORLD: #Worlds dont provide a hash in the URI, so we just always download
-		await download_image(URL)
-		return await load_image_from_buffer()
-	
-	if TYPE == ITEM_TYPES.AVATAR:
-		await download_image(URL)
-		return await load_image_from_buffer()
-	
-	if TYPE == ITEM_TYPES.PROP:
-		await download_image(URL)
-		return await load_image_from_buffer()
+#	if TYPE == ITEM_TYPES.WORLD: #Worlds dont provide a hash in the URI, so we just always download
+#		await download_image(URL)
+#		return await load_image_from_buffer()
+#	
+#	if TYPE == ITEM_TYPES.AVATAR:
+#		await download_image(URL)
+#		return await load_image_from_buffer()
+#	
+#	if TYPE == ITEM_TYPES.PROP:
+#		await download_image(URL)
+#		return await load_image_from_buffer()
 	
 	if TYPE == ITEM_TYPES.BADGE: #These Tend to not change so we will cache without hash
 		var file = URL.trim_prefix(cdnaddr + TYPE)
@@ -77,6 +78,21 @@ func get_image(URL:String, TYPE:String, AssetId:String = ''):
 			return await load_image_from_cache(cachedir + file)
 		await download_image(URL, cachedir + file)
 		return await load_image_from_buffer()
+	
+	#default behavior is to download from server and use etag as image hash
+	#this is bad but theres no other choice if i want to cache everything
+	
+	var remote = await get_remote_hash(URL)
+	
+	if local is String:
+		if local == remote:
+			return await load_image_from_cache(cachedir + AssetId + ".png")
+	
+	save_local_hash(cachedir + AssetId + ".meta", remote)
+	if (await download_image(URL, cachedir + AssetId + ".png") == errorimg):
+		return errorimg
+	return await load_image_from_buffer()
+
 
 func download_image(url:String, path = null):
 	var imgget = IMG_GET(url)
@@ -101,7 +117,6 @@ func load_image_from_cache(File:String):
 		printerr('Something happened while loading an image from cache: ' + File)
 		return errorimg
 	return texture
-	
 
 func load_image_from_buffer():
 	var image = Image.new()
@@ -112,6 +127,15 @@ func load_image_from_buffer():
 		printerr('Something happened while loading an image from buffer: ' + ''.join(buffer))
 		return errorimg
 	return texture
+
+func get_remote_hash(url:String):
+	var head = HEAD(url)
+	var request = await head.request_completed
+	
+	if request[ApiCvrHttp.PACKED_RESPONSE.RESPONSE_CODE] == 200:
+		var headers = request[ApiCvrHttp.PACKED_RESPONSE.HEADERS]
+		return headers[9].trim_prefix("ETag: ")
+	
 
 func get_local_hash(Path:String):
 	var file

@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://cju7v1u4c130d"]
+[gd_scene load_steps=16 format=3 uid="uid://cju7v1u4c130d"]
 
+[ext_resource type="Theme" uid="uid://bxthtt0n6qcta" path="res://CVR OG Green.tres" id="1_gtogh"]
 [ext_resource type="Script" uid="uid://cxbpplsld5l3c" path="res://Frontend/Desktop/Clock.gd" id="2_wcfpt"]
 [ext_resource type="Script" uid="uid://dwsrtkco2u67n" path="res://Frontend/Desktop/HomePage.gd" id="3_8smlt"]
 [ext_resource type="Script" uid="uid://dkfps78spmwb1" path="res://Frontend/Desktop/MainTabController.gd" id="3_q3riv"]
@@ -26,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_gtogh")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -69,11 +71,12 @@ grow_vertical = 2
 [node name="TabBar" type="TabContainer" parent="OutlineMargin" node_paths=PackedStringArray("Tabs")]
 layout_mode = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 6
 script = ExtResource("3_q3riv")
 Tabs = [NodePath("Home"), NodePath("Friends"), NodePath("Worlds"), NodePath("Avatars"), NodePath("Props"), NodePath("Search"), NodePath("Settings")]
 
 [node name="Home" type="Panel" parent="OutlineMargin/TabBar"]
+visible = false
 layout_mode = 2
 script = ExtResource("3_8smlt")
 metadata/_tab_index = 0
@@ -312,7 +315,7 @@ offset_left = -0.136
 offset_top = -0.207
 offset_right = 0.135986
 offset_bottom = -0.045002
-text = "Online Friends"
+text = "Online Friends - 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -651,7 +654,6 @@ size_flags_horizontal = 3
 alignment = 1
 
 [node name="Settings" type="Panel" parent="OutlineMargin/TabBar"]
-visible = false
 layout_mode = 2
 script = ExtResource("5_1p88j")
 metadata/_tab_index = 6
@@ -673,11 +675,48 @@ clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="24htime" type="CheckButton" parent="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer"]
+[node name="Theme" type="HBoxContainer" parent="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-button_pressed = true
-text = "24-hour time "
-clip_text = true
+
+[node name="Label" type="Label" parent="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/Theme"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Theme"
+
+[node name="OptionButton" type="OptionButton" parent="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/Theme"]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 1
+popup/item_0/text = "Default"
+popup/item_0/id = 0
+popup/item_0/separator = true
+
+[node name="HomeTab" type="HBoxContainer" parent="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/HomeTab"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Open to tab"
+
+[node name="OptionButton" type="OptionButton" parent="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/HomeTab"]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 6
+popup/item_0/text = "Home"
+popup/item_0/id = 0
+popup/item_1/text = "Friends"
+popup/item_1/id = 1
+popup/item_2/text = "Worlds"
+popup/item_2/id = 2
+popup/item_3/text = "Avatars"
+popup/item_3/id = 3
+popup/item_4/text = "Props"
+popup/item_4/id = 4
+popup/item_5/text = "Search"
+popup/item_5/id = 5
 
 [node name="systemtray" type="CheckButton" parent="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -698,21 +737,6 @@ size_flags_horizontal = 4
 texture = ExtResource("6_vueme")
 expand_mode = 3
 stretch_mode = 4
-
-[node name="save" type="Button" parent="OutlineMargin/TabBar/Settings"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.391
-anchor_top = 0.926
-anchor_right = 0.61
-anchor_bottom = 0.992
-offset_left = 0.0869751
-offset_top = 0.065979
-offset_right = -0.230042
-offset_bottom = -0.128052
-grow_horizontal = 2
-grow_vertical = 0
-text = "Save settings"
 
 [node name="InfoOverlayDarken" type="Panel" parent="."]
 visible = false
@@ -743,7 +767,7 @@ grow_vertical = 1
 [connection signal="pressed" from="OutlineMargin/TabBar/Home/HBoxContainer/Active Worlds/Button" to="OutlineMargin/TabBar/Home" method="UpdateTab"]
 [connection signal="text_submitted" from="OutlineMargin/TabBar/Search/VBoxContainer/Searchbar/SearchTerm" to="OutlineMargin/TabBar/Search" method="_on_search_pressed"]
 [connection signal="pressed" from="OutlineMargin/TabBar/Search/VBoxContainer/Searchbar/Search" to="OutlineMargin/TabBar/Search" method="_on_search_pressed"]
-[connection signal="toggled" from="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/24htime" to="OutlineMargin/TabBar/Settings" method="_on_htime_toggled"]
+[connection signal="item_selected" from="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/Theme/OptionButton" to="OutlineMargin/TabBar/Settings" method="_on_theme_item_selected"]
+[connection signal="item_selected" from="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/HomeTab/OptionButton" to="OutlineMargin/TabBar/Settings" method="_on_home_tab_item_selected"]
 [connection signal="toggled" from="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/systemtray" to="OutlineMargin/TabBar/Settings" method="_on_systemtray_toggled"]
 [connection signal="toggled" from="OutlineMargin/TabBar/Settings/ScrollContainer/VBoxContainer/updatenotif" to="OutlineMargin/TabBar/Settings" method="_on_updatenotif_toggled"]
-[connection signal="pressed" from="OutlineMargin/TabBar/Settings/save" to="OutlineMargin/TabBar/Settings" method="_on_save_pressed"]

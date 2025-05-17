@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cumv5w51iw20"]
 
-[ext_resource type="Theme" uid="uid://bxthtt0n6qcta" path="res://CVR.tres" id="1_ufdtb"]
+[ext_resource type="Theme" uid="uid://bxthtt0n6qcta" path="res://CVR OG Green.tres" id="1_ufdtb"]
 [ext_resource type="Texture2D" uid="uid://irr4uv4nfsb2" path="res://Frontend/CVRYicon.png" id="2_o2f70"]
 [ext_resource type="Texture2D" uid="uid://btmdj5dlm51vd" path="res://Frontend/loadigncircle.svg" id="2_oid2n"]
-[ext_resource type="Script" path="res://Frontend/Startup/LoadingCircle.gd" id="3_rbcu2"]
+[ext_resource type="Script" uid="uid://b3a55xqswuo88" path="res://Frontend/Startup/LoadingCircle.gd" id="3_rbcu2"]
 
 [node name="Startup" type="Control"]
 layout_mode = 3

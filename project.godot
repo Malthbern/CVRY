@@ -54,10 +54,6 @@ project/assembly_name="CVR-Y"
 
 enabled=PackedStringArray("res://addons/SystemTrayEnabler/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg", "res://addons/toastparty/plugin.cfg")
 
-[gui]
-
-theme/custom="uid://bxthtt0n6qcta"
-
 [input_devices]
 
 pointing/android/enable_long_press_as_right_click=true

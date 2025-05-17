@@ -1,5 +1,6 @@
 extends Panel
 
+@onready var count = $Header
 @onready var worldcontainer = $"Online Panel/ScrollContainer/VBoxContainer"
 #@onready var notconnected = $"Online Panel/ScrollContainer/VBoxContainer/OnlineNotConnected"
 @onready var private = $"Online Panel/ScrollContainer/VBoxContainer/PrivateFriendPanel"
@@ -11,6 +12,7 @@ func _ready():
 
 func updateui():
 	var children = worldcontainer.get_children()
+	count.text = ("Online Friends - %s" %[Cache.Online_Friends.size()])
 	
 	for friend in Cache.Online_Friends:
 		var childpanel

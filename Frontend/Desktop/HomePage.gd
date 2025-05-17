@@ -4,6 +4,8 @@ var timer:float
 var refreashlimit:float = 60 #1 minuite cooldown for forced refreash
 var autorefreash:float = 600 #10 minuite auto refreash timer
 
+@onready var controlroot = $"../../.."
+
 #user
 @onready var userlabel = $"HBoxContainer/User+notifications/Profile/HBoxContainer/VBoxContainer/Username"
 @onready var profileimage = $"HBoxContainer/User+notifications/Profile/HBoxContainer/PlayerProfPic"
@@ -26,17 +28,13 @@ var instancepane = load("res://Frontend/Desktop/SubScenes/instance_pane.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	var rand = randi_range(0,100)
-	
-	if rand < 10:
-		var desktop = $"../../.."
-		var csans:Font = load("res://Frontend/Comic.TTF")
-		printerr("Oops! fogot to impliment the easteregg")
-		# todo: add csans easteregg (blame DDAkebono)
-	
 	populate_userdata()
 	populate_active()
 	Cache.get_our_user_info()
+
+func update_theme():
+	controlroot.theme = get_tree().root.theme
+	controlroot.propagate_call("update")
 
 func refreash():
 	depopulate_active()

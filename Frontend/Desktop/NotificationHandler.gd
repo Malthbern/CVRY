@@ -8,5 +8,5 @@ func _ready():
 	var FriendRequests = await ApiCvrHttp.GetMyFriendRequests()
 	pass
 
-func notify(Message:JSON):
+func friend_request(Message:JSON):
 	pass

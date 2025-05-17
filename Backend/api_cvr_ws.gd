@@ -123,7 +123,7 @@ func _process(delta):
 			ConnectWebsocket()
 	
 	if reconnectattempts < 0:
-		var i
+		var i = 0
 		if i >= 60:
 			i = 0
 			reconnectattempts -= 1
@@ -139,11 +139,13 @@ func process_packet(Packet):
 	
 	
 	#I wanted to do a match operation but it didnt work
+	#Most of these don't even need to be here as they wont get used
+	#they are here for logging purposes mainly
 	if restype == RESPONSE_TYPE.MENU_POPUP:
 		pass
 	
 	if restype == RESPONSE_TYPE.HUD_MESSAGE:
-		pass
+		print_debug("Message: %s" %[pktjson.Message]) 
 	
 	if restype == RESPONSE_TYPE.ONLINE_FRIENDS:
 		Cache.update_online_friends(pktjson.Data)
@@ -155,4 +157,4 @@ func process_packet(Packet):
 		pass
 	
 	if restype == RESPONSE_TYPE.FRIEND_REQUESTS:
-		pass
+		get_tree().root.propagate_call("friend_request", pktjson.Data)

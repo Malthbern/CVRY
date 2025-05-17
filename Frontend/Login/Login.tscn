@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://nhglhox6yy7m"]
 
-[ext_resource type="Theme" uid="uid://bxthtt0n6qcta" path="res://CVR.tres" id="1_ou2en"]
+[ext_resource type="Theme" uid="uid://bxthtt0n6qcta" path="res://CVR OG Green.tres" id="1_ou2en"]
 [ext_resource type="Texture2D" uid="uid://irr4uv4nfsb2" path="res://Frontend/CVRYicon.png" id="2_aq1bf"]
-[ext_resource type="Script" path="res://Frontend/Login/Login.gd" id="2_diw12"]
-[ext_resource type="Script" path="res://Frontend/URLOpen.gd" id="4_27hua"]
+[ext_resource type="Script" uid="uid://dsj2x5s3fuj4g" path="res://Frontend/Login/Login.gd" id="2_diw12"]
+[ext_resource type="Script" uid="uid://cr0o1au3p2nm5" path="res://Frontend/URLOpen.gd" id="4_27hua"]
 
 [node name="Login" type="Control"]
 layout_mode = 3
