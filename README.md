@@ -2,6 +2,9 @@
 ## Description
  A standalone companion app for ChilloutVR that expands the user experience! and is meant as an upgrade to AstroDoge's [CVRX](https://github.com/AstroDogeDX/CVRX).
 
+ ### This is very much so still a work in progress
+ however an in progress build is avaliable here
+
 ## Why
 This primarily exists because AstroDoge's [CVRX](https://github.com/AstroDogeDX/CVRX) is fairly bare bones and dosent offer much in the way of features. CVRY is attempting to be more feature rich allowing for managing friends, worlds, and props. (these are currently only planned features)
 
