@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CVR-Y"
-config/version="0.0.2_DEV"
+config/version="0.0.3"
 run/main_scene="res://Frontend/Startup/Startup.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -35,7 +35,6 @@ Cache="*res://Backend/cache.gd"
 WebSocket="*res://Backend/api_cvr_ws.gd"
 FrontStart="*res://Frontend/FrontStart.gd"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
-DiscordRPCLoader="res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
 [debug]
 
@@ -52,7 +51,7 @@ project/assembly_name="CVR-Y"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SystemTrayEnabler/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg", "res://addons/toastparty/plugin.cfg")
+enabled=PackedStringArray("res://addons/SystemTrayEnabler/plugin.cfg", "res://addons/toastparty/plugin.cfg")
 
 [input_devices]
 

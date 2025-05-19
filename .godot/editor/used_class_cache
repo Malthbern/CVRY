@@ -1,8 +1,8 @@
-res://CVR.tres::1724129486::b6b3a9c90a52e3451305d02f4562972f::StyleBoxFlat,StyleBoxEmpty,
-res://export_presets.cfg::1722421180::7586e2e1ded11678e02b91d48c8a7cb0::
+res://CVR OG Green.tres::1747475043::55a89a6869d231e9f77a04f522c68b08::StyleBoxFlat,StyleBoxEmpty,
+res://export_presets.cfg::1747612862::1f8fe7a53a3f45101975ad2cb0bfb350::
 res://icon.svg::1714907241::43b305bd3d55f8faec5e5175cbe35533::CompressedTexture2D
 res://plugin-icon.png::1716181033::047da2119d1da7dbfd572fdd8f57bd31::CompressedTexture2D
-res://README.md::1722584819::2065531769671a9b86f1b420a30edcf3::
+res://README.md::1746180578::8b0074547252a8c4d54faee67204413d::
 res://addons/discord-rpc-gd/Debug.svg::1714907304::6bd85bede11e53a4e718f83d695f3a88::CompressedTexture2D
 res://addons/discord-rpc-gd/example.gd::1714907304::d4fdb771a552bd77728a33b135fb5987::GDScript
 res://addons/discord-rpc-gd/logo.png::1714907304::2557c2df4c38528a468aa1ad7cef2d8c::CompressedTexture2D
@@ -30,16 +30,15 @@ res://addons/toastparty/fonts/Light.ttf::1716065155::bb5671edae4b3cecbd3c9815951
 res://addons/toastparty/toast_label/ToastLabel.gd::1716065155::82677f5735a2c72906ca4f7a8ebe0c8f::GDScript
 res://addons/toastparty/toast_label/toast_label.tscn::1716065155::f53fbf534d2c7392a6702a0a98b7ccff::PackedScene,LabelSettings,Label
 res://addons/toastparty/toast_label/toast_label_style.tres::1716065155::17f2c07b5e2257409e7286acfe43202c::
-res://assetlibData/libIcon.png::1716065393::bcd3e6bcaddbefcbb898270ea64f6224::CompressedTexture2D
-res://assetlibData/TrayItem.png::1716065393::d2d8592e002c4e5c0e47376e4a6760ef::CompressedTexture2D
-res://Backend/api_cvr_http.gd::1724129486::60e605188660a663c5b1203d069f0280::GDScript
-res://Backend/api_cvr_ws.gd::1724124073::59d7d7817eb18f8027b33bc7d263539f::GDScript
-res://Backend/cache.gd::1722590957::b3928f298620e0830daf1de901f84d00::GDScript
-res://Backend/LoginInfo.gd::1724119794::f2656e36b5c797f3adf38059aa29e564::GDScript
-res://Backend/savecrypto.gd::1715317661::2b4974cd28925f843440cf5faa71ed77::GDScript
-res://Backend/UserSettings.gd::1716272998::212ecc441173f94455e22fdc99fa2c1f::GDScript
+res://Backend/api_cvr_http.gd::1746247721::939f22416567ca9c6818ffb03d036a15::GDScript
+res://Backend/api_cvr_ws.gd::1747388077::d6b9321e1e8b8cd58192162478a97a4f::GDScript
+res://Backend/cache.gd::1747373739::ea102a933167740eda7b0105102f0988::GDScript
+res://Backend/LoginInfo.gd::1744443267::bb18b36382f2e1e9d600120582766fa5::GDScript
+res://Backend/savecrypto.gd::1724147803::718ebb941646a5f2675a86554edbddcc::GDScript
+res://Backend/UserSettings.gd::1747473391::4d9910f8ccba64c77621b9536cee5ed7::GDScript
 res://Backend/utils.gd::1715302635::77f3f019d6c8347d884ea8729151f5e2::GDScript
 res://Frontend/00default.png::1718613294::4919770cce623adad4ae3b09f19c0698::CompressedTexture2D
+res://Frontend/Comic.TTF::1746244624::a50f9c96a76356e3d01013e0b042989f::FontFile
 res://Frontend/CVRYicon.png::1714979118::7c453e971b550ae8d04fea10914deebd::CompressedTexture2D
 res://Frontend/CVRYiconexport.svg::1714979355::ef56578d5864dfda9045ea6f6fd4c3d9::CompressedTexture2D
 res://Frontend/FrontStart.gd::1715384056::f4dccba572121874c983857e0af9720c::GDScript
@@ -47,28 +46,31 @@ res://Frontend/Image Loading.png::1715372897::12c5ca43bcb40e43febe6fac97ef80ac::
 res://Frontend/loadigncircle.svg::1714980416::54e335ee3a418b833373dbb1a54fb5d0::CompressedTexture2D
 res://Frontend/orange-error-icon-0.png::1715562502::078bef6bc2151203d7e71a6f79135f90::CompressedTexture2D
 res://Frontend/Under Construction.png::1718617223::7171857d22e5a4f5d1de09907f0662a2::CompressedTexture2D
+res://Frontend/URLOpen.gd::1724144767::cbb69622a226f5bd773eb3f8fe70ee3d::GDScript
 res://Frontend/UserSettings.gd::1715371590::26830fcd47343bde8e2cc7b49d1035a2::GDScript
-res://Frontend/Desktop/Clock.gd::1715324801::083f0ccc7f35940db23afca12a81634e::GDScript
-res://Frontend/Desktop/Desktop.tscn::1724129486::fffca4f59de0d96399322ad92b238ad7::PackedScene,LabelSettings,StyleBoxFlat,Control,Panel,LineEdit,MarginContainer,TabContainer,HBoxContainer,TextureRect,VBoxContainer,Label,ScrollContainer,Button,FlowContainer,CheckButton
-res://Frontend/Desktop/Friend Tab.gd::1722648450::51610b4f1aa7cc863575eed98b361c76::GDScript
-res://Frontend/Desktop/HomePage.gd::1722648628::c2c613426986e2965f9401faabf40eef::GDScript
-res://Frontend/Desktop/MainTabController.gd::1718607477::24049bd7c5db691183ff8f080278dd40::GDScript
-res://Frontend/Desktop/NotificationHandler.gd::1722752452::ad715133ad34c29ddf0eee1cf45f05b1::GDScript
-res://Frontend/Desktop/settingspanel.gd::1718607333::c6bbac0b1d1a98b30bcdde90b2733f8d::GDScript
+res://Frontend/Desktop/Clock.gd::1747381956::9b49d782f9707a720902c1245dd4523d::GDScript
+res://Frontend/Desktop/Desktop.tscn::1747475043::b913bcdfce10e4f670c772d5dc76b120::PackedScene,LabelSettings,StyleBoxFlat,Control,Panel,Label,MarginContainer,TabContainer,HBoxContainer,TextureRect,VBoxContainer,ScrollContainer,Button,FlowContainer,LineEdit,OptionButton,CheckButton
+res://Frontend/Desktop/HomePage.gd::1747472926::d3f2d0b0945c80415e1599b43aabdf7e::GDScript
+res://Frontend/Desktop/MainTabController.gd::1746244092::2f0b41aad166d231e4ecc605c3edab6b::GDScript
+res://Frontend/Desktop/MyStuff.gd::1746247820::61580a55f8cd3ceb3215c0cd30c2801d::GDScript
+res://Frontend/Desktop/NotificationHandler.gd::1747382197::9c06ed10245adf4ac054e85bcf6bfc7b::GDScript
+res://Frontend/Desktop/settingspanel.gd::1747473792::7bf1f4c7d8976a2b7b7a0c033df67e52::GDScript
 res://Frontend/Desktop/SubScenes/ActiveWorldPane.gd::1718420140::d9ac1cea37a61900bc194bb27554c19f::GDScript
-res://Frontend/Desktop/SubScenes/active_friend_panel.tscn::1724129486::d61863a562abe4c71a411d122ee89417::PackedScene,Panel,HBoxContainer,TextureRect,VBoxContainer,Label,ScrollContainer,FlowContainer
-res://Frontend/Desktop/SubScenes/Friend.gd::1718612673::a6708103307b2bc974ea872eadc98ce4::GDScript
-res://Frontend/Desktop/SubScenes/Friend.tscn::1724129486::24bb429ee08f3efff1ad864ddbe93bbc::PackedScene,Panel,TextureRect,Label,Button
+res://Frontend/Desktop/SubScenes/active_friend_panel.tscn::1747475043::c84c08ea1a88d2cc391e6f8fa34e1eca::PackedScene,Panel,HBoxContainer,TextureRect,VBoxContainer,Label,ScrollContainer,FlowContainer
 res://Frontend/Desktop/SubScenes/friend_request_box.tscn::1724129486::964b3fe864607d7796a748405dc3cdc4::PackedScene,Panel,HBoxContainer,TextureRect,VBoxContainer,Label,Button
-res://Frontend/Desktop/SubScenes/instance_pane.tscn::1724129486::f0961b88f5c798e15d15b2e399905bc8::PackedScene,Panel,Button,HBoxContainer,TextureRect,VBoxContainer,Label
-res://Frontend/Desktop/SubScenes/OnlineFriendManager.gd::1722649428::14068b16404391f9154402a1f7cebf2f::GDScript
+res://Frontend/Desktop/SubScenes/instance_pane.tscn::1747475043::73567151da1cc38f789559f8633b64f7::PackedScene,Panel,Button,HBoxContainer,TextureRect,VBoxContainer,Label
+res://Frontend/Desktop/SubScenes/ObjectPresenter.gd::1744425161::54791295257ea46d1a9627e4dc123f67::GDScript
+res://Frontend/Desktop/SubScenes/ObjectPresenter.tscn::1747475043::f39d5744e4312676d3f8fc59a0fae4f8::PackedScene,Panel,TextureRect,Label,Button
+res://Frontend/Desktop/SubScenes/OnlineFriendManager.gd::1747383589::25e0d06ecc0b292e55d9323235914820::GDScript
 res://Frontend/Desktop/SubScenes/OnlineFriendPannel.gd::1724119481::297c3a97de4cc74d461a2196e788dac4::GDScript
 res://Frontend/Desktop/SubScenes/onlineperson.gd::1722648450::76d86534683b8c13baf42c95d1e448d2::GDScript
-res://Frontend/Desktop/SubScenes/onlineperson.tscn::1724129486::d828c6397517b6cc27fb66c9ef8aac1b::PackedScene,Button,TextureRect
-res://Frontend/Login/Login.gd::1724119653::bcc22a0613ac1407d4aa5e52efb1e173::GDScript
-res://Frontend/Login/Login.tscn::1724129486::551e7365869965c01d003504af2bea86::PackedScene,Control,Panel,TextureRect,VBoxContainer,Label,LineEdit,Button,HTTPRequest
+res://Frontend/Desktop/SubScenes/onlineperson.tscn::1747475043::44498028314a6484a676c7ff4cc9acb0::PackedScene,Button,TextureRect
+res://Frontend/Desktop/SubScenes/Search.gd::1747382297::69d961029bcc73d498d25ec5283023bc::GDScript
+res://Frontend/Desktop/SubScenes/Detail Overlays/player_details.tscn::1747475043::17d9fe761b0b7b8c1e9fb5000d2c76c9::PackedScene,Panel,HBoxContainer,VBoxContainer,Label,TextureRect,TextEdit,TabContainer,Button
+res://Frontend/Login/Login.gd::1744443212::77efc0b7cb8f15f3f5c313e727edb5ad::GDScript
+res://Frontend/Login/Login.tscn::1747471418::4516221ac840be3f6cb083fa4d227404::PackedScene,Control,Panel,TextureRect,Button,VBoxContainer,Label,LineEdit,CheckBox,HTTPRequest
 res://Frontend/Mobile/Mobile.tscn::1724129486::2ae9d6c61118edb305bb1de6c4d078af::PackedScene,Control
 res://Frontend/Startup/LoadingCircle.gd::1715321316::c773f5341f467e70e47da8f3a704dbe5::GDScript
-res://Frontend/Startup/Startup.tscn::1724129486::1b5f433f407ebec5ea07c1209fbbb51f::PackedScene,Control,Panel,TextureRect,VBoxContainer,LineEdit
-res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres::1715047456::9f777e1d659b77a0cfae5afc08726af7::
-res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres::1715047538::e2b9301473f1863607682eb9e5af3c18::
+res://Frontend/Startup/Startup.tscn::1747471418::ec27f6f5831f49b04ea899966c381d72::PackedScene,Control,Panel,TextureRect,VBoxContainer,LineEdit
+res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres::1747475043::eb87aa4142075b4960c9e3213ec91ecd::
+res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres::1747475043::7ee5fcc3455e4b00e763f405fde8d7c0::

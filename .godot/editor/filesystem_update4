@@ -1,12 +1,1 @@
-res://Frontend/Desktop/Desktop.tscn
-res://Frontend/Desktop/SubScenes/active_friend_panel.tscn
-res://Frontend/Desktop/SubScenes/ObjectPresenter.tscn
-res://Frontend/Desktop/SubScenes/friend_request_box.tscn
-res://Frontend/Desktop/SubScenes/instance_pane.tscn
-res://Frontend/Desktop/SubScenes/onlineperson.tscn
-res://Frontend/Desktop/SubScenes/Detail Overlays/player_details.tscn
-res://Frontend/StyleBoxes/Flat _Stylebox_White_focused.tres
-res://Frontend/StyleBoxes/Flat _Stylebox_White_normal.tres
-res://CVR OG Green.tres
-res://Backend/UserSettings.gd
-res://Frontend/Desktop/settingspanel.gd
+res://export_presets.cfg

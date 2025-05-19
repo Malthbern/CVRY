@@ -3,14 +3,14 @@ extends Node
 var ekey:String
 
 func _ready():
-	if !FileAccess.file_exists('res://parsednonesense'):
-		var keyfile = FileAccess.open('res://parsednonesense',FileAccess.WRITE)
+	if !FileAccess.file_exists('res://parsednonesense.txt'):
+		var keyfile = FileAccess.open('res://parsednonesense.txt',FileAccess.WRITE)
 		var crypto := Crypto.new()
 		var byte_array := crypto.generate_random_bytes(1024)
 		keyfile.store_string(byte_array.get_string_from_utf16())
 		keyfile.close()
 	
-	ekey = FileAccess.get_sha256('res://parsednonesense')
+	ekey = FileAccess.get_sha256('res://parsednonesense.txt')
 
 func encrypt_and_save(Data:Dictionary, Path:String):
 	var file = FileAccess.open_encrypted_with_pass(Path, FileAccess.WRITE, ekey)
