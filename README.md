@@ -20,4 +20,4 @@ In accordance with [Section 9 of the ChilloutVR Terms of Service](https://docume
 This application is not created by or affiliated with Alpha Blend Interactive in any way.
 
 ### Mature Content Access
-In using this application you also agree that you currently have access to the [Mature Content DLC](https://documentation.abinteractive.net/chilloutvr/faq/mature-content-access-dlc/).
+In using this application you also agree that you currently have access to the [Mature Content DLC](https://documentation.abinteractive.net/chilloutvr/faq/mature-content-access-dlc/), and by extension Agreeing to Steam's [Subscriber Agreement](https://store.steampowered.com/subscriber_agreement)
