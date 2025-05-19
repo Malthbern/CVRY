@@ -11,7 +11,7 @@ This primarily exists because AstroDoge's [CVRX](https://github.com/AstroDogeDX/
 As for the question of why Godot, a game engine, that's mostly down to me wanting to learn how to work with it's UI system. Dont worry about bloat, the build has ben done with the 3D, 2D rendering, and physics stripped and is also set to the "compatability" rendering pipeline to be nice and lightweight.
 
 ## Instalation
-### todo: figure out what's needed to install and also build an actual release
+fow now it's as simple as grabbing the Latest [here](https://github.com/Malthbern/CVRY/releases/tag/0.0.3) unzipping if on windows and running the executable
 
 ## Nessesary Legal Disclaimers
 ### Third Party Application Disclaimer
