@@ -1,11 +1,15 @@
 # CVRY
+
+## Archive
+With CVRX getting a [ui update] (https://github.com/AstroDogeDX/CVRX/tree/ui-update) that adds all of the features CVRY was meant to replace it for, there really isn't a reason for this to exist anymore. I learned what I wanted to for Godot's UI, and with astro adding those features I see no reason to continue development on a niche tool on an already niche game. 
+
 ## Description
  A standalone companion app for ChilloutVR that expands the user experience! and is meant as an upgrade to AstroDoge's [CVRX](https://github.com/AstroDogeDX/CVRX).
 
  ### This is very much so still a work in progress
 
 ## Why
-This primarily exists because AstroDoge's [CVRX](https://github.com/AstroDogeDX/CVRX) is fairly bare bones and dosent offer much in the way of features. CVRY is attempting to be more feature rich allowing for managing friends, worlds, and props. (these are currently only planned features)
+~~This primarily exists because AstroDoge's [CVRX](https://github.com/AstroDogeDX/CVRX) is fairly bare bones and dosent offer much in the way of features.~~ CVRY is attempting to be more feature rich allowing for managing friends, worlds, and props. (these are currently only planned features)
 
 As for the question of why Godot, a game engine, that's mostly down to me wanting to learn how to work with it's UI system. Dont worry about bloat, the build has ben done with the 3D, 2D rendering, and physics stripped and is also set to the "compatability" rendering pipeline to be nice and lightweight.
 
