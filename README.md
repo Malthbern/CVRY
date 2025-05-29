@@ -1,7 +1,7 @@
 # CVRY
 
 ## Archive
-With CVRX getting a [ui update](https://github.com/AstroDogeDX/CVRX/tree/ui-update) that adds all of the features CVRY was meant to replace it for, there really isn't a reason for this to exist anymore. I learned what I wanted to for Godot's UI, and with astro adding those features I see no reason to continue development on a niche tool on an already niche game. 
+With CVRX getting a [ui update](https://github.com/AstroDogeDX/CVRX/tree/ui-update) that adds all of the features CVRY was meant to replace it for, there really isn't a reason for this to exist anymore. I learned what I wanted to for Godot's UI, and with astro adding those features I see no reason to continue development on a niche tool for an already niche game. 
 
 ## Description
  A standalone companion app for ChilloutVR that expands the user experience! and is meant as an upgrade to AstroDoge's [CVRX](https://github.com/AstroDogeDX/CVRX).
